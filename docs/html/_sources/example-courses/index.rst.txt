@@ -1,17 +1,17 @@
 OpenTA - example courses
 =============================================
 
-.. _author-example: https://examples.opentaproject.com/lti
+.. _author-example: https://examples.opentaproject.com/lti/index
 
-.. _meriam-and-kraige-example: https://apazidis.opentaproject.com/lti
+.. _meriam-and-kraige-example: https://meriam-kraige.opentaproject.com/lti/index
 
-.. _intromatte-f: https://intromatte-f.opentaproject.com/lti
+.. _intromatte-f: https://intromatte-f.opentaproject.com/lti/index
 
-.. _nationella-prov: https://matteprov.opentaproject.com/lti
+.. _nationella-prov: https://matteprov.opentaproject.com/lti/index
 
 .. _archive: https://www.umu.se/institutionen-for-tillampad-utbildningsvetenskap/np/np-2-4/tidigare-givna-prov/
 
-.. _vektorfält: https://ffm234.opentaproject.com/lti
+.. _vektorfält: https://ffm234.opentaproject.com/lti/index
 
 Some interactive examples
 
