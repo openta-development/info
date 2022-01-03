@@ -12,19 +12,17 @@ poetry shell
 ```
 
 
-For live editing the documentation install `sphinx-autobuild` with
+Live editing uses `sphinx-autobuild` which is installed with poetry install. Otherwise
 ```sh
 pip install sphinx-autobuild
 ```
-This is automatically installed when running poetry above
-
-and run
+then run
 
 ```sh
 sphinx-autobuild source docs/html
 ```
 
-This will set up an local webserver at http://127.0.0.1:8080 that recompiles on file changes.
+This will set up an local webserver at http://127.0.0.1:8000 that recompiles on file changes.
 
 Maybe you are using Vim and also want to specify a port:
 ```sh
@@ -35,4 +33,5 @@ To update the repository documentation in ```/docs```. Do changes in master bran
 ```
 make html
 git commit -a
+git push
 ```
