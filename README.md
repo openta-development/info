@@ -26,7 +26,7 @@ This will set up an local webserver at http://127.0.0.1:8000 that recompiles on 
 
 Maybe you are using Vim and also want to specify a port:
 ```sh
-sphinx-autobuild --port 8080 --ignore "*.swp" --ignore "*.swx" --ignore "*~" source docs/html
+sphinx-autobuild --port 8888 --ignore "*.swp" --ignore "*.swx" --ignore "*~" source docs/html
 ```
 
 To update the repository documentation in ```/docs```. Do changes in master branch then
