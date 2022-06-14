@@ -4,8 +4,6 @@ __pycache__/
 *$py.class
 */_build_html
 */_*
-html/*
-docs/*
 */bak/*
 
 # C extensions
