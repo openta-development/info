@@ -39,3 +39,6 @@
 .. |fa-camera| replace:: :latex:`\faCamera`:html:`<i class="fa fa-camera"></i>`
 .. |fa-undo| replace:: :latex:`\faUndo`:html:`<i class="fa fa-undo"></i>`
 .. |fa-users| replace:: :latex:`\faUsers`:html:`<i class="fa fa-users"></i>`
+.. |fa-home| replace:: :latex:`\faUsers`:html:`<i class="fa fa-home"></i>`
+.. |fa-arrow-circle-down| replace:: :latex:`\faUsers`:html:`<i class="fa fa-arrow-circle-down"></i>`
+.. |fa-arrow-circle-up| replace:: :latex:`\faUsers`:html:`<i class="fa fa-arrow-circle-up"></i>`

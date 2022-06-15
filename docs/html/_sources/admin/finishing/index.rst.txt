@@ -1,20 +1,25 @@
 ***************
-Finishing
+Finishing, archiving and migrating  a course
 ***************
 
 .. include:: /global.rst
 
+When finishing a course, make sure you archive the course results and exercises so you can access the results on your own computer without an OpenTA instance. If you plan to use the course again, make you separately archive the exercises so you can start your new course with the material you prepared previously.  So upon finishing your course, perform steps 1) and 2).  
 
-Archiving your  complete course
+.. important::
+       zip files are fragile. In order to be sure to be able to to use a downloaded zip files to an OpenTA server make sure you have the original file. Do not count on rezipping a file tree on your own computer. Make a safe copy of the downloaded zip, and unzip a copy to inspect the filetree.
+
+
+1) Archiving your  complete course
 ========================
 
-
-* The home toolbar
-
+* Press Home (|fa-home|) on the toolbar and if necessary (|fa-arrow-circle-up|) to bring up the menu bar:
+ 
 .. image:: fig1.png
      :align: center
      :width: 600px
-* Press ``Server``
+
+* Then press ``Server``
 
 .. image:: fig2.png
      :align: center
@@ -26,13 +31,13 @@ Archiving your  complete course
 
 * Make a scratch copy of the downloaded file and unzip it. 
  
-* The unzipped files contains archive of the results, exercises and student submissions. By running the command ``python3 -m http.server`` at the root of the downloaded directory, the contents can be browsed on ``https://localhost:8000``. For archival purpose, you should have enough info available so you could delete the course from the server. It is recommended you browse the archive before abandoning or deleting the course from the OpenTA server.
+* The unzipped files contains archive of the results, exercises and student submissions. By running the command ``python3 -m http.server`` at the root of the downloaded directory, the contents can be browsed on ``http://localhost:8000``. For archival purpose, you should have enough info available so you could delete the course from the server. It is recommended you browse the archive before abandoning or deleting the course from the OpenTA server.
 
-Archiving your  exercises
+2) Archiving your  exercises
 =======================
 
+* Press Home (|fa-home|) on the toolbar and if necessary (|fa-arrow-circle-up|) to bring up the menu bar:
 
-* The home toolbar
 
 
 .. image:: fig3.png
@@ -52,26 +57,36 @@ Archiving your  exercises
 
 
 
-Moving a mature course to new OpenTA server
+3) Moving a mature course to new OpenTA server
 ========================
 
+Should you need or want to migrate your entire course to another OpenTA server, 
+follow these instructions.
+
+
 * Let us assume you want to import a mature course to a brand new server. Create a new ''scratch'' course on the new server. Then  access the the home toolbar
+
+
 
 .. image:: fig1.png
      :align: center
      :width: 600px
-* Press ``Server``
-
+* Press ``Server`` 
+     
 .. image:: fig2.png
      :align: center
      :width: 600px
 
-* Press ``Import``.  This will completely replace your scratch course instance with the contents of the zip archive. 
+* Press ``Import``.  Uploading an OpenTA server zip file will completely replace your scratch course instance with the contents of the zip archive.  You will not be able to recreate the scratch course. 
 
-Starting a new course with the old exercises
+.. _import exercises:
+
+4) Starting a new course with the old exercises
 ========================
 
-Go to the home of the new course page with presumably no exercises present. 
+These instructions describes how you would start a new course with the exercises you saved in 1).
+
+Go to the home of the new course page with one scratch exercise present.
 
 .. image:: fig3.png
      :align: center
@@ -82,9 +97,15 @@ Go to the home of the new course page with presumably no exercises present.
      :align: center
      :width: 600px
 
+
 * Press ``Import Exercises``.  Choosing the zip file of exercises, they will be imported into to your new course  resulting in a clean course with the old exercises. 
 
-* To update the dates , you can click on ``Modify``
+.. important::
+      The new files will be merged with the new. But,  if the same exercies already exist there will be duplicates and a big mess. Better to import to clean course.
+
+
+
+* To update the duedates and other meta data, you can click on ``Modify``
 
   .. image:: fig4.png
      :align: center

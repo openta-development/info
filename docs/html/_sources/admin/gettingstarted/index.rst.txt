@@ -9,8 +9,7 @@ Known bugs
 
 .. note::
 
-   * Thumbnails sometimes do not show in student images
-   * Password reset from canvas fails since it demands old password
+   * Pleae report bugs
 
 
 Login for the first time
@@ -51,6 +50,11 @@ The new exercise will now be shown under the toolbar.
 .. image:: new_exercise.png
      :align: center
      :width: 100px
+
+* If you have zip file of exercises, this is the right time to import them. See
+  
+  :ref:`import exercises`
+
 
 Edit the exercise
 =================
