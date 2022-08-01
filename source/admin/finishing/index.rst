@@ -96,7 +96,7 @@ If you are using Canvas you must set up  student access via the Canvas page.
   * ``Lti key``
   * ``Lti secret``
 
- * Now go to your course Canvas page 
+* Now go to your course Canvas page
 
   * Press ``Settings``, found furthest down in the left vertical navigation column
   * Press ``Apps`` , found in the navigation bar at the top of the center frame.
