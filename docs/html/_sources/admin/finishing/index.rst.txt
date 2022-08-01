@@ -1,6 +1,6 @@
 ***************
 Finishing, archiving and migrating  a course
-***************
+*********************************************
 
 .. include:: /global.rst
 
@@ -10,7 +10,7 @@ After finishing a course, make sure you archive the course results and exercises
        zip files can be subtly different across different operating systems. To be sure you can use your downloaded zip files in a new  OpenTA server,  make sure you have the original zip file available. Do not assume a rezip will will work.  Just to be sure, unzip a copy to inspect the filetree.
 
 
-1) Archiving your  complete course
+1) Archive your course
 ========================
 
 * Press Home (|fa-home|) on the toolbar and if necessary (|fa-arrow-circle-up|) to bring up the menu bar:
@@ -31,10 +31,10 @@ After finishing a course, make sure you archive the course results and exercises
 
 * Make a scratch copy of the downloaded file and unzip it. 
  
-* The archive contains the results, exercises and student submissions. By running the command ``python3 -m http.server`` at the root of the course directory, the contents can be browsed on ``http://localhost:8000``. Enough student results should be available so you could delete the course from the server. It is recommended you browse the archive before abandoning or deleting the course from the OpenTA server to make sure you have what you need. 
+* The archive contains the results, exercises and student submissions. By running the command ``python3 -m http.server`` at the root of the course directory, the contents can be browsed on ``http://localhost:8000``. Enough student results should be available so you could delete the course from the server. Browse the archive before abandoning or deleting the course from the OpenTA server to make sure you have what you need and no longer need need to serve the old course.
 
-2) Archiving your  exercises
-=======================
+2) Archive your exercises 
+============================
 
 * Press Home (|fa-home|) on the toolbar and if necessary (|fa-arrow-circle-up|) to bring up the menu bar:
 
@@ -44,21 +44,36 @@ After finishing a course, make sure you archive the course results and exercises
      :align: center
      :width: 600px
 
-* Press ``Course ``
+* Press ``Course``
 
 .. image:: fig4.png
      :align: center
      :width: 600px
 
-* Now press  ``Export exercises`` and download the zip file. Save the zip file, and unzip a copy. As above, by running the command  ``python3 -m http.server`` at the root of the downloaded directory, the contents can be browsed on ``https://localhost:8000``. The directory contains the exercises together with information about meta data such as published or not. The zip file can reimported to a scratch course to create a new instance, such aswould be created when the same course is taught again. 
+* Now press  ``Export exercises`` and download the zip file. Save the zip file, and unzip a copy. As above, by running the command  ``python3 -m http.server`` at the root of the downloaded directory, the contents can be browsed on ``https://localhost:8000``. The directory contains the exercises together with information about meta data such as published or not. The zip file can reimported to a scratch course to create a new instance, such aswould be created when the same course is taught again. But no student information is included.
+
+3) Start a new course based on your old course i.e. duplicate
+================================================================
+
+* Press Home (|fa-home|) on the toolbar and if necessary (|fa-arrow-circle-up|) to bring up the menu bar:
+
+* Press ``Course``
+
+.. image:: fig4.png
+     :align: center
+     :width: 600px
+
+* Press ``Duplicate`` A new course name is suggested; change it to what you want , then press ``Create the new course.``
+
+After server indicates its done, log in to the new course with your present login and password. Admins will be migrated wwhereas no students are imported. Dates and exercise options are left unchanged. Use ``Modify`` in the new course to shifthe dates typically by 52x7 = 364 days. Or wipe due dates clean by deselecting deadline_date. Or unpublish all unchecking the published check. 
+
+4) Other paths to starting a new course or server
+=========================================================
 
 
 
-
-
-
-3) Moving a mature course to new OpenTA server
-========================
+4a) Moving a mature course to new OpenTA server
+------------------------------------------------
 
 Should you need or want to migrate your entire running course to another OpenTA server, follow these instructions.
 
@@ -70,8 +85,9 @@ Should you need or want to migrate your entire running course to another OpenTA 
 .. image:: fig1.png
      :align: center
      :width: 600px
+
 * Press ``Server`` 
-     
+
 .. image:: fig2.png
      :align: center
      :width: 600px
@@ -80,8 +96,8 @@ Should you need or want to migrate your entire running course to another OpenTA 
 
 .. _import exercises:
 
-4) Starting a new course with the old exercises
-========================
+4b) Starting a completely new course with imported exercises
+------------------------------------------------------------------
 
 These instructions describe how you would start a new course with the exercises you saved in 2).
 
@@ -90,6 +106,7 @@ Create an  example exercise in the new course.
 .. image:: fig3.png
      :align: center
      :width: 600px
+
 * Press ``Course``
 
 .. image:: fig4.png
