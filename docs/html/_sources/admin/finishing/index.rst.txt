@@ -60,6 +60,9 @@ Unzip the zip copy. By running the command  ``python3 -m http.server`` at the ro
 3) Duplicate  when you teach the course again.
 ================================================================
 
+.. |tools| image:: fig7.png
+     :width: 40px
+
 The easiest path to starting up the new course based on the old is duplicating the course on the same OpenTA server. You don't need the zip files, but you should download and save them anyway to ensure all future  access to your exercises and data.
 
 * Press Home (|fa-home|) on the toolbar and if necessary (|fa-arrow-circle-up|) to bring up the menu bar:
@@ -71,16 +74,23 @@ The easiest path to starting up the new course based on the old is duplicating t
      :width: 600px
 
 * Press ``Duplicate`` A new course name is suggested; change it to what you want , then press ``Create the new course.``
+* When the server indicates its done, logout of the old course.
 
-After server indicates its done, log in to the new course with your present login and password. Admins will be migrated wwhereas no students are imported. Dates and exercise options are left unchanged. Use ``Modify`` in the new course to shifthe dates typically by 52x7 = 364 days. Or wipe due dates clean by deselecting deadline_date. Uncheck the course options you don't want to keep. 
+* log in to the new course with your present login and password. Admins will be migrated wwhereas no students are imported. Dates and exercise options are left unchanged. 
+  
+  * Use ``Course -> Modify`` to shift the dates typically by 52x7 = 364 days. Or wipe due dates clean by deselecting deadline_date. 
+  * Uncheck the course options you don't want to keep. 
+  * Click  ``Click here to modify ...``
+  * Look over your course  using the the cog and users icons in the toolbar |tools|
 
-* Logout of the old course and login to the new. Admins but no students should be migrated.
+
  
 3b) Setting up your new course with Canvas
-================================================================
+==========
 
-If you are using Canvas you must set up  student access via the Canvas page. 
+.. important::
 
+        Login to OpenTA using your Admin credentials, same as your old course.
 
 
 * Press ``Course`` and then ``Options``
@@ -90,26 +100,34 @@ If you are using Canvas you must set up  student access via the Canvas page.
      :width: 600px
 
 * If ``Use lti`` is unchecked, check it and ``Save`` and reload ``Options``.
-* Copy the following three fields so you can paste into canvas
+* Copy the following three fields ; you need to paste them into canvas
 
   * ``Url`` i.e. ''Config url'' field starting with 'https' and ending with '/config_xml'
   * ``Lti key``
   * ``Lti secret``
 
-* Now go to your course Canvas page 
 
-  * Press ``Settings``, found furthest down in the left vertical navigation column
-  * Press ``Apps`` , found in the navigation bar at the top of the center frame.
-  * Press ``View App Configurations`` found in the title bar
-  * Press ``+App`` in the refreshed title  bar
-  * Select ``By URL`` as configuration type
-  * Put in a name such as ``Open TA`` in 'Name'
-  * Put in the ``Lti key`` you copied above into 'Consuer key'
-  * Put ``Lti secret`` you copied above into 'Shared Secret'
-  * Put in ``Url`` you copied above into 'Config URL'
-  * Press ``Submit``. Hopefully success is confirmed by Canvas. If not, suspect incompletely copied key or secret and try again
-  * Go back to the Canvas page and refresh. If 'Open TA' appears in the left navigation column you succeeded.
-  * Press ``OpenTA`` in the left navigation column. If everythning is set up correctly, you will open up the course page. Close the OpenTA  window within Canvas and make sure it returns.
+.. warning::
+
+        You must have Canvas "Course Designer" privileges to add OpenTA to Canvas;  being only Examiner is not enough. Provide the role of Course Designer to yourself and/or somebody else. This is done in Canvas by checking ``People``  in the left Canvas navigation column, then checking ``+People`` in the top right Canvas Navigation bar. Then  choose ``Course Designer`` , add your email and click ``Next``  then ``AddUsers``.  Check for the  email. Log back in and accept the invitation.
+
+.. important:: 
+
+        Now go to your course Canvas page and login using the account that is Course  Designer:
+
+* Press ``Settings``, found furthest down in the left vertical navigation column
+* Press ``Apps`` , found in the navigation bar at the top of the center frame.
+* Press ``View App Configurations`` found in the title bar
+* Press ``+App`` in the refreshed title  bar.   
+        * *If this does not appear you may not have the role CourseDesigner* See instructions in green above.
+* Select ``By URL`` as configuration type
+* Put in a name such as ``Open TA`` in 'Name'
+* Put in the ``Lti key`` you copied above into 'Consuer key'
+* Put ``Lti secret`` you copied above into 'Shared Secret'
+* Put in ``Url`` you copied above into 'Config URL'
+* Press ``Submit``. Hopefully success is confirmed by Canvas. If not, suspect incompletely copied key or secret and try again
+* Go back to the Canvas page and refresh. If 'Open TA' appears in the left navigation column you succeeded.
+* Press ``OpenTA`` in the left navigation column. If everythning is set up correctly, you will open up the course page. Close the OpenTA  window within Canvas and make sure it returns.
 
 
 .. |returnimage| image:: fig5.png

@@ -145,34 +145,56 @@
 <a class="reference internal image-reference" href="../../_images/fig4.png"><img alt="../../_images/fig4.png" class="align-center" src="../../_images/fig4.png" style="width: 600px;" /></a>
 <ul class="simple">
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Duplicate</span></code> A new course name is suggested; change it to what you want , then press <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">the</span> <span class="pre">new</span> <span class="pre">course.</span></code></p></li>
+<li><p>When the server indicates its done, logout of the old course.</p></li>
+<li><p>log in to the new course with your present login and password. Admins will be migrated wwhereas no students are imported. Dates and exercise options are left unchanged.</p>
+<ul>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">Course</span> <span class="pre">-&gt;</span> <span class="pre">Modify</span></code> to shift the dates typically by 52x7 = 364 days. Or wipe due dates clean by deselecting deadline_date.</p></li>
+<li><p>Uncheck the course options you don’t want to keep.</p></li>
+<li><p>Click  <code class="docutils literal notranslate"><span class="pre">Click</span> <span class="pre">here</span> <span class="pre">to</span> <span class="pre">modify</span> <span class="pre">...</span></code></p></li>
+<li><p>Look over your course  using the the cog and users icons in the toolbar <a class="reference internal" href="../../_images/fig7.png"><img alt="tools" src="../../_images/fig7.png" style="width: 40px;" /></a></p></li>
 </ul>
-<p>After server indicates its done, log in to the new course with your present login and password. Admins will be migrated wwhereas no students are imported. Dates and exercise options are left unchanged. Use <code class="docutils literal notranslate"><span class="pre">Modify</span></code> in the new course to shifthe dates typically by 52x7 = 364 days. Or wipe due dates clean by deselecting deadline_date. Uncheck the course options you don’t want to keep.</p>
-<ul class="simple">
-<li><p>Logout of the old course and login to the new. Admins but no students should be migrated.</p></li>
+</li>
 </ul>
 </section>
 <section id="b-setting-up-your-new-course-with-canvas">
 <h1>3b) Setting up your new course with Canvas<a class="headerlink" href="#b-setting-up-your-new-course-with-canvas" title="Permalink to this headline"></a></h1>
-<p>If you are using Canvas you must set up  student access via the Canvas page.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Login to OpenTA using your Admin credentials, same as your old course.</p>
+</div>
 <ul class="simple">
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Course</span></code> and then <code class="docutils literal notranslate"><span class="pre">Options</span></code></p></li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/fig4.png"><img alt="../../_images/fig4.png" class="align-center" src="../../_images/fig4.png" style="width: 600px;" /></a>
 <ul class="simple">
 <li><p>If <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">lti</span></code> is unchecked, check it and <code class="docutils literal notranslate"><span class="pre">Save</span></code> and reload <code class="docutils literal notranslate"><span class="pre">Options</span></code>.</p></li>
-<li><p>Copy the following three fields so you can paste into canvas</p>
+<li><p>Copy the following three fields ; you need to paste them into canvas</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">Url</span></code> i.e. ‘’Config url’’ field starting with ‘https’ and ending with ‘/config_xml’</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Lti</span> <span class="pre">key</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Lti</span> <span class="pre">secret</span></code></p></li>
 </ul>
 </li>
-<li><p>Now go to your course Canvas page</p>
-<ul>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You must have Canvas “Course Designer” privileges to add OpenTA to Canvas;  being only Examiner is not enough. Provide the role of Course Designer to yourself and/or somebody else. This is done in Canvas by checking <code class="docutils literal notranslate"><span class="pre">People</span></code>  in the left Canvas navigation column, then checking <code class="docutils literal notranslate"><span class="pre">+People</span></code> in the top right Canvas Navigation bar. Then  choose <code class="docutils literal notranslate"><span class="pre">Course</span> <span class="pre">Designer</span></code> , add your email and click <code class="docutils literal notranslate"><span class="pre">Next</span></code>  then <code class="docutils literal notranslate"><span class="pre">AddUsers</span></code>.  Check for the  email. Log back in and accept the invitation.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Now go to your course Canvas page and login using the account that is Course  Designer:</p>
+</div>
+<ul class="simple">
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Settings</span></code>, found furthest down in the left vertical navigation column</p></li>
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Apps</span></code> , found in the navigation bar at the top of the center frame.</p></li>
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">App</span> <span class="pre">Configurations</span></code> found in the title bar</p></li>
-<li><p>Press <code class="docutils literal notranslate"><span class="pre">+App</span></code> in the refreshed title  bar</p></li>
+<li><dl class="simple">
+<dt>Press <code class="docutils literal notranslate"><span class="pre">+App</span></code> in the refreshed title  bar.</dt><dd><ul>
+<li><p><em>If this does not appear you may not have the role CourseDesigner</em> See instructions in green above.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 <li><p>Select <code class="docutils literal notranslate"><span class="pre">By</span> <span class="pre">URL</span></code> as configuration type</p></li>
 <li><p>Put in a name such as <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">TA</span></code> in ‘Name’</p></li>
 <li><p>Put in the <code class="docutils literal notranslate"><span class="pre">Lti</span> <span class="pre">key</span></code> you copied above into ‘Consuer key’</p></li>
@@ -181,8 +203,6 @@
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Submit</span></code>. Hopefully success is confirmed by Canvas. If not, suspect incompletely copied key or secret and try again</p></li>
 <li><p>Go back to the Canvas page and refresh. If ‘Open TA’ appears in the left navigation column you succeeded.</p></li>
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">OpenTA</span></code> in the left navigation column. If everythning is set up correctly, you will open up the course page. Close the OpenTA  window within Canvas and make sure it returns.</p></li>
-</ul>
-</li>
 </ul>
 <ul class="simple">
 <li><p>If OpenTA is now opening in a Canvas frame, make sure students can open up a frameless window.</p>
