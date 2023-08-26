@@ -1,18 +1,38 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>multipleChoice &mdash; OpenTA  documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
@@ -20,20 +40,39 @@
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
         <script src="../../../_static/js/showdomain.js"></script>
-    <script src="../../../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="numeric" href="numeric.html" />
-    <link rel="prev" title="linearAlgebra" href="linearalgebra.html" /> 
+    <link rel="next" title="devLinearAlgebra" href="devLinearAlgebra.html" />
+    <link rel="prev" title="Question Types" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+          
+
+          
             <a href="../../../index.html" class="icon icon-home"> OpenTA
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -41,7 +80,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Introduction</a></li>
@@ -60,16 +110,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../exercise_xml.html">File structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../exercise_xml.html#exercise-xml-format">Exercise XML format</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Question Types</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="comparenumeric.html">compareNumeric</a></li>
-<li class="toctree-l4"><a class="reference internal" href="linearalgebra.html">linearAlgebra</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">multipleChoice</a></li>
-<li class="toctree-l4"><a class="reference internal" href="numeric.html">numeric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="devLinearAlgebra.html">devLinearAlgebra</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../finishing/index.html">1) Archive your finished course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../finishing/index.html#archive-your-finished-exercises">2) Archive your finished exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../finishing/index.html#duplicate-when-you-teach-the-course-again">3) Duplicate  when you teach the course again.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../finishing/index.html#b-setting-up-your-new-course-with-canvas">3b) Setting up your new course with Canvas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../finishing/index.html#other-ways-of-migrating-a-course">4) Other ways of migrating a course</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">OpenTA For Students</span></p>
 <ul>
@@ -80,34 +133,77 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../example-courses/index.html">OpenTA - example courses</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../index.html">OpenTA</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="../index.html">Authoring</a> &raquo;</li>
+        
           <li><a href="index.html">Question Types</a> &raquo;</li>
+        
       <li>multipleChoice</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../../../_sources/admin/author/questiontypes/multiplechoice.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="multiplechoice">
-<span id="id1"></span><h1>multipleChoice<a class="headerlink" href="#multiplechoice" title="Permalink to this headline"></a></h1>
+            
+  <div class="section" id="multiplechoice">
+<span id="id1"></span><h1>multipleChoice<a class="headerlink" href="#multiplechoice" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;question</span> <span class="na">type=</span><span class="s">&quot;multipleChoice&quot;</span><span class="nt">&gt;</span>
  ...
 <span class="nt">&lt;/question&gt;</span>
@@ -119,10 +215,10 @@ submitting. The content of the alternatives can be text, math or elements such
 as figures.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;question</span> <span class="na">type=</span><span class="s">&quot;multipleChoice&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;text&gt;</span>Pick the correct alternatives below.<span class="nt">&lt;/text&gt;</span>
-  <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>The first choice<span class="nt">&lt;/choice&gt;</span>
-  <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;1&quot;</span> <span class="na">correct=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>The second choice<span class="nt">&lt;/choice&gt;</span>
-  <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>The third choice<span class="nt">&lt;/choice&gt;</span>
-  <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;3&quot;</span> <span class="na">correct=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>The fourth choice<span class="nt">&lt;/choice&gt;</span>
+  <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;text&gt;</span> The first choice<span class="nt">&lt;/text&gt;&lt;/choice&gt;</span>
+  <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;1&quot;</span> <span class="na">correct=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;text&gt;</span> The second choice<span class="nt">&lt;/text&gt;&lt;/choice&gt;</span>
+  <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;&lt;text&gt;</span> The third choice<span class="nt">&lt;/text&gt;&lt;/choice&gt;</span>
+  <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;3&quot;</span> <span class="na">correct=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;text&gt;</span> The fourth choice<span class="nt">&lt;/text&gt;&lt;/choice&gt;</span>
 <span class="nt">&lt;/question&gt;</span>
 </pre></div>
 </div>
@@ -172,51 +268,68 @@ for the detailed syntax description.</p></td>
 </tr>
 </tbody>
 </table>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
-<section id="basic-with-math">
-<h3>Basic (with math)<a class="headerlink" href="#basic-with-math" title="Permalink to this headline"></a></h3>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;question</span> <span class="na">type=</span><span class="s">&quot;multipleChoice&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;text&gt;</span>How many people live of planet earth?<span class="nt">&lt;/text&gt;</span>
-  <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>$9\ctimes 10^9$<span class="nt">&lt;/choice&gt;</span>
-  <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;1&quot;</span> <span class="na">correct=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>$9\ctimes 10^10$<span class="nt">&lt;/choice&gt;</span>
-  <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>$9\ctimes 10^11$<span class="nt">&lt;/choice&gt;</span>
-<span class="nt">&lt;/question&gt;</span>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-with-math">
+<h3>Basic (with math)<a class="headerlink" href="#basic-with-math" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;question</span> <span class="na">key=</span><span class="s">&#39;key1&#39;</span> <span class="na">type=</span><span class="s">&quot;multipleChoice&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;text&gt;</span>How many people live of planet earth?<span class="nt">&lt;/text&gt;</span>
+   <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;text&gt;</span> $ 9 \times 10^9 $ <span class="nt">&lt;/text&gt;</span> <span class="nt">&lt;/choice&gt;</span>
+   <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;1&quot;</span> <span class="na">correct=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;&lt;text&gt;</span> $ 9\times 10^{10} $ <span class="nt">&lt;/text&gt;&lt;/choice&gt;</span>
+   <span class="nt">&lt;choice</span> <span class="na">key=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;&lt;text&gt;</span> $ 9\times 10^{11} $ <span class="nt">&lt;/text&gt;</span> <span class="nt">&lt;/choice&gt;</span>
+ <span class="nt">&lt;/question&gt;</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="linearalgebra.html" class="btn btn-neutral float-left" title="linearAlgebra" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="numeric.html" class="btn btn-neutral float-right" title="numeric" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="devLinearAlgebra.html" class="btn btn-neutral float-right" title="devLinearAlgebra" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Question Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Hampus Linander, Stellan Östlund.</p>
-  </div>
+    <p>
+        &#169; Copyright 2021, Hampus Linander, Stellan Östlund.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

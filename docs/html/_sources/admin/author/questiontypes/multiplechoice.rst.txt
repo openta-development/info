@@ -21,10 +21,10 @@ as figures.
 
   <question type="multipleChoice">
     <text>Pick the correct alternatives below.</text>
-    <choice key="0">The first choice</choice>
-    <choice key="1" correct="true">The second choice</choice>
-    <choice key="2">The third choice</choice>
-    <choice key="3" correct="true">The fourth choice</choice>
+    <choice key="0"><text> The first choice</text></choice>
+    <choice key="1" correct="true"><text> The second choice</text></choice>
+    <choice key="2"><text> The third choice</text></choice>
+    <choice key="3" correct="true"><text> The fourth choice</text></choice>
   </question>
 
 The following tags can be used inside a **multipleChoice** block.
@@ -71,9 +71,9 @@ Basic (with math)
 
 .. code-block:: xml
 
-  <question type="multipleChoice">
+ <question key='key1' type="multipleChoice">
     <text>How many people live of planet earth?</text>
-    <choice key="0">$9\ctimes 10^9$</choice>
-    <choice key="1" correct="true">$9\ctimes 10^10$</choice>
-    <choice key="2">$9\ctimes 10^11$</choice>
+    <choice key="0"><text> $ 9 \times 10^9 $ </text> </choice>
+    <choice key="1" correct="true"><text> $ 9\times 10^{10} $ </text></choice>
+    <choice key="2"><text> $ 9\times 10^{11} $ </text> </choice>
   </question>
