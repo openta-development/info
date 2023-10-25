@@ -209,15 +209,19 @@ exercise and its questions are created using a custom <a class="reference extern
 <p><a class="reference download internal" download="" href="../_downloads/e13d946fa42172dc1cb0bbf927f2a3e0/example.xml"><code class="xref download docutils literal notranslate"><span class="pre">example.xml</span></code></a></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;exercise&gt;</span>
   <span class="nt">&lt;exercisename&gt;</span>Momentum and energy<span class="nt">&lt;/exercisename&gt;</span>
+  <span class="nt">&lt;global&gt;</span>
+	m = 3 kg; v = 5 meter / second;
+  <span class="nt">&lt;/global&gt;</span>
   <span class="nt">&lt;text&gt;</span>
     A particle with mass $m$ is moving with velocity $v$.
   <span class="nt">&lt;/text&gt;</span>
   <span class="nt">&lt;question</span> <span class="na">key=</span><span class="s">&quot;1&quot;</span> <span class="na">type=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;variables&gt;</span>
-      m = 3 kg; v = 5 meter / second;
-    <span class="nt">&lt;/variables&gt;</span>
-    <span class="nt">&lt;text&gt;</span>What is the particles kinetic energy?<span class="nt">&lt;/text&gt;</span>
+    <span class="nt">&lt;text&gt;</span>What is the energy of the particle?<span class="nt">&lt;/text&gt;</span>
     <span class="nt">&lt;expression&gt;</span>m*v^2/2<span class="nt">&lt;/expression&gt;</span>
+  <span class="nt">&lt;/question&gt;</span>
+  <span class="nt">&lt;question</span> <span class="na">key=</span><span class="s">&quot;2&quot;</span> <span class="na">type=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;text&gt;</span>What is the momentum  of the particle?<span class="nt">&lt;/text&gt;</span>
+    <span class="nt">&lt;expression&gt;</span>m*v<span class="nt">&lt;/expression&gt;</span>
   <span class="nt">&lt;/question&gt;</span>
 <span class="nt">&lt;/exercise&gt;</span>
 </pre></div>
