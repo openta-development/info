@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Managing the Course &mdash; OpenTA  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/js/showdomain.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> OpenTA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/adoption.html">Adoption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Admins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/managing_course/index.html">Managing the Course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/managing_participants/index.html">Managing Participants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/author/index.html">Authoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/finishing/index.html">1) Archive your finished course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/finishing/index.html#archive-your-finished-exercises">2) Archive your finished exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/finishing/index.html#duplicate-when-you-teach-the-course-again">3) Duplicate  when you teach the course again.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/finishing/index.html#b-setting-up-your-new-course-with-canvas">3b) Setting up your new course with Canvas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/finishing/index.html#other-ways-of-migrating-a-course">4) Other ways of migrating a course</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Students</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student/index.html">Access and first time login</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA for Webworks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html">OpenTA For webworks users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#create-a-blank-course">Create a blank course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#canvas-setup">Canvas setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#migrate-your-course-to-the-webwork-instance-at-openta">Migrate your course to the WebWork instance at openta</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Example Courses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../example-courses/index.html">OpenTA - example courses</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OpenTA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Managing the Course</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/authors/managing_course/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-the-course">
+<h1>Managing the Course<a class="headerlink" href="#managing-the-course" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="more-course-options">
+<h2>More Course Options<a class="headerlink" href="#more-course-options" title="Permalink to this headline">¶</a></h2>
+<p>Make sure the toolbar is visible by clicking <span class="html"><i class="fa fa-chevron-circle-down"></i></span> icon at the top left.</p>
+<ul class="simple">
+<li><p>Press the <code class="docutils literal notranslate"><span class="pre">Course</span></code> button</p></li>
+<li><p>In the new toolbar, press <code class="docutils literal notranslate"><span class="pre">Options</span></code></p></li>
+</ul>
+<p>This page shows the settings for a course. Each setting is grouped by and presented in it’s own card. These are:</p>
+<dl>
+<dt>Published</dt><dd><p>Enable this checkbox if you wish to publish the course (i.e. allow students to log in and answer questions).</p>
+</dd>
+<dt>Course name</dt><dd><p>A short name suitable for links without spaces or special charcters.</p>
+</dd>
+<dt>Course long name</dt><dd><p>A descriptive name to be used in and appear in Web pages.</p>
+</dd>
+<dt>Url</dt><dd><p>The full url of the course.</p>
+</dd>
+<dt>Motd</dt><dd><p>A short message for web pages; typically blank.</p>
+</dd>
+<dt>Difficulties</dt><dd><p>Choices of badges to decorate exercises:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+:Recommended,*:Easy</span> <span class="pre">..</span></code> for instance makes a badge ‘+’
+correspond to the label recommended etc.</p></li>
+<li><p>This can be anything you want; choices appear later in exercise
+options</p></li>
+</ul>
+</dd>
+<dt>Deadline time</dt><dd><p>Time of day when exercises are due.</p>
+</dd>
+<dt>Use lti</dt><dd><p>unchecked</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>Use lti</em> setting is meant for advanced users. Novice users should leave it unchecked.</p>
+</div>
+</dd>
+<dt>Registration by password</dt><dd><p>Allow password for registration.</p>
+</dd>
+<dt>Registration domains</dt><dd><p>Domains from which to allow registration. Wildcard ‘*’ OK.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is currently only a checkbox.</p>
+</div>
+</dd>
+<dt>Use email</dt><dd><p>Enable email.</p>
+<ul>
+<li><p>Put in your own email in <code class="docutils literal notranslate"><span class="pre">email</span> <span class="pre">reply</span> <span class="pre">to</span></code></p></li>
+<li><p>Ignore the following settings for <strong>opentaproject.com</strong> sites</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Email</span> <span class="pre">host</span> <span class="pre">user</span></code> - The SMTP server’s host name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Email</span> <span class="pre">username</span></code> - The SMTP username</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Email</span> <span class="pre">host</span> <span class="pre">password</span></code> - The user’s email password; stored unencrypted</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+<dt>Use autotranslation</dt><dd><p>Novice users should leave this unchecked.</p>
+</dd>
+<dt>Languages</dt><dd><p>The Default is <code class="docutils literal notranslate"><span class="pre">en</span></code>; language codes separated by comma, for instance
+<code class="docutils literal notranslate"><span class="pre">sv,en,de</span></code>. Not particularly useful without auto translation.</p>
+</dd>
+<dt>Owners</dt><dd><p>Check your username and <code class="docutils literal notranslate"><span class="pre">super</span></code> as owners. In addition, select any other users who
+should be able to view <em>unpublished</em> questions.</p>
+</dd>
+<dt>Allow anonymous student</dt><dd><p>Enable this setting` to allow anonymous logins.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enable this setting only if you do not plan to use LTI (i.e. Canvas) or Moodle</p>
+</div>
+</dd>
+</dl>
+<p>Press the <code class="docutils literal notranslate"><span class="pre">Save</span></code> button after you have changed the setting you are interesed in chaning.</p>
+<p>To see what the course looks like for a student, press <code class="docutils literal notranslate"><span class="pre">Student</span> <span class="pre">view</span></code> button.</p>
+</div>
+<div class="section" id="enable-lti-i-e-canvas-or-moodle">
+<h2>Enable LTI i.e. Canvas or Moodle<a class="headerlink" href="#enable-lti-i-e-canvas-or-moodle" title="Permalink to this headline">¶</a></h2>
+<p><em>This section is relevant only to those who will be using OpenTA from
+an LTI CMS such as Canvas or Moodle.</em></p>
+<p>More information about LTI can be found here: <a class="reference external" href="https://en.wikipedia.org/wiki/Learning_Tools_Interoperability">Learning Tools
+Interoperability(LTI)</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><cite>Important</cite>: do not allow students to first authenticate outside of
+Canvas if that’s how they will be expected to login later. A
+student’s identity must be first verified by LTI. You cannot
+migrate a student into Canvas if the identity is not first
+established that way.</p>
+</div>
+<p>This assumes that you are able to install an LTI app in Canvas or
+Moodle.</p>
+<ul>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">Canvas</span></code> interface, choose</p></li>
+<li><p>Choose <code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">-&gt;</span> <span class="pre">Apps</span></code></p></li>
+<li><p>Choose <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">App</span> <span class="pre">Configurations</span> <span class="pre">-&gt;</span> <span class="pre">+App</span> <span class="pre">-&gt;</span> <span class="pre">Configuration</span> <span class="pre">Type</span> <span class="pre">-&gt;</span></code></p></li>
+<li><p>Choose <code class="docutils literal notranslate"><span class="pre">Configuration</span> <span class="pre">Type</span> <span class="pre">-&gt;</span> <span class="pre">ByURL</span></code></p></li>
+<li><p>In another tab or window, in OpenTA choose <code class="docutils literal notranslate"><span class="pre">Course</span> <span class="pre">Options</span></code></p></li>
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">LTI</span></code> and <code class="docutils literal notranslate"><span class="pre">Save</span></code> and go back to <code class="docutils literal notranslate"><span class="pre">Options</span></code></p></li>
+<li><p>Copy the (OpenTA) entire config URL , including the <code class="docutils literal notranslate"><span class="pre">https://</span></code>
+into (LTI) <code class="docutils literal notranslate"><span class="pre">Config</span> <span class="pre">URL</span></code></p></li>
+<li><p>Copy the entire (OpenTA) <code class="docutils literal notranslate"><span class="pre">Lti</span> <span class="pre">key</span></code> into the LTI <code class="docutils literal notranslate"><span class="pre">Consumer</span> <span class="pre">Key</span></code></p></li>
+<li><p>Copy the entire (OpenTA) <code class="docutils literal notranslate"><span class="pre">Lti</span> <span class="pre">secret</span></code> into the LTI <code class="docutils literal notranslate"><span class="pre">Shared</span> <span class="pre">Secret</span></code></p></li>
+<li><p>Choose (Canvas) <code class="docutils literal notranslate"><span class="pre">Submit</span></code></p></li>
+<li><p>If all went well, the App has been added to Canvas.</p></li>
+<li><p>To allow students to easily break OpenTA out from the Canvas frame:</p></li>
+<li><p>Add the Canvas app <cite>Redirect Tool</cite> and point it to the hostname
+running OpenTA</p></li>
+<li><p><cite>Instructions only for those whose superuser identity coincides with
+your Canvas identity</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Create a new superuser identity for yourself so it will be
+different from the identity you have in Canvas.</p></li>
+<li><p>Note that you can assign yourself a password in the admin
+interface (click the gear icon in the header)</p></li>
+<li><p><strong>Make sure you can login as the new superuser</strong></p></li>
+<li><p>Then delete the original user so that identity can be recreated
+with an LTI login</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Try to login through the LTI CMS.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Canvas opens OpenTA in a frame, not only taking valuable desktop
+space with sidebars and headers, but also causing security issues
+through third-party cookies. Some admin features may not work in
+the Canvas frames, so it is best to administer the course as
+superuser via direct login and not through Canvas.</p></li>
+<li><p><cite>If you already have a user identity that coincides with that
+from Canvas, change username and email of the old superuser to
+allow a new identity to be created from Canvas. If you want the
+Canvas identity to be superuser, change the user in the admin
+interface. It can be useful to retain a student identity when
+used through Canvas.</cite></p></li>
+<li><p>To guard against misconfigurations by LTI admins, an LTI
+authenticated user will never automatically have access other
+than Student in OpenTA even if they are examiner or
+CourseDeveloper. The superuser must provide suitable non-student
+access to LTI authenticated users manually.</p></li>
+</ul>
+</div>
+</div></blockquote>
+</li>
+<li><p>Suggestion on dealing with course assistants and other admins</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The best way to proceed is that the course createor obtains a new
+superuser identity, including password and then, after it is
+verified working, deletes the original identity. Then course
+creator logs in <strong>through Canvas</strong>. The superuser login is then
+used to provide whatever privileges is desired to the new
+identity. Same procedure with course assistants; first the course
+assistant logs in through Canvas, then superuser promote
+privileges.</p></li>
+<li><p>This could of course have been done automatically if OpenTA
+respected a Canvas identity such as Examiner or CourseDeveloper.
+However, we have chosen not to rely on that, since a
+misconfiguration of roles from University Canvas services could
+mistakenly compromise the OpenTA site.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Hampus Linander, Stellan Östlund.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
