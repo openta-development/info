@@ -134,7 +134,6 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (
-        'latexindex',
         'OpenTA.tex',
         'OpenTA',
         'Hampus Linander, Stellan Östlund, and Nelson Loyola',
