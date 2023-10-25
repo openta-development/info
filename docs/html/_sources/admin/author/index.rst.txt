@@ -1,6 +1,5 @@
-*********
-Authoring
-*********
+Authoring in OpenTA
+====================
 
 .. include:: /global.rst
 

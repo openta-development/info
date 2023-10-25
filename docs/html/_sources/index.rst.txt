@@ -26,6 +26,15 @@ About
 :doc:`overview/adoption`
      Where OpenTA is in use.
 
+OpenTA For Authors
+--------------------
+
+Here is a guide to question creation
+
+:doc:`author/index`
+     Instructions on how to set up a course.
+
+
 
 OpenTA For Admins
 --------------------
@@ -47,17 +56,32 @@ participants. This section will guide you through these steps.
      deleting users, and disabling student access.
 
 
-:doc:`admin/author/index`
-     This section describes how to create exercises and questions.
-
 :doc:`admin/finishing/index`
      Instructions on how terminate and archive a course
+
+
+OpenTA For Authors
+--------------------
+
+:doc:`author/index`
+     Instructions for authoring
+
+
+
+
+OpenTA For Webworks users
+--------------------------
+
+:doc:`webworks/index`
+      Integrating existing webworks course
 
 OpenTA For Students
 --------------------
 
 :doc:`student/index`
      Instructions for students on how to access a course.
+
+
 
 Example Courses
 --------------------
@@ -88,6 +112,17 @@ Example Courses
    overview/index
    overview/adoption
 
+.. toctree::
+   :maxdepth: 1
+   :caption: OpenTA For Authors
+   :hidden:
+
+   author/index
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: OpenTA for Webworks
 
 .. toctree::
    :maxdepth: 1
@@ -95,10 +130,7 @@ Example Courses
    :hidden:
 
    admin/gettingstarted/index
-   admin/managing_course/index
-   admin/managing_participants/index
-   admin/author/index
-   admin/finishing/index
+
 
 
 .. toctree::
@@ -107,6 +139,13 @@ Example Courses
    :hidden:
 
    student/index
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: OpenTA for Webworks
+
+   webworks/index
 
 
 .. toctree::
