@@ -1,3 +1,5 @@
+
+
 Authoring questions
 ===================
 
@@ -35,10 +37,13 @@ For some more hands-on examples see `this stackexchange collection
 (this is aimed at MathJax which also uses the same syntax).
 
 Creating Exercises
---------------------
+==================
+
+Here are instructions for creating exercises
 
 .. toctree::
     :maxdepth: 1
 
     exercise_xml
     questiontypes/index
+    tags/index

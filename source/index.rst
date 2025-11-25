@@ -154,3 +154,9 @@ Example Courses
    :hidden:
 
    example-courses/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Features
+
+   features/translations/index

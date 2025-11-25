@@ -7,6 +7,8 @@ SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = OpenTA
 SOURCEDIR     = source
 BUILDDIR      = docs
+PORT          = 8080
+HOST          = 127.0.0.1
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -24,3 +26,12 @@ clean:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+.PHONY: autobuild serve
+
+# Live-reload docs server
+autobuild:
+	@sphinx-autobuild -b html "$(SOURCEDIR)" "$(BUILDDIR)/html" --port $(PORT) --host $(HOST)
+
+# Alias for autobuild
+serve: autobuild
