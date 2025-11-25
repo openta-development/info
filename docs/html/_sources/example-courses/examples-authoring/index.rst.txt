@@ -1,2 +1,0 @@
-OpenTA - authoring examples
-========================

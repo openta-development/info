@@ -29,3 +29,4 @@ sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml
 tornado
 urllib3
+sphinx-copybutton

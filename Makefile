@@ -3,7 +3,9 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
+# Prefer project venv's sphinx-build if available, else fallback
+SPHINXBUILD   := $(if $(wildcard env/bin/sphinx-build),env/bin/sphinx-build,sphinx-build)
+SPHINXAUTOBUILD := $(if $(wildcard env/bin/sphinx-autobuild),env/bin/sphinx-autobuild,sphinx-autobuild)
 SPHINXPROJ    = OpenTA
 SOURCEDIR     = source
 BUILDDIR      = docs
@@ -31,7 +33,7 @@ clean:
 
 # Live-reload docs server
 autobuild:
-	@sphinx-autobuild -b html "$(SOURCEDIR)" "$(BUILDDIR)/html" --port $(PORT) --host $(HOST)
+	@$(SPHINXAUTOBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)/html" --port $(PORT) --host $(HOST)
 
 # Alias for autobuild
 serve: autobuild
