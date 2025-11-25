@@ -69,11 +69,11 @@ OpenTA For Authors
 
 
 
-OpenTA For Webworks users
---------------------------
+.. OpenTA For Webworks users
+.. --------------------------
 
-:doc:`webworks/index`
-      Integrating existing webworks course
+.. :doc:`webworks/index`
+..       Integrating existing webworks course
 
 OpenTA For Students
 --------------------
@@ -120,9 +120,9 @@ Example Courses
    author/index
 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: OpenTA for Webworks
+.. .. toctree::
+..    :maxdepth: 1
+..    :caption: OpenTA for Webworks
 
 .. toctree::
    :maxdepth: 1
@@ -141,11 +141,11 @@ Example Courses
    student/index
 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: OpenTA for Webworks
+.. .. toctree::
+..    :maxdepth: 1
+..    :caption: OpenTA for Webworks
 
-   webworks/index
+..    webworks/index
 
 
 .. toctree::
