@@ -142,9 +142,12 @@ latex_elements['preamble'] = latex_elements.get('preamble', '') + "\n\\usepackag
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
+# Build LaTeX from the normal master_doc (index) to avoid maintaining
+# a separate pdfindex.rst. Hidden toctrees in index.rst are still included
+# in the LaTeX build, so the PDF covers the full site structure.
 latex_documents = [
     (
-        'pdfindex',
+        master_doc,
         'OpenTA.tex',
         'OpenTA Documentation',
         'Hampus Linander, Stellan Östlund, and Nelson Loyola',

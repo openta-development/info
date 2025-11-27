@@ -161,5 +161,4 @@ Example Courses
    :hidden:
    :titlesonly:
 
-   features/translations/index
-   features/otp/index
+   features/index

@@ -11,5 +11,4 @@ OpenTA Documentation
    admin/gettingstarted/index
    student/index
    example-courses/index
-   features/translations/index
-
+   features/index
