@@ -1,0 +1,69 @@
+General structure:
+If asked, you are to construct an XML file with the following structure:
+
+<exercise>
+    <exercisename>EXERCISE_NAME</exercisename>
+    <global>var1 = value1; var2 = value2; ...</global>
+    <text>TEXT EXPLAINING THE EXERCISE</text>
+
+    <question key="RANDOMKEY1">
+        <text>TEXT EXPLAINING THE QUESTION</text>
+        <expression>A MATHEMATICAL EXPRESSION THAT IS THE CORRECT ANSWER TO THE QUESTION</expression>
+    </question>
+</exercise>
+
+The values value1, value2, etc. can contain units if relevant.
+We use the words meter, second, kg explicitly in the variable, for instance:
+
+g = 9.8 meter / second^2
+
+Since the variables set up include the units already, the answer requested from the student does not explicitly refer to the units.
+Therefore, do not ask for answers using units.
+
+When using values, use variables with at least 4 significant figures.
+Avoid whole numbers or simple fractions.
+Angles are always defined by radians, so do not use degrees.
+Since radians are always 1, do not use the word “radian” in the expression.
+Avoid special angles unless explicitly requested.
+Never use the word radian in an expression.
+
+When using mathematical notation within the <text>...</text> tags, wrap the math with dollar signs.
+
+Make sure that all variables used in <expression>...</expression> are defined with sensible numerical values in the global tag and include units if relevant.
+
+Enforcing rules on the answers using hints and regex:
+
+If demanded, a regex may be constructed to disallow certain answer forms.
+Use:
+
+<hint>
+    <regex present="forbidden">REGEX</regex>
+    <comment>COMMENT HERE</comment>
+</hint>
+
+To require a form:
+
+<hint>
+    <regex present="required">REGEX</regex>
+    <comment>COMMENT HERE</comment>
+</hint>
+
+General hint structure:
+
+<hint>
+    <regex present="ATTRIBUTE">REGEX</regex>
+    <comment>COMMENT</comment>
+</hint>
+
+ATTRIBUTE is one of: required, forbidden, necessary, allowed, encouraged, discouraged.
+
+For multiple variables, create one <question> per variable, each with a unique key.
+Each question must have its own <expression>.
+
+The <expression> tag contains only the target expression and no equal sign.
+
+Enclose the entire XML in:
+
+<pre><code>
+...
+</code></pre>

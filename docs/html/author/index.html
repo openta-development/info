@@ -57,6 +57,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Authoring questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#creating-exercises">Creating Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#openta-xml-generation-rules">OPENTA XML Generation Rules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#xml-schema">XML SCHEMA</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">OpenTA For Admins</span></p>
@@ -153,6 +154,89 @@ want to show some mathematics, for example
 <li class="toctree-l1"><a class="reference internal" href="tags/index.html">Functions</a></li>
 </ul>
 </div>
+</section>
+<section id="openta-xml-generation-rules">
+<h1>OPENTA XML Generation Rules<a class="headerlink" href="#openta-xml-generation-rules" title="Permalink to this heading"></a></h1>
+<p>This section describes the rules for generating OPENTA-compatible XML exercises. You can copy the entire section  and use it as an instruction in ChatGPT. Or you can get the textfile here which you can paste in as an instruction in chatgpt query. It is very incomplete but it might help.</p>
+<p><a class="reference external" href="../_static/chatgpt_instructions.txt">chatgpt instruction:</a></p>
+<p>When generating an exercise, the XML must follow the structure below:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;exercise&gt;</span>
+<span class="w">    </span><span class="nt">&lt;exercisename&gt;</span>EXERCISE_NAME<span class="nt">&lt;/exercisename&gt;</span>
+<span class="w">    </span><span class="nt">&lt;global&gt;</span>var1<span class="w"> </span>=<span class="w"> </span>value1;<span class="w"> </span>var2<span class="w"> </span>=<span class="w"> </span>value2;<span class="w"> </span>...<span class="nt">&lt;/global&gt;</span>
+<span class="w">    </span><span class="nt">&lt;text&gt;</span>TEXT<span class="w"> </span>EXPLAINING<span class="w"> </span>THE<span class="w"> </span>EXERCISE<span class="nt">&lt;/text&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;question</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RANDOMKEY1&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;text&gt;</span>TEXT<span class="w"> </span>EXPLAINING<span class="w"> </span>THE<span class="w"> </span>QUESTION<span class="nt">&lt;/text&gt;</span>
+<span class="w">        </span><span class="nt">&lt;expression&gt;</span>A<span class="w"> </span>MATHEMATICAL<span class="w"> </span>EXPRESSION<span class="w"> </span>THAT<span class="w"> </span>IS<span class="w"> </span>THE<span class="w"> </span>CORRECT<span class="w"> </span>ANSWER<span class="w"> </span>TO<span class="w"> </span>THE<span class="w"> </span>QUESTION<span class="nt">&lt;/expression&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/question&gt;</span>
+<span class="nt">&lt;/exercise&gt;</span>
+</pre></div>
+</div>
+<p>The values <code class="docutils literal notranslate"><span class="pre">value1</span></code>, <code class="docutils literal notranslate"><span class="pre">value2</span></code> etc. may include units when relevant.
+Units must be written out in full, for example: <code class="docutils literal notranslate"><span class="pre">meter</span></code>, <code class="docutils literal notranslate"><span class="pre">second</span></code>, <code class="docutils literal notranslate"><span class="pre">kg</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="mf">9.800</span> <span class="n">meter</span> <span class="o">/</span> <span class="n">second</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>Since units are already included in the global variable definitions, student answers must not contain units.
+Expressions inside <code class="docutils literal notranslate"><span class="pre">&lt;expression&gt;</span></code> must refer only to variables.</p>
+<ul class="simple">
+<li><p>Use at least four significant figures when assigning numerical values.</p></li>
+<li><p>Avoid whole numbers and simple fractions.</p></li>
+<li><p>Angles must always be expressed in radians.</p></li>
+<li><p>The word <code class="docutils literal notranslate"><span class="pre">radian</span></code> must never be used in an expression.</p></li>
+<li><p>Avoid special angles unless specifically requested.</p></li>
+</ul>
+<p>Mathematical expressions inside <code class="docutils literal notranslate"><span class="pre">&lt;text&gt;</span></code> tags must be wrapped in dollar signs to ensure MathJax rendering.</p>
+<p>Example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;text&gt;</span>The<span class="w"> </span>vector<span class="w"> </span>has<span class="w"> </span>length<span class="w"> </span>$<span class="w"> </span>\sqrt{x^2<span class="w"> </span>+<span class="w"> </span>y^2}<span class="w"> </span>$.<span class="nt">&lt;/text&gt;</span>
+</pre></div>
+</div>
+<p>All variables appearing inside:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;expression&gt;</span><span class="w"> </span>...<span class="w"> </span><span class="nt">&lt;/expression&gt;</span>
+</pre></div>
+</div>
+<p>must:</p>
+<ol class="arabic simple">
+<li><p>Be defined inside the <code class="docutils literal notranslate"><span class="pre">&lt;global&gt;</span></code> tag.</p></li>
+<li><p>Have reasonable numerical values.</p></li>
+<li><p>Include units when appropriate.</p></li>
+</ol>
+<p>Hints may be added to enforce restrictions or requirements on student answers.</p>
+<p>A hint block has the form:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;hint&gt;</span>
+<span class="w">    </span><span class="nt">&lt;regex</span><span class="w"> </span><span class="na">present=</span><span class="s">&quot;ATTRIBUTE&quot;</span><span class="nt">&gt;</span>REGEX<span class="nt">&lt;/regex&gt;</span>
+<span class="w">    </span><span class="nt">&lt;comment&gt;</span>COMMENT<span class="nt">&lt;/comment&gt;</span>
+<span class="nt">&lt;/hint&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">ATTRIBUTE</span></code> can be one of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">required</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">forbidden</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">necessary</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allowed</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">encouraged</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">discouraged</span></code></p></li>
+</ul>
+<p>Hints may be placed inside the <code class="docutils literal notranslate"><span class="pre">&lt;global&gt;</span></code> tag or inside an individual <code class="docutils literal notranslate"><span class="pre">&lt;question&gt;</span></code> tag.</p>
+<p>Use cases include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">forbidden</span></code> – prohibit certain answer forms</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">required</span></code> – demand that a specific structure appears</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">necessary</span></code> – enforce a mandatory component</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allowed</span></code> – whitelist forms</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">encouraged</span></code> / <code class="docutils literal notranslate"><span class="pre">discouraged</span></code> – guide style without strict enforcement</p></li>
+</ul>
+<p>When including a regex, the system should remind the user that the above attributes are available.</p>
+<p>If an exercise requires solving for multiple different variables:</p>
+<ul class="simple">
+<li><p>Create one <code class="docutils literal notranslate"><span class="pre">&lt;question&gt;</span></code> element per variable.</p></li>
+<li><p>Each question must have a unique <code class="docutils literal notranslate"><span class="pre">key</span></code> attribute.</p></li>
+<li><p>Each question must include its own <code class="docutils literal notranslate"><span class="pre">&lt;text&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;expression&gt;</span></code>.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;expression&gt;</span></code> tag contains only the target expression and must not contain an equal sign.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;text&gt;</span></code> tag inside the question explains which variable the student is expected to compute.</p>
 </section>
 <section id="xml-schema">
 <h1>XML SCHEMA<a class="headerlink" href="#xml-schema" title="Permalink to this heading"></a></h1>
