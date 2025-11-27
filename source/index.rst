@@ -158,5 +158,8 @@ Example Courses
 .. toctree::
    :maxdepth: 1
    :caption: Features
+   :hidden:
+   :titlesonly:
 
    features/translations/index
+   features/otp/index

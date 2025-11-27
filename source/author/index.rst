@@ -1,3 +1,4 @@
+.. include:: /global.rst
 
 
 Authoring questions
@@ -36,10 +37,13 @@ For some more hands-on examples see `this stackexchange collection
 <https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference>`_
 (this is aimed at MathJax which also uses the same syntax).
 
+`Here is the full xml schema <../_static/exercise-xsd.html>`_ !
+
 Creating Exercises
 ==================
 
 Here are instructions for creating exercises
+
 
 .. toctree::
     :maxdepth: 1
@@ -47,3 +51,7 @@ Here are instructions for creating exercises
     exercise_xml
     questiontypes/index
     tags/index
+
+XML SCHEMA
+============
+`Here is the full xml schema <../_static/exercise-xsd.html>`_ 

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Functions &mdash; OpenTA  documentation</title>
+  <title>OTP &mdash; OpenTA  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -24,8 +24,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Getting Started" href="../../admin/gettingstarted/index.html" />
-    <link rel="prev" title="default" href="../questiontypes/default.html" /> 
+    <link rel="prev" title="Translations" href="../translations/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,9 +52,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../overview/adoption.html">Adoption</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">OpenTA For Authors</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Authoring questions</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html#creating-exercises">Creating Exercises</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html">Authoring questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#creating-exercises">Creating Exercises</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">OpenTA For Admins</span></p>
 <ul>
@@ -70,9 +69,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../example-courses/index.html">OpenTA - example courses</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Features</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../features/translations/index.html">Translations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../features/otp/index.html">OTP</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OTP</a></li>
 </ul>
 
         </div>
@@ -89,10 +88,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../index.html">Authoring questions</a></li>
-      <li class="breadcrumb-item active">Functions</li>
+      <li class="breadcrumb-item active">OTP</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/author/tags/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/features/otp/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -100,93 +98,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="functions">
-<span id="question-types"></span><h1>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h1>
-<div class="toctree-wrapper compound">
-</div>
-<section id="list-of-convenience-functions-for-openta">
-<h2>List of convenience functions for OpenTA<a class="headerlink" href="#list-of-convenience-functions-for-openta" title="Permalink to this heading"></a></h2>
-<p>Booleans</p>
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Boolean arguments</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
-<colgroup>
-<col style="width: 50.0%" />
-<col style="width: 50.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Not( b1 )</p></td>
-<td><p>trace of the matrix M</p></td>
-</tr>
-<tr class="row-odd"><td><p>Or( b1, b2 , … bN)</p></td>
-<td><p>b1 or b2 or b2 … or bN</p></td>
-</tr>
-<tr class="row-even"><td><p>And( b1, b2 , … bN)</p></td>
-<td><p>b1 and b2 and b2 … and bN</p></td>
-</tr>
-</tbody>
-</table>
-<p>Sympy matrix functions should work. In addition the following are available;</p>
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-text">Matrix</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
-<colgroup>
-<col style="width: 50.0%" />
-<col style="width: 50.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
-<th class="head"><p>Explanation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Trace(M)</p></td>
-<td><p>trace of the matrix M</p></td>
-</tr>
-<tr class="row-odd"><td><p>M^I or (M)^I</p></td>
-<td><p>Inverse of M</p></td>
-</tr>
-<tr class="row-even"><td><p>M^T or (M)^T</p></td>
-<td><p>Transpose of M</p></td>
-</tr>
-<tr class="row-odd"><td><p>Transpose(M)</p></td>
-<td><p>transpose of the matrix M</p></td>
-</tr>
-<tr class="row-even"><td><p>Conjugate(M)</p></td>
-<td><p>complex conjugate of the matrix M</p></td>
-</tr>
-<tr class="row-odd"><td><p>AreEigenvaluesOf(M,ev)</p></td>
-<td><p>true if ev are the eigenvalues of M</p></td>
-</tr>
-<tr class="row-even"><td><p>IsDiagonalizationOf(M,v )</p></td>
-<td><p>true if  M v = D v where D is a diagonal matrix</p></td>
-</tr>
-<tr class="row-odd"><td><p>IsHermitian(M)</p></td>
-<td><p>true if  M  is Hermitian</p></td>
-</tr>
-<tr class="row-even"><td><p>IsUnitary(M)</p></td>
-<td><p>true if  M  is Unitary</p></td>
-</tr>
-<tr class="row-odd"><td><p>IsDiagonal(M)</p></td>
-<td><p>true if  M  is a diagonal matrix</p></td>
-</tr>
-<tr class="row-even"><td><p>IsDiagonalizable(M)</p></td>
-<td><p>true if  M  is a diagonalizable matrix</p></td>
-</tr>
-<tr class="row-odd"><td><p>Rank(m)</p></td>
-<td><p>gives rank of the matrix M</p></td>
-</tr>
-<tr class="row-even"><td><p>DiagonalOf(M)</p></td>
-<td><p>the diagonal entries of M as a row vector</p></td>
-</tr>
-<tr class="row-odd"><td><p>NullRank(M)</p></td>
-<td><p>gives the rank of the null space of M</p></td>
-</tr>
-</tbody>
-</table>
+  <section id="otp">
+<h1>OTP<a class="headerlink" href="#otp" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>OTP can be used to authenticate after a password.
+The first time a user logs on with password, QR code is generated
+which must be saved into an oauth app</p>
+<section id="activate-otp-on-the-server">
+<h3>Activate OTP on the server<a class="headerlink" href="#activate-otp-on-the-server" title="Permalink to this heading"></a></h3>
+<blockquote>
+<div><ul>
+<li><p>set USE_OTP=True in the environment</p></li>
+<li><p>OTP_BYPASS_MAX_AGE
+- environmental variable OTP_BYPASS_MAX_AGE=3600</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>this bypasses the OTP requirement for 3600 seconds for that user.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>After a user has used OTP to log in, OTP will no longer be required from that IP</p></li>
+<li><p>OTP can only be reset by forgotten password reset. Should work by email reset or course examiner resets password</p></li>
+</ul>
+</div></blockquote>
+</section>
 </section>
 </section>
 
@@ -194,8 +130,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../questiontypes/default.html" class="btn btn-neutral float-left" title="default" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../admin/gettingstarted/index.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../translations/index.html" class="btn btn-neutral float-left" title="Translations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

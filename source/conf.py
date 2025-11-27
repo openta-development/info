@@ -94,8 +94,14 @@ html_theme = 'sphinx_rtd_theme'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
-#html_theme_options = {'fixed_sidebar': True}
+html_theme_options = {
+    # Keep navigation collapsed by default; expand only current branch.
+    'collapse_navigation': True,
+    # Limit to top-level only under captions (prevents pages like OTP from auto-expanding)
+    'navigation_depth': 1,
+    # Avoid repeating section titles in the sidebar entries
+    'titles_only': True,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

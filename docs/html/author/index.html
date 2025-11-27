@@ -55,18 +55,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">OpenTA For Authors</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Authoring questions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mathematics-typesetting">Mathematics typesetting</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#creating-exercises">Creating Exercises</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="exercise_xml.html">File structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_xml.html#exercise-xml-format">Exercise XML format</a></li>
-<li class="toctree-l2"><a class="reference internal" href="questiontypes/index.html">Question Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tags/index.html">Functions</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Authoring questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#creating-exercises">Creating Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#xml-schema">XML SCHEMA</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">OpenTA For Admins</span></p>
 <ul>
@@ -83,6 +74,7 @@
 <p class="caption" role="heading"><span class="caption-text">Features</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../features/translations/index.html">Translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/otp/index.html">OTP</a></li>
 </ul>
 
         </div>
@@ -113,7 +105,7 @@
 <h1>Authoring questions<a class="headerlink" href="#authoring-questions" title="Permalink to this heading"></a></h1>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
-<p>See some examples on this website <a href="#id1"><span class="problematic" id="id2">|examples_website|</span></a>.</p>
+<p>See some examples on this website <span class="html"><a href="https://examples.opentaproject.com/lti" target="_blank">https://examples.opentaproject.com/lti</a></span>.</p>
 <p>Content in OpenTA consists of exercises with one or many questions. An
 exercise and its questions are created using a custom <a class="reference external" href="https://en.wikipedia.org/wiki/XML">XML</a> format. For example,</p>
 <p><a class="reference download internal" download="" href="../_downloads/e13d946fa42172dc1cb0bbf927f2a3e0/example.xml"><code class="xref download docutils literal notranslate"><span class="pre">example.xml</span></code></a></p>
@@ -147,6 +139,7 @@ want to show some mathematics, for example
 <p>See <a class="reference external" href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">the LaTeX wiki</a> for a syntax reference.</p>
 <p>For some more hands-on examples see <a class="reference external" href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">this stackexchange collection</a>
 (this is aimed at MathJax which also uses the same syntax).</p>
+<p><a class="reference external" href="../_static/exercise-xsd.html">Here is the full xml schema</a> !</p>
 </section>
 </section>
 <section id="creating-exercises">
@@ -160,6 +153,10 @@ want to show some mathematics, for example
 <li class="toctree-l1"><a class="reference internal" href="tags/index.html">Functions</a></li>
 </ul>
 </div>
+</section>
+<section id="xml-schema">
+<h1>XML SCHEMA<a class="headerlink" href="#xml-schema" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="../_static/exercise-xsd.html">Here is the full xml schema</a></p>
 </section>
 
 

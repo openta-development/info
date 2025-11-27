@@ -4,6 +4,10 @@ __pycache__/
 *$py.class
 */_build_html
 */_*
+
+# Allow a specific static HTML file to be tracked
+!source/_static/
+!source/_static/exercise-xsd.html
 */bak/*
 
 # C extensions
@@ -74,6 +78,7 @@ instance/
 # Sphinx documentation
 docs/_build/
 docs/_build_html/
+docs/doctrees/
 
 # PyBuilder
 target/
@@ -121,6 +126,9 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
+docs/doctrees/
+docs/latex/
+tmp/
 # mkdocs documentation
 /site
 
