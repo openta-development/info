@@ -55,3 +55,5 @@ Here are instructions for creating exercises
 XML SCHEMA
 ============
 `Here is the full xml schema <../_static/exercise-xsd.html>`_ 
+
+You can validate all the exercises in OpenTA by pressing "Validate Exercises" in the toolbar
