@@ -222,6 +222,9 @@ PDF_TOC = [
 ]
 
 def _write_pdfindex(app):
+    # Only generate when building LaTeX to avoid triggering html autobuild loops
+    if getattr(app, 'builder', None) is None or getattr(app.builder, 'format', '') != 'latex':
+        return
     toc = "\n   ".join(PDF_TOC)
     content = (
         ".. orphan::\n\n"
@@ -233,8 +236,15 @@ def _write_pdfindex(app):
         f"   {toc}\n"
     )
     path = os.path.join(app.srcdir, 'pdfindex.rst')
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write(content)
+    # Write only if missing or changed to avoid unnecessary file touches
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            existing = f.read()
+    except FileNotFoundError:
+        existing = None
+    if existing != content:
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(content)
 
 def setup(app):
     app.connect('builder-inited', _write_pdfindex)
