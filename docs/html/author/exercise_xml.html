@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File structure &mdash; OpenTA  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/js/showdomain.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Question Types" href="questiontypes/index.html" />
+    <link rel="prev" title="Authoring questions" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            OpenTA
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/adoption.html">Adoption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Authors</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Authoring questions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html#creating-exercises">Creating Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#xml-schema">XML SCHEMA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Admins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin/gettingstarted/index.html">Getting Started</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Students</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../student/index.html">Access and first time login</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Example Courses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../example-courses/index.html">OpenTA - example courses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/translations/index.html">Translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/otp/index.html">OTP</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenTA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Authoring questions</a></li>
+      <li class="breadcrumb-item active">File structure</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/author/exercise_xml.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-structure">
+<h1>File structure<a class="headerlink" href="#file-structure" title="Permalink to this heading"></a></h1>
+<p>Exercises are stored on the server’s file system. An exercise consists
+of a directory containing a definition file <code class="docutils literal notranslate"><span class="pre">exercise.xml</span></code> together
+with a file <code class="docutils literal notranslate"><span class="pre">exercisekey</span></code> and possibly additional assets such as
+<code class="docutils literal notranslate"><span class="pre">figures/pdf</span></code>. This directory must be located somewhere under the root
+<code class="docutils literal notranslate"><span class="pre">exercises/</span></code> directory to be recognized by the system.</p>
+<aside class="topic">
+<p class="topic-title">Directory structure</p>
+<div class="line-block">
+<div class="line">exercises</div>
+<div class="line">├── …</div>
+<div class="line">├── exercise_folder</div>
+<div class="line">│   ├── exercise.xml</div>
+<div class="line">│   ├── exercisekey</div>
+<div class="line">│   └── …</div>
+<div class="line">├── …</div>
+<div class="line"><br /></div>
+</div>
+</aside>
+<section id="exercise-xml">
+<h2><cite>exercise.xml</cite><a class="headerlink" href="#exercise-xml" title="Permalink to this heading"></a></h2>
+<p>An XML file containing all information about the exercise, see below
+for the XML format.</p>
+</section>
+<section id="exercisekey">
+<h2><cite>exercisekey</cite><a class="headerlink" href="#exercisekey" title="Permalink to this heading"></a></h2>
+<p>A text file containing a unique key (up to 255 bytes of UTF8 encoded
+ASCII) that identifies the exercise in the database. A key file can be
+added and assigned manually, but is automatically generated as a
+<a class="reference external" href="https://docs.python.org/3.5/library/uuid.html">uuid4</a> identifier if
+not present.</p>
+</section>
+</section>
+<section id="exercise-xml-format">
+<h1>Exercise XML format<a class="headerlink" href="#exercise-xml-format" title="Permalink to this heading"></a></h1>
+<p>This first part describes the XML tags that are common to all exercises.</p>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<p><a class="reference download internal" download="" href="../_downloads/e13d946fa42172dc1cb0bbf927f2a3e0/example.xml"><code class="xref download docutils literal notranslate"><span class="pre">example.xml</span></code></a></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;exercise&gt;</span>
+<span class="w">  </span><span class="nt">&lt;exercisename&gt;</span>Momentum<span class="w"> </span>and<span class="w"> </span>energy<span class="nt">&lt;/exercisename&gt;</span>
+<span class="w">  </span><span class="nt">&lt;global&gt;</span>
+<span class="w">	</span>m<span class="w"> </span>=<span class="w"> </span>3<span class="w"> </span>kg;<span class="w"> </span>v<span class="w"> </span>=<span class="w"> </span>5<span class="w"> </span>meter<span class="w"> </span>/<span class="w"> </span>second;
+<span class="w">  </span><span class="nt">&lt;/global&gt;</span>
+<span class="w">  </span><span class="nt">&lt;text&gt;</span>
+<span class="w">    </span>A<span class="w"> </span>particle<span class="w"> </span>with<span class="w"> </span>mass<span class="w"> </span>$m$<span class="w"> </span>is<span class="w"> </span>moving<span class="w"> </span>with<span class="w"> </span>velocity<span class="w"> </span>$v$.
+<span class="w">  </span><span class="nt">&lt;/text&gt;</span>
+<span class="w">  </span><span class="nt">&lt;question</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;text&gt;</span>What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>energy<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>particle?<span class="nt">&lt;/text&gt;</span>
+<span class="w">    </span><span class="nt">&lt;expression&gt;</span>m*v^2/2<span class="nt">&lt;/expression&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/question&gt;</span>
+<span class="w">  </span><span class="nt">&lt;question</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;text&gt;</span>What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>momentum<span class="w">  </span>of<span class="w"> </span>the<span class="w"> </span>particle?<span class="nt">&lt;/text&gt;</span>
+<span class="w">    </span><span class="nt">&lt;expression&gt;</span>m*v<span class="nt">&lt;/expression&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/question&gt;</span>
+<span class="nt">&lt;/exercise&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="Permalink to this heading"></a></h2>
+<table class="tight-table docutils align-default" id="id1">
+<caption><span class="caption-text">Top level tags
+ :header-rows: 1</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<tbody>
+<tr class="row-odd"><td><p>Tag</p></td>
+<td><p>Attributes</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;exercise&gt;</span></code></p></td>
+<td></td>
+<td><p>Root tag</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;exercisename&gt;</span></code></p></td>
+<td></td>
+<td><p>The visible name/title of the exercise</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;question&gt;</span></code></p></td>
+<td><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">key</span></code> [string]</dt><dd><p>unique id (within the exercise)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type</span></code> [string]</dt><dd><p><a class="reference internal" href="tags/index.html#question-types"><span class="std std-ref">question type</span></a> [compareNumeric, …]</p>
+</dd>
+</dl>
+</td>
+<td><p>Question root tag. See <a class="reference internal" href="tags/index.html#question-types"><span class="std std-ref">Functions</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;global&gt;</span></code></p></td>
+<td><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">type</span></code> [string]</dt><dd><p>question type (optional, if not specified all questions
+will recieve this data).</p>
+</dd>
+</dl>
+</td>
+<td><p>Data that will be passed to all questions in this exercise. For
+example variables for multiple symbolic questions.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;figure&gt;</span></code></p></td>
+<td><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">size</span></code> [string]</dt><dd><p>optional size specification. Choices are small*, <em>medium</em> or
+<em>large</em>.</p>
+</dd>
+</dl>
+</td>
+<td><p>A figure (usually an image) that aids in explaining the
+question. Specify the filename of image that was added to the
+exercise folder, or uploaded via the assets browser in <code class="docutils literal notranslate"><span class="pre">XML</span> <span class="pre">&amp;</span>
+<span class="pre">Assets</span></code> when editing the exercise.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Authoring questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="questiontypes/index.html" class="btn btn-neutral float-right" title="Question Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Hampus Linander, Stellan Östlund.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

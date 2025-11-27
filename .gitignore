@@ -132,7 +132,6 @@ docs/latex/
 tmp/
 # mkdocs documentation
 /site
-docs/html
 
 
 # mypy
