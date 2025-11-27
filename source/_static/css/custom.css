@@ -1,0 +1,22 @@
+/* Custom overrides: hide left navigation (RTD theme) */
+
+/* Screen view: keep default RTD sidebar and layout */
+
+/* Ensure clean HTML-to-PDF printing (hide nav in print) */
+@media print {
+  .wy-nav-side,
+  .wy-side-scroll,
+  .wy-menu-vertical,
+  .wy-side-nav-search,
+  .wy-breadcrumbs,
+  .rst-versions,
+  .wy-nav-top {
+    display: none !important;
+  }
+  .wy-nav-content-wrap {
+    margin-left: 0 !important;
+  }
+  .wy-nav-content {
+    max-width: 100% !important;
+  }
+}
