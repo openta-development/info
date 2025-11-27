@@ -24,6 +24,28 @@ clean:
 	find $(BUILDDIR) -type f -not \( -name index.html -or -name .nojekyll \) -delete
 	rm -rf $(BUILDDIR)/doctrees $(BUILDDIR)/html
 
+.PHONY: latexpdf
+
+# Build LaTeX PDF and place a copy next to HTML for the download link
+latexpdf:
+	@if command -v wkhtmltopdf >/dev/null 2>&1; then \
+		echo "Converting _static/exercise-xsd.html to PDF with wkhtmltopdf"; \
+		wkhtmltopdf --enable-local-file-access "$(SOURCEDIR)/_static/exercise-xsd.html" "$(SOURCEDIR)/exercise-xsd.pdf"; \
+	elif command -v weasyprint >/dev/null 2>&1; then \
+		echo "Converting _static/exercise-xsd.html to PDF with weasyprint"; \
+		weasyprint "$(SOURCEDIR)/_static/exercise-xsd.html" "$(SOURCEDIR)/exercise-xsd.pdf"; \
+	else \
+		echo "Error: Install 'wkhtmltopdf' or 'weasyprint' to embed exercise-xsd in PDF"; \
+		exit 1; \
+	fi
+	@if [ ! -s "$(SOURCEDIR)/exercise-xsd.pdf" ]; then \
+		echo "Error: Failed to generate $(SOURCEDIR)/exercise-xsd.pdf"; \
+		exit 1; \
+	fi
+	@$(SPHINXBUILD) -M latexpdf "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@mkdir -p "$(BUILDDIR)/html"
+	@cp -f "$(BUILDDIR)/latex/$(SPHINXPROJ).pdf" "$(BUILDDIR)/html/$(SPHINXPROJ).pdf" || true
+
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile

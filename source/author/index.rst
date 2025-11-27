@@ -54,6 +54,13 @@ Here are instructions for creating exercises
 
 XML SCHEMA
 ============
-`Here is the full xml schema <../_static/exercise-xsd.html>`_ 
+`Here is the full xml schema <../_static/exercise-xsd.html>`_
+
+.. only:: latex
+
+   .. raw:: latex
+
+      \clearpage
+      \includepdf[pages=-]{exercise-xsd.pdf}
 
 You can validate all the exercises in OpenTA by pressing "Validate Exercises" in the toolbar

@@ -133,6 +133,10 @@ latex_elements = {
     'preamble': r'\usepackage{fontawesome}'
 }
 
+# Ensure pdfpages is available to include external PDFs
+# Use an actual newline so LaTeX doesn't see a literal \n command.
+latex_elements['preamble'] = latex_elements.get('preamble', '') + "\n\\usepackage{pdfpages}"
+
 #latex_additional_files = ["fontawesome.sty"]
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -189,3 +193,12 @@ html_css_files = ['css/custom.css']
 html_js_files = [
     'js/showdomain.js'
 ]
+
+# Include additional LaTeX files
+import os
+_schema_pdf_rel = 'exercise-xsd.pdf'
+_schema_pdf_abs = os.path.join(os.path.dirname(__file__), _schema_pdf_rel)
+# Always ship a minimal fontawesome.sty to avoid package dependency
+latex_additional_files = ['fontawesome.sty']
+if os.path.exists(_schema_pdf_abs):
+    latex_additional_files.append(_schema_pdf_rel)
