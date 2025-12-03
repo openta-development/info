@@ -7,6 +7,15 @@ Introduction
 
    :download:`OpenTA-presentation.pdf <OpenTA-presentation.pdf>`
 
+
+.. only:: html
+
+   Click on the link below to download this entire document as a pdf
+
+   :download:`OpenTA-webdocs.pdf <OpenTA.pdf>`
+
+
+
 Goals
 -----
 * E-learning system for questions with symbolic answers.

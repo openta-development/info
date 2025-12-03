@@ -219,6 +219,7 @@ PDF_TOC = [
     'student/index',
     'example-courses/index',
     'features/index',  # Groups OTP and Translations for PDF only
+    'installing/local',  # Groups OTP and Translations for PDF only
 ]
 
 def _write_pdfindex(app):

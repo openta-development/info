@@ -14,3 +14,4 @@ OpenTA Documentation
    student/index
    example-courses/index
    features/index
+   installing/local

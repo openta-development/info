@@ -163,3 +163,11 @@ Example Courses
 
    features/translations/index
    features/otp/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Installing
+   :hidden:
+   :titlesonly:
+
+   installing/local/index
