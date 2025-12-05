@@ -148,6 +148,135 @@
 </li>
 </ul>
 </div></blockquote>
+<section id="clone-the-openta-repo">
+<h3>Clone the openta repo<a class="headerlink" href="#clone-the-openta-repo" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+<section id="install-necessary-tools-on-your-linux-box">
+<h2>Install necessary tools on your linux box<a class="headerlink" href="#install-necessary-tools-on-your-linux-box" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>ssh -L 8000:localhost:8000</dt><dd><ul class="simple">
+<li><p>Note the povray installation and texlive installation is optional;</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># install  core packages ; povray and texlive is optional</span>
+
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="p">;</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">--</span><span class="n">fix</span><span class="o">-</span><span class="n">broken</span> <span class="n">install</span> <span class="n">graphviz</span> <span class="n">libldap2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcairo2</span> <span class="n">libcairo2</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">libgraphviz</span><span class="o">-</span><span class="n">dev</span> <span class="n">libjpeg</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libxml2</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libxslt1</span><span class="o">-</span><span class="n">dev</span>  <span class="n">libzmq3</span><span class="o">-</span><span class="n">dev</span>  <span class="n">memcached</span>  \
+    <span class="n">libmemcached</span><span class="o">-</span><span class="n">dev</span>  <span class="n">vim</span> <span class="n">rsync</span> <span class="n">apt</span><span class="o">-</span><span class="n">utils</span> <span class="n">redis</span> <span class="n">libnss3</span> <span class="n">poppler</span><span class="o">-</span><span class="n">utils</span> \
+    <span class="n">uuid</span> <span class="n">bc</span> <span class="n">texlive</span><span class="o">-</span><span class="n">latex</span><span class="o">-</span><span class="n">base</span> <span class="n">texlive</span><span class="o">-</span><span class="n">fonts</span><span class="o">-</span><span class="n">recommended</span> <span class="n">texlive</span><span class="o">-</span><span class="n">fonts</span><span class="o">-</span><span class="n">extra</span> \
+    <span class="n">texlive</span><span class="o">-</span><span class="n">latex</span><span class="o">-</span><span class="n">extra</span> <span class="n">povray</span> <span class="n">povray</span><span class="o">-</span><span class="n">includes</span> <span class="n">cron</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+
+<span class="c1"># install postgres14</span>
+
+<span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">postgresql</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">keys</span><span class="o">/</span><span class="n">ACCC4CF8</span><span class="o">.</span><span class="n">asc</span> <span class="o">|</span> <span class="n">gpg</span> <span class="o">--</span><span class="n">dearmor</span> \
+    <span class="o">|</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">trusted</span><span class="o">.</span><span class="n">gpg</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">apt</span><span class="o">.</span><span class="n">postgresql</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">gpg</span> <span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+<span class="n">sudo</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;echo &quot;deb http://apt.postgresql.org/pub/repos/apt/ bullseye-pgdg main&quot;  </span><span class="se">\</span>
+<span class="s1">    &gt; /etc/apt/sources.list.d/postgresql.list&#39;</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">y</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">postgresql</span><span class="o">-</span><span class="mi">14</span><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="mi">8000</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8000</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">postgresql</span><span class="o">-</span><span class="n">client</span><span class="o">-</span><span class="n">common</span>
+<span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">enable</span> <span class="n">postgresql</span>
+<span class="n">sudo</span> <span class="o">-</span><span class="n">u</span> <span class="n">postgres</span> <span class="n">createdb</span> <span class="n">opentadefault1</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Check</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">psql</span> <span class="pre">--version</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">status</span> <span class="pre">postgresql</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>make sure your allow login with the postgres user and password  [ often postgres postgres ]</p></li>
+<li><p>make sure postgres can access that database</p></li>
+</ul>
+</section>
+<section id="build-the-frontend-or-use-cdn-see-below">
+<h2>Build the frontend  (or use CDN - see below)<a class="headerlink" href="#build-the-frontend-or-use-cdn-see-below" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/opentaproject/openta-public.git</span>&#160; <span class="pre">openta-public</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">openta/frontend</span></code></p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">--force</span></code></dt><dd><ul>
+<li><p>if npm is missing:  <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">npm</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">build</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="build-the-backend">
+<h2>Build the backend<a class="headerlink" href="#build-the-backend" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Important: use python3.11</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">mkdir</span> <span class="pre">-p</span> <span class="pre">/subdomain-data/CACHE;</span> <span class="pre">sudo</span> <span class="pre">chmod</span> <span class="pre">-R</span>&#160; <span class="pre">a+w</span> <span class="pre">/subdomain-data;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd;</span> <span class="pre">cd</span> <span class="pre">openta/openta/django/</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3.11</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">env</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">env/bin/activate</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">pip</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements_dev.txt</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="set-important-enviromental-variables">
+<h2>Set important enviromental variables<a class="headerlink" href="#set-important-enviromental-variables" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">SUPERUSER=super</span> <span class="pre">###</span> <span class="pre">EXAMPLE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">SUPEURSER_PASSWORD=superuser-password</span> <span class="pre">###</span> <span class="pre">EXAMPLE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PGPASSWORD=postgres</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PGUSER=postgres</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">DJANGO_RAGAMUFFIN_DB=rsaasdfsdsf39</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="start-the-webserver">
+<h2>Start the webserver<a class="headerlink" href="#start-the-webserver" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">;</span> <span class="pre">cd</span> <span class="pre">openta/openta/django/backend</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">DJANGO_RAGAMUFFIN_DB=rsaasdfsdsf39</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-u</span> <span class="pre">postgres</span> <span class="pre">createdb</span> <span class="pre">opentadefault1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">migrate</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">createcachetable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">static</span></code></p></li>
+<li><dl class="simple">
+<dt>get frontend working<span class="classifier">two alternatives</span></dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">./frontend-update</span></code>  or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STATIC_URL='https://storage.googleapis.com/opentaproject-cdn-bucket/latest/deploystatic/'</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span> <span class="pre">127.0.0.1:8000</span></code></p></li>
+<li><dl class="simple">
+<dt>if you are installing on another machine try ssh tunnel</dt><dd><ul>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">8000:localhost:8000</span> <span class="pre">user&#64;remote</span></code></dt><dd><ul>
+<li><p>You may have to place <strong>course.remote</strong> in <strong>/etc/hosts</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">http://chat1.localhost:8000/login/</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">8000:localhost:8000</span> <span class="pre">-l</span> <span class="pre">ostlund&#64;srv1170758.hstgr.cloud</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
 </section>
 </section>
 
