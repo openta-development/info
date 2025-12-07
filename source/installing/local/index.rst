@@ -1,7 +1,7 @@
 .. include:: /global.rst
 
 ************
-Running OpenTA locally
+Running OpenTA locally - (NOT READY)
 ************
 
 Make sure you communicate with a web server
@@ -59,6 +59,14 @@ ssh -L 8000:localhost:8000
     sudo systemctl enable postgresql
     sudo -u postgres createdb opentadefault1
 
+    # install chromedriver if you want to do runtests
+    sudo apt install -y chromium-browser
+
+    # if you are not running locally 
+
+    sudo apt install chromium-browser
+    sudo apt install -y xvfb
+
 - Check
         - ``psql --version``
         - ``systemctl status postgresql``
@@ -70,7 +78,7 @@ ssh -L 8000:localhost:8000
 Build the frontend  (or use CDN - see below)
 ________________
 
-    - ``git clone https://github.com/opentaproject/openta-public.git  openta-public``
+    - ``git clone https://github.com/opentaproject/openta-public.git  openta``
     - ``cd openta/frontend``
     - ``npm install --force``
         - if npm is missing:  ``sudo apt install npm`` 
@@ -115,3 +123,12 @@ _________________
                 - You may have to place **course.remote** in **/etc/hosts**
                 - ``http://chat1.localhost:8000/login/``
                 - ``ssh -L 8000:localhost:8000 -l ostlund@srv1170758.hstgr.cloud``
+
+Test the webserver
+_________________
+
+    - make sure chromedriver is installed
+    - make sure chromium-browswer is installed or
+    - either X11 has to be installed or xvfb
+    - either the commant ``pytest`` or the command ``xvfb-run -a pytest``
+        
