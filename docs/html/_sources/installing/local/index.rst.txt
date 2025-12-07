@@ -125,6 +125,12 @@ Start the webserver
                 - ``http://chat1.localhost:8000/login/``
                 - ssh -L 8000:localhost:8000 |remote-user| @ |remote-host|
 
+.. note::
+
+   You can adjust the placeholders above using the "Session Variables" panel in the left sidebar.
+   Set Remote user (|remote-user|) and Remote host (|remote-host|) for your environment.
+   These values persist in your browser only. PDF outputs use the defaults.
+
 
 
 Test the webserver

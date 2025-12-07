@@ -43,5 +43,5 @@
 .. |fa-arrow-circle-down| replace:: :latex:`\faUsers`:html:`<i class="fa fa-arrow-circle-down"></i>`
 .. |fa-arrow-circle-up| replace:: :latex:`\faUsers`:html:`<i class="fa fa-arrow-circle-up"></i>`
 
-.. |remote-host| replace:: :html:`<span class="var-remote-host">example.com</span>`:latex:`example.com`
+.. |remote-host| replace:: :html:`<span class="var-remote-host">remote-host</span>`:latex:`remote-host`
 .. |remote-user| replace:: :html:`<span class="var-remote-user">remote-user</span>`:latex:`remote-user`
