@@ -1,11 +1,10 @@
 .. include:: /global.rst
 
-************
 Running OpenTA locally - (NOT READY)
-************
+====================================
 
 Make sure you communicate with a web server
-___________________________________________
+-------------------------------------------
 
     - sudo apt install nginx nginx-common nginx-core
     - make sure you can server port 8000 on a web server
@@ -15,7 +14,7 @@ ___________________________________________
         - make sure you see the file at localhost:8000
 
 Make sure you can serve a django instance
-___________________
+----------------------------------------------
     - ``mkdir django ; cd django``
     - ``sudo apt install python3 python3-venv python3-pip -y``
     - ``python3 -m venv env``
@@ -30,7 +29,7 @@ Clone the openta repo
 ======================
 
 Install necessary tools on your linux box
-____________________
+-----------------------------------------
 ssh -L 8000:localhost:8000
     - Note the povray installation and texlive installation is optional;
 
@@ -76,7 +75,7 @@ ssh -L 8000:localhost:8000
 
 
 Build the frontend  (or use CDN - see below)
-________________
+--------------------------------------------
 
     - ``git clone https://github.com/opentaproject/openta-public.git  openta``
     - ``cd openta/frontend``
@@ -85,7 +84,7 @@ ________________
     - ``npm run build``
 
 Build the backend 
-___________________
+------------------
 
     -  **Important: use python3.11**
     - ``sudo mkdir -p /subdomain-data/CACHE; sudo chmod -R  a+w /subdomain-data;``
@@ -97,7 +96,7 @@ ___________________
     - ``pip install -r requirements_dev.txt``
 
 Set important enviromental variables
-_______________________
+--------------------------------------------------
 
     - ``export SUPERUSER=super ### EXAMPLE``
     - ``export SUPEURSER_PASSWORD=superuser-password ### EXAMPLE``
@@ -108,7 +107,7 @@ _______________________
 
 
 Start the webserver
-_________________
+-------------------
 
     - ``cd ; cd openta/openta/django/backend``
     - ``export DJANGO_RAGAMUFFIN_DB=rsaasdfsdsf39``
@@ -129,7 +128,7 @@ _________________
 
 
 Test the webserver
-_________________
+------------------
 
     - make sure chromedriver is installed
     - make sure chromium-browswer is installed or

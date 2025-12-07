@@ -1,8 +1,7 @@
 .. include:: /global.rst
 
-=========
 Installing
-=========
+==========
 
 This section groups installation instructions
 
@@ -10,4 +9,3 @@ This section groups installation instructions
    :maxdepth: 2
 
    local/index
-

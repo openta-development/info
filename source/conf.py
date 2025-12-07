@@ -219,7 +219,7 @@ PDF_TOC = [
     'student/index',
     'example-courses/index',
     'features/index',  # Groups OTP and Translations for PDF only
-    'installing/local',  # Groups OTP and Translations for PDF only
+    'installing/local/index',  # Ensure Sphinx resolves the doc
 ]
 
 def _write_pdfindex(app):
@@ -228,7 +228,6 @@ def _write_pdfindex(app):
         return
     toc = "\n   ".join(PDF_TOC)
     content = (
-        ".. orphan::\n\n"
         "=====================\n"
         "OpenTA Documentation\n"
         "=====================\n\n"
