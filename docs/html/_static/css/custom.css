@@ -1,0 +1,32 @@
+/* OpenTA docs customizations */
+
+/* Compact, inline variables panel under the search box */
+.openta-vars {
+  margin-top: 6px;
+  font-size: 90%;
+}
+.openta-vars .caption {
+  margin: 6px 0 2px;
+}
+.openta-vars #openta-vars-form {
+  margin: 0;
+}
+.openta-vars .openta-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0;
+}
+.openta-vars .openta-field label {
+  white-space: nowrap;
+  color: #444;
+}
+.openta-vars .openta-field input[type="text"] {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 180px;
+  padding: 2px 6px;
+  font-size: 90%;
+  line-height: 1.3;
+}
+
