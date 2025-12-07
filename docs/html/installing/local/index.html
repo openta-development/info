@@ -9,7 +9,7 @@
   <title>Running OpenTA locally - (NOT READY) &mdash; OpenTA  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=5f85db3b" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
@@ -283,10 +283,10 @@
 <li><dl class="simple">
 <dt>if you are installing on another machine try ssh tunnel</dt><dd><ul>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">8000:localhost:8000</span> <span class="pre">user&#64;remote</span></code></dt><dd><ul>
+<dt><span class="html"><code>ssh -L 8000:localhost:8000 <span class="var-remote-user">remote-user</span>@<span class="var-remote-host">remote-host</span></code></span></dt><dd><ul>
 <li><p>You may have to place <strong>course.remote</strong> in <strong>/etc/hosts</strong></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">http://chat1.localhost:8000/login/</span></code></p></li>
-<li><p>ssh -L 8000:localhost:8000 <span class="html"><span class="var-remote-user">remote-user</span></span> &#64; <span class="html"><span class="var-remote-host">remote-host</span></span></p></li>
+<li><p><span class="html"><code>ssh -L 8000:localhost:8000 <span class="var-remote-user">remote-user</span>@<span class="var-remote-host">remote-host</span></code></span></p></li>
 </ul>
 </dd>
 </dl>
