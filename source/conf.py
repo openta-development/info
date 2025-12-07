@@ -186,6 +186,7 @@ html_sidebars = {
         #'globaltoc.html',
         #'localtoc.html',
         'searchbox.html',
+        'variables.html',
     ]
 }
 
@@ -246,7 +247,7 @@ def _write_pdfindex(app):
         with open(path, 'w', encoding='utf-8') as f:
             f.write(content)
 
-# Keep rst_epilog empty; |host| is defined in global.rst via include
+# Keep rst_epilog empty; substitutions are defined in global.rst via include
 rst_epilog = ""
 
 def setup(app):

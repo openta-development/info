@@ -7,6 +7,7 @@ __pycache__/
 
 # Allow a specific static HTML file to be tracked
 !source/_static/
+!source/_templates/
 !source/_static/exercise-xsd.html
 */bak/*
 
