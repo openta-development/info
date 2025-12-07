@@ -42,3 +42,5 @@
 .. |fa-home| replace:: :latex:`\faUsers`:html:`<i class="fa fa-home"></i>`
 .. |fa-arrow-circle-down| replace:: :latex:`\faUsers`:html:`<i class="fa fa-arrow-circle-down"></i>`
 .. |fa-arrow-circle-up| replace:: :latex:`\faUsers`:html:`<i class="fa fa-arrow-circle-up"></i>`
+
+.. |host| replace:: :html:`<span class="var-host">example.com</span>`:latex:`example.com`

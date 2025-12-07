@@ -35,7 +35,7 @@
 # ones.
 extensions = [
     'sphinx.ext.mathjax',
-    'sphinx_copybutton',
+    #'sphinx_copybutton',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -246,6 +246,9 @@ def _write_pdfindex(app):
     if existing != content:
         with open(path, 'w', encoding='utf-8') as f:
             f.write(content)
+
+# Keep rst_epilog empty; |host| is defined in global.rst via include
+rst_epilog = ""
 
 def setup(app):
     app.connect('builder-inited', _write_pdfindex)
