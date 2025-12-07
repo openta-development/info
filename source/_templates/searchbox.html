@@ -1,0 +1,22 @@
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
+    <input type="text" name="q" placeholder="{{ _('Search docs') }}" aria-label="{{ _('Search docs') }}" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+<div class="openta-vars">
+  <p class="caption" role="heading"><span class="caption-text">Session Variables</span></p>
+  <form id="openta-vars-form">
+    <div class="openta-field">
+      <label for="openta-remote-user">Remote user</label>
+      <input id="openta-remote-user" type="text" placeholder="remote-user" />
+    </div>
+    <div class="openta-field">
+      <label for="openta-remote-host">Remote host</label>
+      <input id="openta-remote-host" type="text" placeholder="remote-host" />
+    </div>
+  </form>
+</div>
+

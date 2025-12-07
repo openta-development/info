@@ -186,7 +186,7 @@ html_sidebars = {
         #'globaltoc.html',
         #'localtoc.html',
         'searchbox.html',
-        'variables.html',
+        'sidebar/variables.html',
     ]
 }
 
