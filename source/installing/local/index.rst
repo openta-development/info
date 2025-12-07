@@ -123,7 +123,7 @@ Start the webserver
         - ``ssh -L 8000:localhost:8000 user@remote``
                 - You may have to place **course.remote** in **/etc/hosts**
                 - ``http://chat1.localhost:8000/login/``
-                - ssh -L 8000:localhost:8000 ostlund@ |host|
+                - ssh -L 8000:localhost:8000 |remote-user| @ |remote-host|
 
 
 
