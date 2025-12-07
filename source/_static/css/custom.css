@@ -30,3 +30,13 @@
   line-height: 1.3;
 }
 
+/* Make all inline code (backticks) black for consistency */
+.rst-content :not(pre) > code {
+  color: #000 !important;
+  background: none !important;
+  border: none !important;
+}
+/* Preserve block code coloring */
+.rst-content pre > code {
+  color: inherit !important;
+}
