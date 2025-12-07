@@ -17,7 +17,7 @@
       <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
       <script src="../../_static/doctools.js?v=888ff710"></script>
       <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
-      <script src="../../_static/js/showdomain.js?v=42e0fb40"></script>
+      <script src="../../_static/js/showdomain.js?v=e8cf0276"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -75,6 +75,7 @@
 <p class="caption" role="heading"><span class="caption-text">Installing</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Running OpenTA locally - (NOT READY)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#clone-the-openta-repo">Clone the openta repo</a></li>
 </ul>
 
         </div>
@@ -145,10 +146,10 @@
 </li>
 </ul>
 </div></blockquote>
+</section>
+</section>
 <section id="clone-the-openta-repo">
-<h3>Clone the openta repo<a class="headerlink" href="#clone-the-openta-repo" title="Permalink to this heading"></a></h3>
-</section>
-</section>
+<h1>Clone the openta repo<a class="headerlink" href="#clone-the-openta-repo" title="Permalink to this heading"></a></h1>
 <section id="install-necessary-tools-on-your-linux-box">
 <h2>Install necessary tools on your linux box<a class="headerlink" href="#install-necessary-tools-on-your-linux-box" title="Permalink to this heading"></a></h2>
 <dl class="simple">
@@ -271,7 +272,7 @@
 <dt><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">8000:localhost:8000</span> <span class="pre">user&#64;remote</span></code></dt><dd><ul>
 <li><p>You may have to place <strong>course.remote</strong> in <strong>/etc/hosts</strong></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">http://chat1.localhost:8000/login/</span></code></p></li>
-<li><p>ssh -L 8000:localhost:8000 ostlund&#64; <span class="html"><span class="var-host">example.com</span></span></p></li>
+<li><p>ssh -L 8000:localhost:8000 <span class="html"><span class="var-remote-user">remote-user</span></span> &#64; <span class="html"><span class="var-remote-host">example.com</span></span></p></li>
 </ul>
 </dd>
 </dl>
