@@ -120,10 +120,10 @@ Start the webserver
         - ``STATIC_URL='https://storage.googleapis.com/opentaproject-cdn-bucket/latest/deploystatic/'``
     - ``python manage.py runserver 127.0.0.1:8000``
     - if you are installing on another machine try ssh tunnel
-        - ``ssh -L 8000:localhost:8000 user@remote``
+        - |ssh-remote|
                 - You may have to place **course.remote** in **/etc/hosts**
                 - ``http://chat1.localhost:8000/login/``
-                - ssh -L 8000:localhost:8000 |remote-user| @ |remote-host|
+                - |ssh-remote|
 
 .. note::
 

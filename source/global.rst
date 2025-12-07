@@ -45,3 +45,5 @@
 
 .. |remote-host| replace:: :html:`<span class="var-remote-host">remote-host</span>`:latex:`remote-host`
 .. |remote-user| replace:: :html:`<span class="var-remote-user">remote-user</span>`:latex:`remote-user`
+
+.. |ssh-remote| replace:: :latex:`\texttt{ssh -L 8000:localhost:8000 remote-user@remote-host}`:html:`<code>ssh -L 8000:localhost:8000 <span class="var-remote-user">remote-user</span>@<span class="var-remote-host">remote-host</span></code>`
