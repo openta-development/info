@@ -4,6 +4,11 @@
 Managing the Course
 *******************
 
+Maintenance
+===========
+* create the file maintenance.lock in BASEDIR with the contents of the message to nonadmin that the course is down for maintenance
+
+
 More Course Options
 ===================
 
@@ -126,9 +131,6 @@ Moodle.
 * Copy the entire (OpenTA) ``Lti secret`` into the LTI ``Shared Secret``
 * Choose (Canvas) ``Submit``
 * If all went well, the App has been added to Canvas.
-* To allow students to easily break OpenTA out from the Canvas frame:
-* Add the Canvas app `Redirect Tool` and point it to the hostname
-  running OpenTA
 
 * `Instructions only for those whose superuser identity coincides with
   your Canvas identity`
@@ -145,11 +147,6 @@ Moodle.
 * Try to login through the LTI CMS.
 
    .. note::
-      * Canvas opens OpenTA in a frame, not only taking valuable desktop
-        space with sidebars and headers, but also causing security issues
-        through third-party cookies. Some admin features may not work in
-        the Canvas frames, so it is best to administer the course as
-        superuser via direct login and not through Canvas.
 
       * `If you already have a user identity that coincides with that
         from Canvas, change username and email of the old superuser to
