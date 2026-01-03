@@ -1,13 +1,17 @@
 .. include:: /global.rst
 
-Running OpenTA locally - (NOT READY)
-====================================
+Install OpenTA using Docker
+===========================
+See the readme at https://github.com/opentaproject/openta-public
+
+Fully install OpenTA either locally or remote vps
+=================================================
 
 Make sure you communicate with a web server
 -------------------------------------------
 
     - sudo apt install nginx nginx-common nginx-core
-    - make sure you can server port 8000 on a web server
+    - make sure you can communicate with the server port 8000 either locally or through the internet
         - create a small file index.html
         - start a python web server in the same directory
                 - ``python3 -m http.server 8000``
@@ -27,6 +31,7 @@ Make sure you can serve a django instance
 
 Clone the openta repo
 ======================
+*This procedure is not generally available yet since as of 2026-01-03  the entire repository is not yet public*
 
 Install necessary tools on your linux box
 -----------------------------------------
@@ -121,9 +126,8 @@ Start the webserver
     - ``python manage.py runserver 127.0.0.1:8000``
     - if you are installing on another machine try ssh tunnel
         - |ssh-remote|
-                - You may have to place **course.remote** in **/etc/hosts**
-                - ``http://chat1.localhost:8000/login/``
-                - |ssh-remote|
+                - You may have to place course.  |remote-host| in **/etc/hosts**
+    - Then got to http://course.localhost:8000
 
 .. note::
 

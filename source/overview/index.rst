@@ -12,7 +12,7 @@ Introduction
 
    Click on the link below to download this entire document as a pdf
 
-   :download:`OpenTA-webdocs.pdf <OpenTA.pdf>`
+   :download:`OpenTA-webdocs.pdf <../OpenTA.pdf>`
 
 
 

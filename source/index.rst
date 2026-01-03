@@ -131,6 +131,9 @@ Example Courses
    :hidden:
 
    admin/gettingstarted/index
+   admin/managing_course/index
+   admin/managing_participants/index
+   admin/finishing/index
 
 
 
@@ -171,4 +174,17 @@ Example Courses
    :hidden:
    :titlesonly:
 
-   installing/local/index
+   installing/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: WebWorks
+   :hidden:
+
+   webworks/index
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   pdfindex
