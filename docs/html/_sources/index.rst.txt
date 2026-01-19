@@ -18,6 +18,11 @@ attempts, both correct and incorrect for a given question. It is
 possible for the teacher look in detail at a given student and see how
 they are faring in the course.
 
+OpenTA source
+________
+
+See https://github.com/opentaproject/openta-public
+
 About
 --------
 
