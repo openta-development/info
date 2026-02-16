@@ -1,0 +1,2032 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Sync &amp; Pull: User Guide &mdash; OpenTA  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=39b4d592" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/js/showdomain.js?v=94da2774"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Installing" href="../../installing/index.html" />
+    <link rel="prev" title="Show Source Feature" href="../show_source_feature/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            OpenTA
+          </a><div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+<div class="openta-vars">
+  <p class="caption" role="heading"><span class="caption-text">Session Variables</span></p>
+  <form id="openta-vars-form">
+    <div class="openta-field">
+      <label for="openta-remote-user">Remote user</label>
+      <input id="openta-remote-user" type="text" placeholder="remote-user" />
+    </div>
+    <div class="openta-field">
+      <label for="openta-remote-host">Remote host</label>
+      <input id="openta-remote-host" type="text" placeholder="remote-host" />
+    </div>
+  </form>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/adoption.html">Adoption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Authors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html">Authoring questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#creating-exercises">Creating Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#openta-xml-generation-rules">OPENTA XML Generation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#xml-schema">XML SCHEMA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Admins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">OpenTA For Admins</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Students</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student/index.html">Access and first time login</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Example Courses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../example-courses/index.html">OpenTA - example courses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Features</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Features</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../otp/index.html">OTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openta_xml_rules/index.html">OPENTA XML Generation Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../show_source_feature/index.html">Show Source Feature</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Git Sync &amp; Pull: User Guide</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installing/index.html">Installing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">WebWorks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html">OpenTA For webworks users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#create-a-blank-course">Create a blank course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#canvas-setup">Canvas setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#migrate-your-course-to-the-webwork-instance-at-openta">Migrate your course to the WebWork instance at openta</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../pdfindex.html">OpenTA Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../overview/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/adoption.html">Adoption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../author/index.html">Authoring questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../author/index.html#creating-exercises">Creating Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../author/index.html#openta-xml-generation-rules">OPENTA XML Generation Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../author/index.html#xml-schema">XML SCHEMA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../student/index.html">Access and first time login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../example-courses/index.html">OpenTA - example courses</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installing/local/index.html">Install OpenTA using Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installing/local/index.html#fully-install-openta-either-locally-or-remote-vps">Fully install OpenTA either locally or remote vps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installing/local/index.html#clone-the-openta-repo">Clone the openta repo</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OpenTA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Features</a></li>
+      <li class="breadcrumb-item active">Git Sync &amp; Pull: User Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/features/gitsync/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="git-sync-pull-user-guide">
+<span id="gitsync-documentation"></span><h1>Git Sync &amp; Pull: User Guide<a class="headerlink" href="#git-sync-pull-user-guide" title="Permalink to this heading"></a></h1>
+<blockquote>
+<div><p><strong>For Teachers</strong>: This guide explains how to backup, restore, and
+share your OpenTA courses using GitHub. <strong>For Developers</strong>: Technical
+implementation details are in the second half of this document.</p>
+</div></blockquote>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading"></a></h2>
+<section id="for-teachers-and-course-administrators">
+<h3>For Teachers and Course Administrators<a class="headerlink" href="#for-teachers-and-course-administrators" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="#what-is-this">What Is This?</a></p></li>
+<li><p><a class="reference external" href="#quick-start">Quick Start</a></p></li>
+<li><p><a class="reference external" href="#gitsync-backing-up-your-course">GitSync: Backing Up Your Course</a></p></li>
+<li><p><a class="reference external" href="#gitpull-restoring-or-updating-your-course">GitPull: Restoring or Updating Your
+Course</a></p></li>
+<li><p><a class="reference external" href="#common-use-cases">Common Use Cases</a></p></li>
+<li><p><a class="reference external" href="#troubleshooting-for-users">Troubleshooting</a></p></li>
+</ol>
+</section>
+<section id="for-developers-and-system-administrators">
+<h3>For Developers and System Administrators<a class="headerlink" href="#for-developers-and-system-administrators" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple" start="7">
+<li><p><a class="reference external" href="#technical-implementation">Technical Implementation</a></p></li>
+<li><p><a class="reference external" href="#api-reference">API Reference</a></p></li>
+<li><p><a class="reference external" href="#development-notes">Development Notes</a></p></li>
+</ol>
+</section>
+</section>
+<section id="for-teachers-and-course-administrators-1">
+<span id="id1"></span><h2>For Teachers and Course Administrators<a class="headerlink" href="#for-teachers-and-course-administrators-1" title="Permalink to this heading"></a></h2>
+</section>
+<section id="what-is-this">
+<h2>What Is This?<a class="headerlink" href="#what-is-this" title="Permalink to this heading"></a></h2>
+<p>Git integration lets you backup and restore your OpenTA courses using
+GitHub (like Dropbox for courses).</p>
+<section id="three-simple-features">
+<h3>Three Simple Features<a class="headerlink" href="#three-simple-features" title="Permalink to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Feature       | What It Does           | When to Use It             |</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="why-use-this">
+<h3>Why Use This?<a class="headerlink" href="#why-use-this" title="Permalink to this heading"></a></h3>
+<p><strong>Problem</strong>: You spend weeks building a course, then: - Your computer
+crashes - You accidentally delete important files - You need to share
+the course with another instructor - You want to deploy from development
+to production</p>
+<p><strong>Solution</strong>: Git integration automatically backs up everything to
+GitHub and lets you restore it anytime.</p>
+</section>
+</section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this heading"></a></h2>
+<section id="first-time-setup">
+<h3>First Time Setup<a class="headerlink" href="#first-time-setup" title="Permalink to this heading"></a></h3>
+<p>You need to configure your course with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GIT_USER</span><span class="p">:</span> <span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">username</span>
+<span class="n">GIT_TOKEN</span><span class="p">:</span> <span class="n">your</span><span class="o">-</span><span class="n">personal</span><span class="o">-</span><span class="n">access</span><span class="o">-</span><span class="n">token</span>
+<span class="n">GIT_REPO</span><span class="p">:</span> <span class="n">username</span><span class="o">/</span><span class="n">repository</span><span class="o">-</span><span class="n">name</span>
+</pre></div>
+</div>
+<p>Plus one of: - <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PUSH:</span> <span class="pre">true</span></code> (for backing up) -
+<code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PULL:</span> <span class="pre">true</span></code> (for restoring)</p>
+<p><strong>Note</strong>: You can’t have both enabled on the same course (safety
+feature).</p>
+<p>These are inserted as optional fields int Course -&gt; Options at the end.
+Press “Add Field” and insert these. If you are pulling from a public
+repository, you only need <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PULL</span>&#160; <span class="pre">:</span> <span class="pre">true</span></code> and
+<code class="docutils literal notranslate"><span class="pre">GIT_REPO</span> <span class="pre">:</span> <span class="pre">XXXX</span></code></p>
+</section>
+<section id="daily-use">
+<h3>Daily Use<a class="headerlink" href="#daily-use" title="Permalink to this heading"></a></h3>
+<p><strong>To Backup Your Course:</strong> 1. Go to <code class="docutils literal notranslate"><span class="pre">/gitsync/</span></code>, selectable from
+<code class="docutils literal notranslate"><span class="pre">Course</span></code> in the main menu provided you have <code class="docutils literal notranslate"><span class="pre">GITPUSH:</span> <span class="pre">true</span></code> 2. Enter
+a description of changes 3. Click “Sync to GitHub” 4. Wait 1-2 minutes
+5. Done!</p>
+<p><strong>To restore your course from Git:</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">/gitpull/</span></code>, selectable from <code class="docutils literal notranslate"><span class="pre">Course</span></code> in the main menu
+provided you have <code class="docutils literal notranslate"><span class="pre">GITPUSH:</span> <span class="pre">true</span></code></p></li>
+<li><p>Select the entire course, and read the warning</p></li>
+<li><p>Wait 1-2 minutes</p></li>
+<li><p>Done!</p></li>
+</ol>
+<p><strong>To Update Exercises:</strong> 1. Go to <code class="docutils literal notranslate"><span class="pre">/gitpull/</span></code> , selectable from
+<code class="docutils literal notranslate"><span class="pre">Course</span></code> in the main menu provided you have <code class="docutils literal notranslate"><span class="pre">GIT_PULL</span> <span class="pre">:</span> <span class="pre">true</span></code> 2.
+Select “Exercises Only” or select 3. Click “Pull from GitHub” 4. Wait 30
+seconds 5. Done!</p>
+</section>
+</section>
+<section id="gitsync-backing-up-your-course">
+<h2>GitSync: Backing Up Your Course<a class="headerlink" href="#gitsync-backing-up-your-course" title="Permalink to this heading"></a></h2>
+<section id="when-to-use-gitsync">
+<h3>When to Use GitSync<a class="headerlink" href="#when-to-use-gitsync" title="Permalink to this heading"></a></h3>
+<p>✅ <strong>Use GitSync when you want to:</strong> - Create a backup of your course -
+Save your work before making big changes - Share your course with
+another instructor - Move your course to a production server</p>
+</section>
+<section id="how-to-use-gitsync">
+<h3>How to Use GitSync<a class="headerlink" href="#how-to-use-gitsync" title="Permalink to this heading"></a></h3>
+<section id="step-1-access-gitsync">
+<h4>Step 1: Access GitSync<a class="headerlink" href="#step-1-access-gitsync" title="Permalink to this heading"></a></h4>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">/gitsync/</span></code> in your browser, or click the GitSync link in
+your course menu.</p>
+</section>
+<section id="step-2-review-what-youll-see">
+<h4>Step 2: Review What You’ll See<a class="headerlink" href="#step-2-review-what-youll-see" title="Permalink to this heading"></a></h4>
+<p>The GitSync page shows:</p>
+<p><strong>📦 Repository Information (Top Section)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Repository: github.com/university/cs101-course
+Repository size: 2.3 MB
+
+Recent commits on branch: openta-demo
+┌─────────┬───────────────────────────────┬──────────────────┐
+│ Hash    │ Message                       │ Date             │
+├─────────┼───────────────────────────────┼──────────────────┤
+│ a3f2b1c │ Added week 4 exercises        │ 2026-02-15 14:30 │
+│ 8d9e1f0 │ Fixed grading rubric          │ 2026-02-14 09:15 │
+│ 2c5a7b9 │ Updated README                │ 2026-02-13 16:45 │
+│ f1d3e8a │ Initial course setup          │ 2026-02-10 11:00 │
+└─────────┴───────────────────────────────┴──────────────────┘
+</pre></div>
+</div>
+<p><strong>📝 Branch Name (Auto-Generated)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Branch</span><span class="p">:</span> <span class="n">your</span><span class="o">-</span><span class="n">server</span> <span class="p">(</span><span class="n">read</span><span class="o">-</span><span class="n">only</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is automatically created from your server name. You don’t need to
+change it.</p>
+<p><strong>💬 Commit Message</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Commit</span> <span class="n">Message</span><span class="p">:</span> <span class="n">Sync</span> <span class="n">cs101</span> <span class="mi">2026</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">45</span> <span class="n">UTC</span>
+</pre></div>
+</div>
+<p>Replace this with a description of your changes, like: - “Added quiz for
+week 5” - “Fixed typo in assignment 2” - “Updated course schedule”</p>
+<p><strong>📄 README Editor</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># CS101: Introduction to Computer Science</span>
+
+<span class="c1">## Course Information</span>
+<span class="n">Instructor</span><span class="p">:</span> <span class="n">Prof</span><span class="o">.</span> <span class="n">Smith</span>
+<span class="n">Semester</span><span class="p">:</span> <span class="n">Spring</span> <span class="mi">2026</span>
+
+<span class="c1">## Setup Instructions</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>This README appears on your GitHub repository page. Edit it to document
+your course.</p>
+<p><strong>🔍 Preview README Button</strong> Click this to see how your README will look
+on GitHub (opens below the form).</p>
+<p><strong>✅ Sync to GitHub Button</strong> Click this to start the backup.</p>
+</section>
+<section id="step-3-fill-out-the-form">
+<h4>Step 3: Fill Out the Form<a class="headerlink" href="#step-3-fill-out-the-form" title="Permalink to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p><strong>Check recent commits</strong> - See what changed since your last backup</p></li>
+<li><p><strong>Enter commit message</strong> - Describe what you changed today</p></li>
+<li><p><strong>Edit README</strong> (optional) - Update course documentation</p></li>
+<li><p><strong>Click “Preview README”</strong> (optional) - Check formatting</p></li>
+<li><p><strong>Click “Sync to GitHub”</strong> - Start the backup</p></li>
+</ol>
+</section>
+<section id="step-4-wait-for-completion">
+<h4>Step 4: Wait for Completion<a class="headerlink" href="#step-4-wait-for-completion" title="Permalink to this heading"></a></h4>
+<p>You’ll see a status page with a progress bar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Progress: ████████████████░░░░ 80%
+Status: Pushing to GitHub...
+</pre></div>
+</div>
+<p>Typical messages you’ll see: - “Creating database backup” (10%) -
+“Cloning repository” (20%) - “Syncing subdomain data” (50%) - “Staging
+changes” (70%) - “Pushing to GitHub” (90%) - “Sync complete” (100%)</p>
+<p><strong>Typical time</strong>: 30 seconds to 2 minutes depending on course size</p>
+</section>
+<section id="step-5-success">
+<h4>Step 5: Success!<a class="headerlink" href="#step-5-success" title="Permalink to this heading"></a></h4>
+<p>When done, you’ll see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>✅ Sync complete
+   [Return to course]
+</pre></div>
+</div>
+<p>Your course is now backed up on GitHub!</p>
+</section>
+</section>
+<section id="what-gets-backed-up">
+<h3>What Gets Backed Up?<a class="headerlink" href="#what-gets-backed-up" title="Permalink to this heading"></a></h3>
+<p><strong>✅ Included:</strong> - All your exercises - Course database (students,
+grades, settings) - Configuration files - README file - All course
+materials</p>
+<p><strong>❌ Excluded (cleaned up automatically):</strong> - <code class="docutils literal notranslate"><span class="pre">backups/</span></code> folder
+(temporary files) - <code class="docutils literal notranslate"><span class="pre">xsl/</span></code> folder (system files) - <code class="docutils literal notranslate"><span class="pre">csv/</span></code> folder
+(exports) - <code class="docutils literal notranslate"><span class="pre">html/</span></code> folder (cache)</p>
+<p>These folders are excluded because they’re temporary or regenerated
+automatically.</p>
+</section>
+<section id="can-i-cancel">
+<h3>Can I Cancel?<a class="headerlink" href="#can-i-cancel" title="Permalink to this heading"></a></h3>
+<p>Yes! Click the “Cancel” button on the status page.</p>
+<p><strong>What happens when you cancel:</strong> - ⏸️ <strong>During “Cloning”</strong>: Safe to
+cancel, no changes made - ⏸️ <strong>During “Syncing”</strong>: Safe to cancel, no
+changes made to GitHub - ⚠️ <strong>During “Pushing”</strong>: May have partial push,
+but you can run sync again</p>
+<p><strong>Best practice</strong>: Let it finish (usually under 2 minutes), but cancel
+if you need to stop immediately.</p>
+</section>
+</section>
+<section id="gitpull-restoring-or-updating-your-course">
+<h2>GitPull: Restoring or Updating Your Course<a class="headerlink" href="#gitpull-restoring-or-updating-your-course" title="Permalink to this heading"></a></h2>
+<section id="when-to-use-gitpull">
+<h3>When to Use GitPull<a class="headerlink" href="#when-to-use-gitpull" title="Permalink to this heading"></a></h3>
+<p>✅ <strong>Use GitPull (Full) when you want to:</strong> - Set up a course on a new
+server - Restore from backup after a problem - Deploy a course from
+development to production - Get an exact copy of another instructor’s
+course</p>
+<p>✅ <strong>Use GitPull (Exercises) when you want to:</strong> - Update exercise
+content without affecting student data - Get new exercises from GitHub -
+Sync exercises from another instructor</p>
+<p>❌ <strong>Don’t use GitPull (Full) if:</strong> - You have students enrolled (their
+data will be replaced) - You just want to update exercises (use
+Exercises mode instead)</p>
+</section>
+<section id="how-to-use-gitpull">
+<h3>How to Use GitPull<a class="headerlink" href="#how-to-use-gitpull" title="Permalink to this heading"></a></h3>
+<section id="step-1-access-gitpull">
+<h4>Step 1: Access GitPull<a class="headerlink" href="#step-1-access-gitpull" title="Permalink to this heading"></a></h4>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">/gitpull/</span></code> in your browser, or click the GitPull link in
+your course menu.</p>
+</section>
+<section id="step-2-understand-what-youll-see">
+<h4>Step 2: Understand What You’ll See<a class="headerlink" href="#step-2-understand-what-youll-see" title="Permalink to this heading"></a></h4>
+<p>The GitPull page shows:</p>
+<p><strong>📦 Repository Information</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Repository</span><span class="p">:</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">university</span><span class="o">/</span><span class="n">cs101</span><span class="o">-</span><span class="n">course</span>
+<span class="n">Branch</span><span class="p">:</span> <span class="n">test3b</span><span class="o">.</span><span class="n">openta</span><span class="o">-</span><span class="n">demo</span>
+</pre></div>
+</div>
+<p><strong>⚠️ IMPORTANT: Choose Your Pull Mode</strong></p>
+<p>You’ll see TWO options:</p>
+<p><strong>Option 1: 🔴 Full Pull - Replace all subdomain data from GitHub</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⚠️ WARNING: This will DELETE all local files and replace with GitHub
+
+What will be DELETED:
+• All files in your course directory
+• Current database (students, grades, settings)
+• All local configuration
+
+Old files will be moved to: /subdomain-data/deleted/cs101-20260216-103045/
+(You can recover them if needed)
+</pre></div>
+</div>
+<p><strong>When to choose Full Pull:</strong> - Fresh installation on new server -
+Complete disaster recovery - Deploying finished course to production -
+You want EXACTLY what’s in GitHub</p>
+<p><strong>Time required</strong>: 1-3 minutes + you’ll be logged out</p>
+<p><strong>Option 2: 🔵 Exercises Only - Update only exercises/ directory</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ℹ️ This preserves your database and configuration
+
+What will be PRESERVED:
+• Database (students, grades, settings)
+• Configuration files
+• All non-exercise files
+
+What will be UPDATED:
+• exercises/ directory only
+</pre></div>
+</div>
+<p><strong>When to choose Exercises Only:</strong> - Course already set up with students
+- Just need new exercise content - Want to keep everything except
+exercises</p>
+<p><strong>Time required</strong>: 30-60 seconds + no logout required</p>
+</section>
+<section id="step-3-make-your-choice">
+<h4>Step 3: Make Your Choice<a class="headerlink" href="#step-3-make-your-choice" title="Permalink to this heading"></a></h4>
+<p>Click the radio button for your desired mode: - ○ Full Pull (complete
+replacement) - ○ Exercises Only (just exercises)</p>
+</section>
+<section id="step-4-click-pull-from-github">
+<h4>Step 4: Click “Pull from GitHub”<a class="headerlink" href="#step-4-click-pull-from-github" title="Permalink to this heading"></a></h4>
+</section>
+<section id="step-5-watch-progress">
+<h4>Step 5: Watch Progress<a class="headerlink" href="#step-5-watch-progress" title="Permalink to this heading"></a></h4>
+<p><strong>For Full Pull:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Progress: ████████████████████ 100%
+
+You&#39;ll see these messages:
+1. Moving existing directory to deleted/ (5%)
+2. Initializing git repository (10%)
+3. Fetching from remote (30%)
+4. Resetting to remote (force) (60%)
+5. Cleaning untracked files (80%)
+6. Activating course (db_rename_database) (90%)
+   ⏱️ This step can take 2-5 minutes for large databases
+7. Done (commit a3f2b1c). Press Return to the course in 30 seconds (100%)
+</pre></div>
+</div>
+<p><strong>For Exercises Only:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Progress: ████████████████████ 100%
+
+Simpler and faster:
+1. Initializing git repository (10%)
+2. Fetching from remote (sparse: exercises/) (30%)
+3. Resetting to remote (exercises only) (60%)
+4. Cleaning untracked files (80%)
+5. Done (commit a3f2b1c) (100%)
+</pre></div>
+</div>
+</section>
+<section id="step-6-after-completion">
+<h4>Step 6: After Completion<a class="headerlink" href="#step-6-after-completion" title="Permalink to this heading"></a></h4>
+<p><strong>After Full Pull:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>You’ll be logged out automatically</strong></p></li>
+<li><p>Your old data is safe in
+<code class="docutils literal notranslate"><span class="pre">/subdomain-data/deleted/cs101-{timestamp}/</span></code></p></li>
+<li><p>Log in with the credentials from the restored course</p></li>
+<li><p>Test the course:</p>
+<ul class="simple">
+<li><p>✅ Check course loads</p></li>
+<li><p>✅ Test a few exercises</p></li>
+<li><p>✅ Verify settings are correct</p></li>
+</ul>
+</li>
+<li><p>If everything works, you can delete the backup from
+<code class="docutils literal notranslate"><span class="pre">/subdomain-data/deleted/</span></code></p></li>
+</ol>
+<p><strong>After Exercises Only:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>No logout required</strong></p></li>
+<li><p>Refresh your exercise list</p></li>
+<li><p>New exercises are immediately available</p></li>
+<li><p>Students and all data unchanged</p></li>
+</ol>
+</section>
+</section>
+<section id="can-i-cancel-1">
+<span id="id2"></span><h3>Can I Cancel?<a class="headerlink" href="#can-i-cancel-1" title="Permalink to this heading"></a></h3>
+<p>Yes, but be careful!</p>
+<p><strong>Full Pull Cancellation:</strong></p>
+<ul class="simple">
+<li><p>✅ <strong>Safe to cancel</strong> during steps 1-3 (before 60%)</p>
+<ul>
+<li><p>Old data still exists or safely backed up</p></li>
+<li><p>Easy recovery: move files back from deleted/</p></li>
+</ul>
+</li>
+<li><p>⚠️ <strong>RISKY to cancel</strong> during steps 4-6 (after 60%)</p>
+<ul>
+<li><p>Database may be partially restored</p></li>
+<li><p>Git state may be inconsistent</p></li>
+<li><p>Recovery may require manual steps</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Exercises Only Cancellation:</strong></p>
+<ul class="simple">
+<li><p>✅ <strong>Safe to cancel anytime</strong></p>
+<ul>
+<li><p>Only exercises affected</p></li>
+<li><p>Database never touched</p></li>
+<li><p>Just run again to complete</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Best practice</strong>: Let it finish, especially for Full Pull. Only cancel
+if absolutely necessary.</p>
+</section>
+</section>
+<section id="common-use-cases">
+<h2>Common Use Cases<a class="headerlink" href="#common-use-cases" title="Permalink to this heading"></a></h2>
+<section id="use-case-1-daily-backups">
+<h3>Use Case 1: Daily Backups<a class="headerlink" href="#use-case-1-daily-backups" title="Permalink to this heading"></a></h3>
+<p><strong>Goal</strong>: Regular backups in case something goes wrong</p>
+<p><strong>How often</strong>: Daily or weekly, or before major changes</p>
+<p><strong>Steps:</strong> 1. Go to <code class="docutils literal notranslate"><span class="pre">/gitsync/</span></code> 2. Commit message: “Daily backup -
+{today’s date}” 3. Click “Sync to GitHub” 4. Done in 1-2 minutes</p>
+<p><strong>Why</strong>: If you accidentally delete something or need to go back, you
+can restore from any backup.</p>
+</section>
+<section id="use-case-2-sharing-a-course-with-another-instructor">
+<h3>Use Case 2: Sharing a Course with Another Instructor<a class="headerlink" href="#use-case-2-sharing-a-course-with-another-instructor" title="Permalink to this heading"></a></h3>
+<p><strong>Goal</strong>: Instructor A gives course to Instructor B</p>
+<p><strong>Instructor A (has the course):</strong> 1. Configure course with
+<code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PUSH:</span> <span class="pre">true</span></code> 2. Go to <code class="docutils literal notranslate"><span class="pre">/gitsync/</span></code> 3. Edit README with
+instructions for Instructor B 4. Commit message: “Complete course ready
+for deployment” 5. Click “Sync to GitHub” 6. Tell Instructor B: “Course
+is ready in GitHub repo”</p>
+<p><strong>Instructor B (wants the course):</strong> 1. Create or use existing subdomain
+2. Configure course with <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PULL:</span> <span class="pre">true</span></code> 3. Go to <code class="docutils literal notranslate"><span class="pre">/gitpull/</span></code>
+4. Select “Full Pull” 5. Click “Pull from GitHub” 6. Wait 2-3 minutes 7.
+Log in with credentials from Instructor A 8. Customize for your
+institution</p>
+<p><strong>Result</strong>: Instructor B has an exact copy of Instructor A’s course.</p>
+</section>
+<section id="use-case-3-development-production-deployment">
+<h3>Use Case 3: Development → Production Deployment<a class="headerlink" href="#use-case-3-development-production-deployment" title="Permalink to this heading"></a></h3>
+<p><strong>Goal</strong>: Build course on dev server, deploy to production</p>
+<p><strong>On Development Server (``dev.openta.org``):</strong> 1. Build and test your
+course 2. Configure with <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PUSH:</span> <span class="pre">true</span></code> 3. Go to <code class="docutils literal notranslate"><span class="pre">/gitsync/</span></code>
+4. Commit message: “Ready for production” 5. Click “Sync to GitHub”</p>
+<p><strong>On Production Server (``openta.org``):</strong> 1. Create subdomain for
+course 2. Configure with <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PULL:</span> <span class="pre">true</span></code> 3. Go to <code class="docutils literal notranslate"><span class="pre">/gitpull/</span></code>
+4. Select “Full Pull” 5. Click “Pull from GitHub” 6. Test everything
+works 7. Open course to students</p>
+<p><strong>Result</strong>: Production has exact copy of development course.</p>
+</section>
+<section id="use-case-4-weekly-exercise-updates">
+<h3>Use Case 4: Weekly Exercise Updates<a class="headerlink" href="#use-case-4-weekly-exercise-updates" title="Permalink to this heading"></a></h3>
+<p><strong>Goal</strong>: Update exercises without affecting student data</p>
+<p><strong>Setup</strong> (one time): - Production course running with students enrolled
+- Course configured with <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PULL:</span> <span class="pre">true</span></code> - Exercises updated in
+GitHub by another instructor</p>
+<p><strong>Weekly Update Process:</strong> 1. Go to <code class="docutils literal notranslate"><span class="pre">/gitpull/</span></code> 2. Select “Exercises
+Only” 3. Click “Pull from GitHub” 4. Wait 30 seconds 5. New exercises
+immediately available</p>
+<p><strong>Result</strong>: Students see new exercises, their progress and grades
+unchanged.</p>
+</section>
+<section id="use-case-5-disaster-recovery">
+<h3>Use Case 5: Disaster Recovery<a class="headerlink" href="#use-case-5-disaster-recovery" title="Permalink to this heading"></a></h3>
+<p><strong>Problem</strong>: Something broke, need to restore</p>
+<p><strong>Steps:</strong> 1. Don’t panic! Old data is backed up 2. Go to <code class="docutils literal notranslate"><span class="pre">/gitpull/</span></code>
+3. Select “Full Pull” 4. Click “Pull from GitHub” 5. Old broken data
+moved to <code class="docutils literal notranslate"><span class="pre">/subdomain-data/deleted/</span></code> 6. Course restored from last
+GitHub backup 7. Log in and verify everything works</p>
+<p><strong>If it’s still broken</strong>: Recover older backup - Check GitHub commit
+history - Find last known-good commit - Contact admin to restore from
+specific commit</p>
+<p><strong>Result</strong>: Course restored to working state.</p>
+</section>
+</section>
+<section id="best-practices-for-teachers">
+<h2>Best Practices for Teachers<a class="headerlink" href="#best-practices-for-teachers" title="Permalink to this heading"></a></h2>
+<section id="for-gitsync-backups">
+<h3>For GitSync (Backups)<a class="headerlink" href="#for-gitsync-backups" title="Permalink to this heading"></a></h3>
+<p><strong>✅ DO:</strong> - Sync before making major changes - Write clear commit
+messages - Sync regularly (daily or weekly) - Review recent commits
+before syncing - Keep your GitHub repo private</p>
+<p><strong>❌ DON’T:</strong> - Use generic messages like “update” or “sync” - Forget to
+sync before risky operations - Make your repo public (contains student
+data) - Navigate away during sync - Cancel unless necessary</p>
+</section>
+<section id="for-gitpull-restore">
+<h3>For GitPull (Restore)<a class="headerlink" href="#for-gitpull-restore" title="Permalink to this heading"></a></h3>
+<p><strong>✅ DO:</strong> - Use “Exercises Only” when possible - Test on development
+server first - Verify old data in deleted/ folder after Full Pull - Have
+credentials ready for Full Pull - Coordinate with team before pulling</p>
+<p><strong>❌ DON’T:</strong> - Use Full Pull if you have active students (unless
+intentional) - Delete old data immediately after Full Pull (test first)
+- Cancel during critical stages (60%+) - Use both push and pull on same
+course - Pull without telling other instructors</p>
+</section>
+<section id="pre-operation-checklist">
+<h3>Pre-Operation Checklist<a class="headerlink" href="#pre-operation-checklist" title="Permalink to this heading"></a></h3>
+<p>Before running any operation, check:</p>
+<ul class="simple">
+<li><p>☐ GitHub credentials configured correctly</p></li>
+<li><p>☐ Repository exists and is accessible</p></li>
+<li><p>☐ Correct mode selected (Full vs Exercises)</p></li>
+<li><p>☐ Coordinated with team (if applicable)</p></li>
+<li><p>☐ Tested on non-production first (for new workflows)</p></li>
+<li><p>☐ Have time to monitor progress (1-5 minutes)</p></li>
+<li><p>☐ Know where to find documentation if problems occur</p></li>
+</ul>
+</section>
+</section>
+<section id="troubleshooting-for-users">
+<h2>Troubleshooting for Users<a class="headerlink" href="#troubleshooting-for-users" title="Permalink to this heading"></a></h2>
+<section id="common-problems-and-solutions">
+<h3>Common Problems and Solutions<a class="headerlink" href="#common-problems-and-solutions" title="Permalink to this heading"></a></h3>
+<section id="pull-disabled-or-push-disabled">
+<h4>“Pull Disabled” or “Push Disabled”<a class="headerlink" href="#pull-disabled-or-push-disabled" title="Permalink to this heading"></a></h4>
+<p><strong>Problem</strong>: Flag not set in course configuration</p>
+<p><strong>Solution</strong>: 1. Ask your admin to add to course.data: - For backup:
+<code class="docutils literal notranslate"><span class="pre">&quot;GIT_ALLOW_PUSH&quot;:</span> <span class="pre">true</span></code> - For restore: <code class="docutils literal notranslate"><span class="pre">&quot;GIT_ALLOW_PULL&quot;:</span> <span class="pre">true</span></code> 2.
+Refresh page 3. Try again</p>
+</section>
+<section id="conflicting-configuration">
+<h4>“Conflicting Configuration”<a class="headerlink" href="#conflicting-configuration" title="Permalink to this heading"></a></h4>
+<p><strong>Problem</strong>: Both push and pull flags are enabled</p>
+<p><strong>Solution</strong>: 1. Decide which you need: - Development server: Use push
+only - Production server: Use pull only 2. Ask admin to set one flag to
+<code class="docutils literal notranslate"><span class="pre">false</span></code> 3. You can’t have both (prevents sync conflicts)</p>
+</section>
+<section id="repository-must-be-private">
+<h4>“Repository must be private”<a class="headerlink" href="#repository-must-be-private" title="Permalink to this heading"></a></h4>
+<p><strong>Problem</strong>: Trying to GitSync to a public repository</p>
+<p><strong>Solution</strong>: 1. Go to GitHub repository settings 2. Change visibility
+to “Private” 3. Try GitSync again</p>
+<p><strong>Why</strong>: GitSync refuses public repos because courses contain student
+data.</p>
+</section>
+<section id="git-operation-timed-out">
+<h4>“Git operation timed out”<a class="headerlink" href="#git-operation-timed-out" title="Permalink to this heading"></a></h4>
+<p><strong>Problem</strong>: Operation took too long</p>
+<p><strong>Common causes</strong>: - Very large course (&gt;100 MB) - Slow network
+connection - GitHub is slow</p>
+<p><strong>Solution</strong>: 1. Check your internet connection 2. Try again (might be
+temporary) 3. If persistent, contact admin to increase timeout</p>
+</section>
+<section id="repository-does-not-exist-or-is-not-accessible">
+<h4>“Repository does not exist or is not accessible”<a class="headerlink" href="#repository-does-not-exist-or-is-not-accessible" title="Permalink to this heading"></a></h4>
+<p><strong>Problem</strong>: Can’t access GitHub repository</p>
+<p><strong>Check</strong>: 1. Repository name correct? Format: <code class="docutils literal notranslate"><span class="pre">username/repo-name</span></code> 2.
+For private repos: Are credentials correct? 3. GitHub token has <code class="docutils literal notranslate"><span class="pre">repo</span></code>
+permission? 4. Repository actually exists on GitHub?</p>
+<p><strong>Solution</strong>: Fix configuration and try again</p>
+</section>
+<section id="branch-not-found">
+<h4>“Branch not found”<a class="headerlink" href="#branch-not-found" title="Permalink to this heading"></a></h4>
+<p><strong>Problem</strong>: Branch doesn’t exist in repository</p>
+<p><strong>For GitPull</strong>: - Branch name format: <code class="docutils literal notranslate"><span class="pre">{subdomain}.{servername}</span></code> -
+Example: <code class="docutils literal notranslate"><span class="pre">cs101.openta-demo</span></code> - This branch must exist in GitHub</p>
+<p><strong>Solution</strong>: 1. Check branch name on status page 2. Go to GitHub and
+verify branch exists 3. If using new subdomain, push from source first
+4. Or create branch manually in GitHub</p>
+</section>
+<section id="cant-log-in-after-full-pull">
+<h4>“Can’t log in after Full Pull”<a class="headerlink" href="#cant-log-in-after-full-pull" title="Permalink to this heading"></a></h4>
+<p><strong>Problem</strong>: Credentials changed after restore</p>
+<p><strong>Why</strong>: Full Pull restores the database, which includes user accounts</p>
+<p><strong>Solution</strong>: 1. Use credentials from the restored course (check GitHub
+README) 2. If unknown, recover old database:
+<code class="docutils literal notranslate"><span class="pre">Old</span> <span class="pre">database</span> <span class="pre">is</span> <span class="pre">in:</span> <span class="pre">/subdomain-data/deleted/{subdomain}-{timestamp}/</span></code>
+3. Contact admin to restore old database if needed</p>
+</section>
+<section id="task-disappeared">
+<h4>“Task disappeared”<a class="headerlink" href="#task-disappeared" title="Permalink to this heading"></a></h4>
+<p><strong>Problem</strong>: Navigated away and task is gone</p>
+<p><strong>Why</strong>: Tasks auto-delete after 20 minutes</p>
+<p><strong>Solution</strong>: Start the operation again (safe to re-run)</p>
+</section>
+</section>
+<section id="when-to-contact-your-administrator">
+<h3>When to Contact Your Administrator<a class="headerlink" href="#when-to-contact-your-administrator" title="Permalink to this heading"></a></h3>
+<p>Contact admin if:</p>
+<ul class="simple">
+<li><p>Configuration flags need to be changed</p></li>
+<li><p>GitHub credentials need to be updated</p></li>
+<li><p>Timeouts need to be increased</p></li>
+<li><p>Manual recovery needed after failed Full Pull</p></li>
+<li><p>Can’t access deleted/ directory</p></li>
+<li><p>Database restoration failed</p></li>
+<li><p>Need to restore from specific old commit</p></li>
+</ul>
+</section>
+<section id="recovery-procedures">
+<h3>Recovery Procedures<a class="headerlink" href="#recovery-procedures" title="Permalink to this heading"></a></h3>
+<section id="recovering-from-failed-full-pull">
+<h4>Recovering from Failed Full Pull<a class="headerlink" href="#recovering-from-failed-full-pull" title="Permalink to this heading"></a></h4>
+<p>If Full Pull failed and course is broken:</p>
+<ol class="arabic">
+<li><p><strong>Find your backup</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Location</span><span class="p">:</span> <span class="o">/</span><span class="n">subdomain</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">deleted</span><span class="o">/</span><span class="p">{</span><span class="n">subdomain</span><span class="p">}</span><span class="o">-</span><span class="p">{</span><span class="n">timestamp</span><span class="p">}</span><span class="o">/</span>
+<span class="n">Example</span><span class="p">:</span> <span class="o">/</span><span class="n">subdomain</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">deleted</span><span class="o">/</span><span class="n">cs101</span><span class="o">-</span><span class="mi">20260216</span><span class="o">-</span><span class="mi">103045</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Contact your administrator</strong> to:</p>
+<ul class="simple">
+<li><p>Stop application servers</p></li>
+<li><p>Move backup back to main location</p></li>
+<li><p>Restart servers</p></li>
+</ul>
+</li>
+<li><p><strong>Alternative</strong>: Run Full Pull again</p>
+<ul class="simple">
+<li><p>Often fixes partial failures</p></li>
+<li><p>Gets fresh copy from GitHub</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="recovering-specific-files">
+<h4>Recovering Specific Files<a class="headerlink" href="#recovering-specific-files" title="Permalink to this heading"></a></h4>
+<p>If you just need one file from backup:</p>
+<ol class="arabic simple">
+<li><p>Ask admin for access to <code class="docutils literal notranslate"><span class="pre">/subdomain-data/deleted/</span></code></p></li>
+<li><p>Find the backup folder with correct timestamp</p></li>
+<li><p>Copy specific file you need</p></li>
+<li><p>Replace in current course directory</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="quick-reference-cards">
+<h2>Quick Reference Cards<a class="headerlink" href="#quick-reference-cards" title="Permalink to this heading"></a></h2>
+<section id="gitsync-quick-reference">
+<h3>GitSync Quick Reference<a class="headerlink" href="#gitsync-quick-reference" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌─────────────────────────────────────────────────┐
+│ GITSYNC - BACKUP YOUR COURSE                    │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│ When:  Before changes, regularly                │
+│ Time:  1-2 minutes                              │
+│ Where: /gitsync/                                │
+│                                                 │
+│ Steps:                                          │
+│  1. Enter commit message                        │
+│  2. (Optional) Edit README                      │
+│  3. Click &quot;Sync to GitHub&quot;                      │
+│  4. Wait for completion                         │
+│                                                 │
+│ Safe to cancel: Yes (before pushing)            │
+│ Requires: GIT_ALLOW_PUSH: true                  │
+│ Repository: Private only                        │
+└─────────────────────────────────────────────────┘
+</pre></div>
+</div>
+</section>
+<section id="gitpull-quick-reference">
+<h3>GitPull Quick Reference<a class="headerlink" href="#gitpull-quick-reference" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌─────────────────────────────────────────────────┐
+│ GITPULL - RESTORE OR UPDATE YOUR COURSE         │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│ FULL PULL                                       │
+│ When:  New setup, disaster recovery             │
+│ Time:  1-5 minutes                              │
+│ Safe to cancel: Only before 60%                 │
+│ Requires: GIT_ALLOW_PULL: true                  │
+│ Warning: You&#39;ll be logged out                   │
+│                                                 │
+│ Steps:                                          │
+│  1. Select &quot;Full Pull&quot;                          │
+│  2. Click &quot;Pull from GitHub&quot;                    │
+│  3. Wait for completion                         │
+│  4. Log in with restored credentials            │
+│                                                 │
+├─────────────────────────────────────────────────┤
+│                                                 │
+│ EXERCISES ONLY                                  │
+│ When:  Update exercises, preserve database      │
+│ Time:  30-60 seconds                            │
+│ Safe to cancel: Yes (anytime)                   │
+│ Requires: GIT_ALLOW_PULL: true                  │
+│ Warning: None, no logout                        │
+│                                                 │
+│ Steps:                                          │
+│  1. Select &quot;Exercises Only&quot;                     │
+│  2. Click &quot;Pull from GitHub&quot;                    │
+│  3. Wait for completion                         │
+│  4. Refresh page to see new exercises           │
+│                                                 │
+└─────────────────────────────────────────────────┘
+</pre></div>
+</div>
+</section>
+</section>
+<section id="for-developers-and-system-administrators-1">
+<span id="id3"></span><h2>For Developers and System Administrators<a class="headerlink" href="#for-developers-and-system-administrators-1" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><p>The following sections contain technical implementation details for
+developers and system administrators.</p>
+</div></blockquote>
+</section>
+<section id="technical-implementation">
+<h2>Technical Implementation<a class="headerlink" href="#technical-implementation" title="Permalink to this heading"></a></h2>
+<section id="architecture-overview">
+<h3>Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permalink to this heading"></a></h3>
+<p>Git integration uses Django-RQ (Redis Queue) for asynchronous task
+processing. Long-running git operations execute in background workers,
+preventing web server blocking.</p>
+<p><strong>Component Stack:</strong> - Django views (sync/pull forms and status pages) -
+Django-RQ task queue (async processing) - Git subprocess commands
+(clone, fetch, push, reset) - GitHub API (repo validation, commit
+history) - PostgreSQL/SQLite (task status, course data)</p>
+</section>
+<section id="code-structure">
+<h3>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this heading"></a></h3>
+<p><strong>Core Files:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">course</span><span class="o">/</span><span class="n">views</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>          <span class="o">-</span> <span class="n">All</span> <span class="n">git</span> <span class="n">views</span> <span class="ow">and</span> <span class="n">pipeline</span> <span class="n">functions</span>
+<span class="n">course</span><span class="o">/</span><span class="n">urls</span><span class="o">.</span><span class="n">py</span>                 <span class="o">-</span> <span class="n">URL</span> <span class="n">routing</span> <span class="k">for</span> <span class="n">git</span> <span class="n">features</span>
+<span class="n">workqueue</span><span class="o">/</span><span class="n">tasks</span><span class="o">.</span><span class="n">py</span>             <span class="o">-</span> <span class="n">Task</span> <span class="n">wrappers</span> <span class="k">for</span> <span class="n">django</span><span class="o">-</span><span class="n">rq</span>
+<span class="n">workqueue</span><span class="o">/</span><span class="n">util</span><span class="o">.</span><span class="n">py</span>              <span class="o">-</span> <span class="n">Task</span> <span class="n">enqueueing</span> <span class="n">utilities</span>
+<span class="n">workqueue</span><span class="o">/</span><span class="n">models</span><span class="o">.</span><span class="n">py</span>            <span class="o">-</span> <span class="n">QueueTask</span> <span class="n">model</span>
+
+<span class="n">templates</span><span class="o">/</span><span class="n">gitsync</span><span class="o">/</span><span class="n">form</span><span class="o">.</span><span class="n">html</span>    <span class="o">-</span> <span class="n">GitSync</span> <span class="n">form</span> <span class="n">page</span>
+<span class="n">templates</span><span class="o">/</span><span class="n">gitsync</span><span class="o">/</span><span class="n">status</span><span class="o">.</span><span class="n">html</span>  <span class="o">-</span> <span class="n">GitSync</span> <span class="n">status</span> <span class="n">page</span>
+<span class="n">templates</span><span class="o">/</span><span class="n">gitpull</span><span class="o">/</span><span class="n">confirm</span><span class="o">.</span><span class="n">html</span> <span class="o">-</span> <span class="n">GitPull</span> <span class="n">confirmation</span> <span class="n">page</span>
+<span class="n">templates</span><span class="o">/</span><span class="n">gitpull</span><span class="o">/</span><span class="n">status</span><span class="o">.</span><span class="n">html</span>  <span class="o">-</span> <span class="n">GitPull</span> <span class="n">status</span> <span class="n">page</span>
+<span class="n">templates</span><span class="o">/</span><span class="n">gitsync</span><span class="o">/</span><span class="n">layout</span><span class="o">.</span><span class="n">html</span>  <span class="o">-</span> <span class="n">Shared</span> <span class="n">layout</span> <span class="n">template</span>
+<span class="n">templates</span><span class="o">/</span><span class="n">gitsync</span><span class="o">/</span><span class="n">error</span><span class="o">.</span><span class="n">html</span>   <span class="o">-</span> <span class="n">Error</span> <span class="n">page</span> <span class="n">template</span>
+</pre></div>
+</div>
+</section>
+<section id="view-functions">
+<h3>View Functions<a class="headerlink" href="#view-functions" title="Permalink to this heading"></a></h3>
+<section id="gitsync-views">
+<h4>GitSync Views<a class="headerlink" href="#gitsync-views" title="Permalink to this heading"></a></h4>
+<p><strong>``GitSyncRedirectView(request)``</strong> - Decorator:
+<code class="docutils literal notranslate"><span class="pre">&#64;user_passes_test(lambda</span> <span class="pre">u:</span> <span class="pre">u.is_superuser)</span></code> - URL: <code class="docutils literal notranslate"><span class="pre">/gitsync/</span></code> -
+Function: Redirects to course-specific GitSync or shows course picker -
+Returns: Redirect or course selection page</p>
+<p><strong>``CourseGitSyncView(request, course_pk)``</strong> - Decorator:
+<code class="docutils literal notranslate"><span class="pre">&#64;user_passes_test(lambda</span> <span class="pre">u:</span> <span class="pre">u.is_superuser)</span></code> - URL:
+<code class="docutils literal notranslate"><span class="pre">/course/&lt;pk&gt;/gitsync/</span></code> - GET: Renders form with repo info, commits,
+README editor - POST: Validates config, enqueues task, redirects to
+status - Checks: <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PUSH</span></code> must be true, repo must be private</p>
+<p><strong>``CourseGitSyncStatusView(request, course_pk, task_id)``</strong> -
+Decorator: <code class="docutils literal notranslate"><span class="pre">&#64;user_passes_test(lambda</span> <span class="pre">u:</span> <span class="pre">u.is_superuser)</span></code> - URL:
+<code class="docutils literal notranslate"><span class="pre">/course/&lt;pk&gt;/gitsync/status/&lt;task_id&gt;/</span></code> - Function: Displays
+real-time progress, polls <code class="docutils literal notranslate"><span class="pre">/queuetask/&lt;task_id&gt;/</span></code> - Returns: Status
+page with progress bar and current status</p>
+<p><strong>``CourseGitSyncCancelView(request, course_pk, task_id)``</strong> - URL:
+<code class="docutils literal notranslate"><span class="pre">/course/&lt;pk&gt;/gitsync/cancel/&lt;task_id&gt;/</span></code> - Function: Marks task as
+done with “Cancelled” status - Returns: JSON response</p>
+</section>
+<section id="gitpull-views">
+<h4>GitPull Views<a class="headerlink" href="#gitpull-views" title="Permalink to this heading"></a></h4>
+<p><strong>``GitPullRedirectView(request)``</strong> - Decorator:
+<code class="docutils literal notranslate"><span class="pre">&#64;user_passes_test(lambda</span> <span class="pre">u:</span> <span class="pre">u.is_superuser)</span></code> - URL: <code class="docutils literal notranslate"><span class="pre">/gitpull/</span></code> -
+Function: Redirects to course-specific GitPull or shows course picker</p>
+<p><strong>``CourseGitPullView(request, course_pk)``</strong> - Decorator:
+<code class="docutils literal notranslate"><span class="pre">&#64;user_passes_test(lambda</span> <span class="pre">u:</span> <span class="pre">u.is_superuser)</span></code> - URL:
+<code class="docutils literal notranslate"><span class="pre">/course/&lt;pk&gt;/gitpull/</span></code> - GET: Renders confirmation page with pull
+scope options - POST: Validates flags, enqueues task, redirects to
+status - Checks: <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PULL</span></code> true, <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PUSH</span></code> false, repo
+exists</p>
+<p><strong>``CourseGitPullStatusView(request, course_pk, task_id)``</strong> -
+Decorator: <code class="docutils literal notranslate"><span class="pre">&#64;user_passes_test(lambda</span> <span class="pre">u:</span> <span class="pre">u.is_superuser)</span></code> - URL:
+<code class="docutils literal notranslate"><span class="pre">/course/&lt;pk&gt;/gitpull/status/&lt;task_id&gt;/</span></code> - Function: Displays
+real-time progress - Returns: Status page</p>
+<p><strong>``CourseGitPullCancelView(request, course_pk, task_id)``</strong> - URL:
+<code class="docutils literal notranslate"><span class="pre">/course/&lt;pk&gt;/gitpull/cancel/&lt;task_id&gt;/</span></code> - Function: Marks task as
+done with “Cancelled” status</p>
+</section>
+</section>
+<section id="pipeline-functions">
+<h3>Pipeline Functions<a class="headerlink" href="#pipeline-functions" title="Permalink to this heading"></a></h3>
+<section id="gitsync-pipeline-task-sync-subdomain-git-user-git-token-git-repo-branch-commit-msg-source-path">
+<h4><code class="docutils literal notranslate"><span class="pre">_gitsync_pipeline(task,</span> <span class="pre">sync_subdomain,</span> <span class="pre">git_user,</span> <span class="pre">git_token,</span> <span class="pre">git_repo,</span> <span class="pre">branch,</span> <span class="pre">commit_msg,</span> <span class="pre">source_path)</span></code><a class="headerlink" href="#gitsync-pipeline-task-sync-subdomain-git-user-git-token-git-repo-branch-commit-msg-source-path" title="Permalink to this heading"></a></h4>
+<p>Executes GitSync (push) operation.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic">
+<li><p><strong>Create Database Backup</strong> (Progress: 5%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">task</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Creating database backup&quot;</span>
+<span class="n">task</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="c1"># Uses course.backup_utilities to create backup</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Setup Git Environment</strong> (Progress: 10%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">git_env</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;GIT_AUTHOR_NAME&quot;</span><span class="p">:</span> <span class="n">git_user</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_AUTHOR_EMAIL&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">git_user</span><span class="si">}</span><span class="s2">@users.noreply.github.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_COMMITTER_NAME&quot;</span><span class="p">:</span> <span class="n">git_user</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_COMMITTER_EMAIL&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">git_user</span><span class="si">}</span><span class="s2">@users.noreply.github.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_TERMINAL_PROMPT&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">clone_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://</span><span class="si">{</span><span class="n">git_user</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">git_token</span><span class="si">}</span><span class="s2">@github.com/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">.git&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Clone Repository</strong> (Progress: 20%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+    <span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;clone&quot;</span><span class="p">,</span> <span class="s2">&quot;--depth&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--branch&quot;</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span>
+    <span class="n">clone_url</span><span class="p">,</span> <span class="n">temp_dir</span>
+<span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Checkout Branch</strong> (Progress: 30%)</p>
+<ul class="simple">
+<li><p>Checks if branch exists:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show-ref</span> <span class="pre">--verify</span> <span class="pre">refs/heads/{branch}</span></code></p></li>
+<li><p>If not: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">{branch}</span></code></p></li>
+<li><p>If exists: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">{branch}</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Clean Excluded Directories</strong> (Progress: 40%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">excluded_dirs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;backups&quot;</span><span class="p">,</span> <span class="s2">&quot;xsl&quot;</span><span class="p">,</span> <span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="nb">dir</span> <span class="ow">in</span> <span class="n">excluded_dirs</span><span class="p">:</span>
+    <span class="n">dir_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">repo_path</span><span class="p">,</span> <span class="n">subdomain</span><span class="p">,</span> <span class="nb">dir</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">dir_path</span><span class="p">):</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Rsync Subdomain Data</strong> (Progress: 50%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+    <span class="s2">&quot;rsync&quot;</span><span class="p">,</span> <span class="s2">&quot;-av&quot;</span><span class="p">,</span> <span class="s2">&quot;--delete&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--exclude=backups&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--exclude=xsl&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--exclude=csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--exclude=html&quot;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">source_path</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">repo_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">subdomain</span><span class="si">}</span><span class="s2">/&quot;</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Stage Changes</strong> (Progress: 70%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Check for Changes</strong> (Progress: 75%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;diff&quot;</span><span class="p">,</span> <span class="s2">&quot;--cached&quot;</span><span class="p">,</span> <span class="s2">&quot;--quiet&quot;</span><span class="p">],</span>
+    <span class="n">env</span><span class="o">=</span><span class="n">git_env</span>
+<span class="p">)</span>
+<span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">returncode</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;No changes to commit&quot;</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Commit</strong> (Progress: 80%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+    <span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;commit&quot;</span><span class="p">,</span> <span class="s2">&quot;-m&quot;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">commit_msg</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Co-Authored-By: Claude Sonnet 4.5 &lt;noreply@anthropic.com&gt;&quot;</span>
+<span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Push to Remote</strong> (Progress: 90%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if branch exists remotely</span>
+<span class="n">remote_check</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+    <span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;ls-remote&quot;</span><span class="p">,</span> <span class="s2">&quot;--heads&quot;</span><span class="p">,</span> <span class="s2">&quot;origin&quot;</span><span class="p">,</span> <span class="n">branch</span>
+<span class="p">],</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">remote_check</span><span class="o">.</span><span class="n">stdout</span><span class="p">:</span>
+    <span class="c1"># New branch</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;push&quot;</span><span class="p">,</span> <span class="s2">&quot;-u&quot;</span><span class="p">,</span> <span class="s2">&quot;origin&quot;</span><span class="p">,</span> <span class="n">branch</span>
+    <span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Existing branch - force with lease</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;fetch&quot;</span><span class="p">,</span> <span class="s2">&quot;--depth&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;origin&quot;</span><span class="p">,</span> <span class="n">branch</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;push&quot;</span><span class="p">,</span> <span class="s2">&quot;--force-with-lease&quot;</span><span class="p">,</span> <span class="s2">&quot;origin&quot;</span><span class="p">,</span> <span class="n">branch</span>
+    <span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Cleanup</strong> (Progress: 100%)
+<code class="docutils literal notranslate"><span class="pre">python</span>&#160;&#160;&#160;&#160; <span class="pre">shutil.rmtree(temp_dir)</span>&#160;&#160;&#160;&#160; <span class="pre">task.status</span> <span class="pre">=</span> <span class="pre">&quot;Sync</span> <span class="pre">complete&quot;</span>&#160;&#160;&#160;&#160; <span class="pre">task.progress</span> <span class="pre">=</span> <span class="pre">100</span>&#160;&#160;&#160;&#160; <span class="pre">task.done</span> <span class="pre">=</span> <span class="pre">True</span>&#160;&#160;&#160;&#160; <span class="pre">task.save()</span></code></p></li>
+</ol>
+<p><strong>Error Handling:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">stderr</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">stderr</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Command failed: </span><span class="si">{</span><span class="n">stderr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">[:</span><span class="mi">250</span><span class="p">]</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Git operation timed out&quot;</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="gitpull-pipeline-task-pull-subdomain-git-user-git-token-git-repo-branch-source-path">
+<h4><code class="docutils literal notranslate"><span class="pre">_gitpull_pipeline(task,</span> <span class="pre">pull_subdomain,</span> <span class="pre">git_user,</span> <span class="pre">git_token,</span> <span class="pre">git_repo,</span> <span class="pre">branch,</span> <span class="pre">source_path)</span></code><a class="headerlink" href="#gitpull-pipeline-task-pull-subdomain-git-user-git-token-git-repo-branch-source-path" title="Permalink to this heading"></a></h4>
+<p>Executes GitPull full operation.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic">
+<li><p><strong>Move Existing Directory</strong> (Progress: 5%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">source_path</span><span class="p">):</span>
+    <span class="n">deleted_dir</span> <span class="o">=</span> <span class="s2">&quot;/subdomain-data/deleted&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">deleted_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">-%H%M%S&quot;</span><span class="p">)</span>
+    <span class="n">deleted_target</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">deleted_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pull_subdomain</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="n">deleted_target</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Initialize Git Repository</strong> (Progress: 10%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">git_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="s2">&quot;.git&quot;</span><span class="p">)</span>
+<span class="n">git_env</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;GIT_DIR&quot;</span><span class="p">:</span> <span class="n">git_dir</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_WORK_TREE&quot;</span><span class="p">:</span> <span class="n">source_path</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_TERMINAL_PROMPT&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_ASKPASS&quot;</span><span class="p">:</span> <span class="s2">&quot;echo&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;init&quot;</span><span class="p">,</span> <span class="n">source_path</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="s2">&quot;user.name&quot;</span><span class="p">,</span> <span class="n">git_user</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="s2">&quot;user.email&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">git_user</span><span class="si">}</span><span class="s2">@users.noreply.github.com&quot;</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">git_user</span> <span class="ow">and</span> <span class="n">git_token</span><span class="p">:</span>
+    <span class="n">clone_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://</span><span class="si">{</span><span class="n">git_user</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">git_token</span><span class="si">}</span><span class="s2">@github.com/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">.git&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">clone_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://github.com/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">.git&quot;</span>
+
+<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;remote&quot;</span><span class="p">,</span> <span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="s2">&quot;origin&quot;</span><span class="p">,</span> <span class="n">clone_url</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Enable Sparse-Checkout</strong> (Progress: 15%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="s2">&quot;core.sparseCheckout&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+<span class="n">sparse_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s2">&quot;info&quot;</span><span class="p">,</span> <span class="s2">&quot;sparse-checkout&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sparse_file</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sparse_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;/*</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Include everything for full pull</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Fetch from Remote</strong> (Progress: 30%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+    <span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;fetch&quot;</span><span class="p">,</span> <span class="s2">&quot;--force&quot;</span><span class="p">,</span> <span class="s2">&quot;--depth&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;origin&quot;</span><span class="p">,</span> <span class="n">branch</span>
+<span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Reset to Remote</strong> (Progress: 60%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+    <span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;reset&quot;</span><span class="p">,</span> <span class="s2">&quot;--hard&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;origin/</span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Clean Untracked Files</strong> (Progress: 80%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;clean&quot;</span><span class="p">,</span> <span class="s2">&quot;-fd&quot;</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Align Exercises Directory</strong> (Progress: 85%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename exercises/&lt;pulled_key&gt;/ to match existing course_key</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">course.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Course</span>
+<span class="n">course</span> <span class="o">=</span> <span class="n">Course</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">pull_subdomain</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">course</span><span class="p">:</span>
+    <span class="n">existing_key</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">course</span><span class="o">.</span><span class="n">course_key</span><span class="p">)</span>
+    <span class="n">exercises_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="s2">&quot;exercises&quot;</span><span class="p">)</span>
+    <span class="c1"># Rename pulled directory to match existing key</span>
+    <span class="c1"># (implementation details...)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Activate Course</strong> (Progress: 90%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">backend_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">backend_dir</span><span class="p">))</span>
+<span class="n">db_rename_script</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">backend_root</span><span class="p">,</span> <span class="s2">&quot;db_rename_database&quot;</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">db_rename_script</span><span class="p">,</span> <span class="n">pull_subdomain</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Update OpenTA Site URL</strong> (Progress: 95%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update opentasite in database settings</span>
+<span class="c1"># (SQL update command)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Logout and Reload</strong> (Progress: 98%)
+<code class="docutils literal notranslate"><span class="pre">python</span>&#160;&#160;&#160;&#160; <span class="pre">from</span> <span class="pre">course.views.views</span> <span class="pre">import</span> <span class="pre">logout_and_reload</span>&#160;&#160;&#160;&#160; <span class="pre">logout_and_reload(pull_subdomain)</span></code></p></li>
+<li><p><strong>Completion</strong> (Progress: 100%)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">commit_hash</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;rev-parse&quot;</span><span class="p">,</span> <span class="s2">&quot;HEAD&quot;</span><span class="p">],</span>
+    <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">git_env</span>
+<span class="p">)</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()[:</span><span class="mi">8</span><span class="p">]</span>
+
+<span class="n">task</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Done (commit </span><span class="si">{</span><span class="n">commit_hash</span><span class="si">}</span><span class="s2">). Press Return to the course in about 30 seconds&quot;</span>
+<span class="n">task</span><span class="o">.</span><span class="n">progress</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">task</span><span class="o">.</span><span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">task</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="gitpull-exercises-pipeline-task-pull-subdomain-git-user-git-token-git-repo-branch-source-path">
+<h4><code class="docutils literal notranslate"><span class="pre">_gitpull_exercises_pipeline(task,</span> <span class="pre">pull_subdomain,</span> <span class="pre">git_user,</span> <span class="pre">git_token,</span> <span class="pre">git_repo,</span> <span class="pre">branch,</span> <span class="pre">source_path)</span></code><a class="headerlink" href="#gitpull-exercises-pipeline-task-pull-subdomain-git-user-git-token-git-repo-branch-source-path" title="Permalink to this heading"></a></h4>
+<p>Executes GitPull exercises-only operation using sparse-checkout.</p>
+<p><strong>Key Differences from Full Pull:</strong></p>
+<ol class="arabic">
+<li><p><strong>No Directory Move</strong> - Preserves existing files</p></li>
+<li><p><strong>Sparse-Checkout Configuration</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sparse_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;exercises/</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;README.md</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;database.conf</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>No Database Restoration</strong> - Skips db_rename_database</p></li>
+<li><p><strong>No Session Clearing</strong> - No logout required</p></li>
+</ol>
+<p><strong>Sparse-Checkout Benefits:</strong> - Only fetches specified directories from
+GitHub - Faster than full clone - Preserves all other files (database,
+config, etc.) - Safe for production with active students</p>
+</section>
+</section>
+<section id="task-management">
+<h3>Task Management<a class="headerlink" href="#task-management" title="Permalink to this heading"></a></h3>
+<section id="queuetask-model">
+<h4>QueueTask Model<a class="headerlink" href="#queuetask-model" title="Permalink to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">QueueTask</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">owner</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># &quot;gitsync&quot;, &quot;gitpull&quot;, &quot;gitpull_exercises&quot;</span>
+    <span class="n">subdomain</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">progress</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 0-100</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">done</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">result_file</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="task-lifecycle">
+<h4>Task Lifecycle<a class="headerlink" href="#task-lifecycle" title="Permalink to this heading"></a></h4>
+<ol class="arabic">
+<li><p><strong>Creation</strong> via <code class="docutils literal notranslate"><span class="pre">workqueue.util.enqueue_task()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">task_id</span> <span class="o">=</span> <span class="n">workqueue</span><span class="o">.</span><span class="n">enqueue_task</span><span class="p">(</span>
+    <span class="s2">&quot;gitsync&quot;</span><span class="p">,</span>              <span class="c1"># name</span>
+    <span class="n">run_gitsync_pipeline</span><span class="p">,</span>   <span class="c1"># function</span>
+    <span class="n">subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>    <span class="c1"># for QueueTask record</span>
+    <span class="n">sync_subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>  <span class="c1"># passed to pipeline</span>
+    <span class="n">git_user</span><span class="o">=</span><span class="n">git_user</span><span class="p">,</span>
+    <span class="c1"># ... other kwargs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Execution</strong> by django-rq worker:</p>
+<ul class="simple">
+<li><p>Worker picks task from Redis queue</p></li>
+<li><p>Calls pipeline function with task object and kwargs</p></li>
+<li><p>Pipeline updates task.progress and task.status throughout</p></li>
+</ul>
+</li>
+<li><p><strong>Polling</strong> by client:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">GET</span> <span class="o">/</span><span class="n">queuetask</span><span class="o">/&lt;</span><span class="n">task_id</span><span class="o">&gt;/</span>
+
+<span class="n">Returns</span><span class="p">:</span>
+<span class="p">{</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Pushing to GitHub&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;progress&quot;</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>
+    <span class="s2">&quot;done&quot;</span><span class="p">:</span> <span class="n">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Auto-Deletion</strong> after 20 minutes:</p>
+<ul class="simple">
+<li><p>Managed by django-rq or custom cleanup</p></li>
+<li><p>Prevents database bloat</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="parameter-naming-convention">
+<h4>Parameter Naming Convention<a class="headerlink" href="#parameter-naming-convention" title="Permalink to this heading"></a></h4>
+<p><strong>Important</strong>: <code class="docutils literal notranslate"><span class="pre">enqueue_task()</span></code> consumes <code class="docutils literal notranslate"><span class="pre">subdomain=</span></code> kwarg for the
+QueueTask record. Pipeline functions use different parameter names:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># GitSync</span>
+<span class="n">workqueue</span><span class="o">.</span><span class="n">enqueue_task</span><span class="p">(</span>
+    <span class="s2">&quot;gitsync&quot;</span><span class="p">,</span>
+    <span class="n">run_gitsync_pipeline</span><span class="p">,</span>
+    <span class="n">subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>        <span class="c1"># For QueueTask</span>
+    <span class="n">sync_subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>   <span class="c1"># For pipeline function</span>
+    <span class="c1"># ...</span>
+<span class="p">)</span>
+
+<span class="c1"># GitPull</span>
+<span class="n">workqueue</span><span class="o">.</span><span class="n">enqueue_task</span><span class="p">(</span>
+    <span class="s2">&quot;gitpull&quot;</span><span class="p">,</span>
+    <span class="n">run_gitpull_pipeline</span><span class="p">,</span>
+    <span class="n">subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>        <span class="c1"># For QueueTask</span>
+    <span class="n">pull_subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>   <span class="c1"># For pipeline function</span>
+    <span class="c1"># ...</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="error-handling">
+<h3>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this heading"></a></h3>
+<section id="subprocess-errors">
+<h4>Subprocess Errors<a class="headerlink" href="#subprocess-errors" title="Permalink to this heading"></a></h4>
+<p>All subprocess calls wrapped in try-except:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="n">cmd</span><span class="p">,</span>
+        <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+        <span class="n">check</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+<span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">stderr</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">stderr</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[GitSync] subprocess error: </span><span class="si">{</span><span class="n">stderr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Command failed: </span><span class="si">{</span><span class="n">stderr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">[:</span><span class="mi">250</span><span class="p">]</span>  <span class="c1"># Truncate to 250 chars</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="k">return</span>
+<span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[GitSync] Operation timed out&quot;</span><span class="p">)</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Git operation timed out&quot;</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</section>
+<section id="timeouts">
+<h4>Timeouts<a class="headerlink" href="#timeouts" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Timeout</p></th>
+<th class="head"><p>Reason</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Git clone</p></td>
+<td><p>60s</p></td>
+<td><p>Should be fast with –depth 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git fetch</p></td>
+<td><p>120s</p></td>
+<td><p>May pull more data</p></td>
+</tr>
+<tr class="row-even"><td><p>Git push</p></td>
+<td><p>120s</p></td>
+<td><p>Uploading course data</p></td>
+</tr>
+<tr class="row-odd"><td><p>db_rename_database</p></td>
+<td><p>300s</p></td>
+<td><p>Large database restoration</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="github-api-checks">
+<h4>GitHub API Checks<a class="headerlink" href="#github-api-checks" title="Permalink to this heading"></a></h4>
+<p><strong>GitSync</strong> (before allowing sync):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resp</span> <span class="o">=</span> <span class="n">http_requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;token </span><span class="si">{</span><span class="n">git_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span>
+<span class="p">)</span>
+<span class="n">repo_data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">repo_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;private&quot;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">_gitsync_error</span><span class="p">(</span><span class="s2">&quot;Repository must be private&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>GitPull</strong> (before allowing pull):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resp</span> <span class="o">=</span> <span class="n">http_requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;token </span><span class="si">{</span><span class="n">git_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span>
+<span class="p">)</span>
+<span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">_gitsync_error</span><span class="p">(</span><span class="s2">&quot;Repo does not exist or is not accessible&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="security-considerations">
+<h3>Security Considerations<a class="headerlink" href="#security-considerations" title="Permalink to this heading"></a></h3>
+<ol class="arabic">
+<li><p><strong>Superuser Only</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@user_passes_test</span><span class="p">(</span><span class="k">lambda</span> <span class="n">u</span><span class="p">:</span> <span class="n">u</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">CourseGitSyncView</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">course_pk</span><span class="p">):</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Repository Visibility</strong>:</p>
+<ul class="simple">
+<li><p>GitSync: Requires private repositories (checked via API)</p></li>
+<li><p>GitPull: Allows both public and private</p></li>
+</ul>
+</li>
+<li><p><strong>Token Security</strong>:</p>
+<ul class="simple">
+<li><p>Stored in course.data (database, encrypted at rest)</p></li>
+<li><p>Passed via environment variables (not command line args)</p></li>
+<li><p>Never logged or displayed to users</p></li>
+<li><p>Not included in error messages</p></li>
+</ul>
+</li>
+<li><p><strong>CSRF Protection</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">csrf_token</span> <span class="o">=</span> <span class="n">get_token</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="c1"># Included in all forms</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Path Validation</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">source_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">VOLUME</span><span class="p">,</span> <span class="n">subdomain</span><span class="p">)</span>
+<span class="c1"># settings.VOLUME restricted to /subdomain-data/</span>
+<span class="c1"># Prevents path traversal attacks</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Safety Flags</strong>:</p>
+<ul class="simple">
+<li><p>Mutual exclusion: <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PUSH</span></code> and <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PULL</span></code> cannot
+both be true</p></li>
+<li><p>Explicit opt-in required for pull (safety feature)</p></li>
+<li><p>Checked on every request</p></li>
+</ul>
+</li>
+<li><p><strong>Session Management</strong>:</p>
+<ul class="simple">
+<li><p>Full pull clears all sessions via <code class="docutils literal notranslate"><span class="pre">logout_and_reload()</span></code></p></li>
+<li><p>Prevents unauthorized access with old credentials</p></li>
+<li><p>Forces re-authentication with restored database</p></li>
+</ul>
+</li>
+<li><p><strong>Backup Before Replace</strong>:</p>
+<ul class="simple">
+<li><p>Full pull moves existing data to <code class="docutils literal notranslate"><span class="pre">/subdomain-data/deleted/</span></code></p></li>
+<li><p>Allows recovery if pull goes wrong</p></li>
+<li><p>Preserved indefinitely (manual cleanup)</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h3>
+<section id="settings-required">
+<h4>Settings Required<a class="headerlink" href="#settings-required" title="Permalink to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># settings.py</span>
+<span class="n">VOLUME</span> <span class="o">=</span> <span class="s2">&quot;/subdomain-data&quot;</span>  <span class="c1"># Production</span>
+<span class="c1"># VOLUME = &quot;/tmp/subdomain-data&quot;  # Test</span>
+</pre></div>
+</div>
+</section>
+<section id="course-data-configuration">
+<h4>Course Data Configuration<a class="headerlink" href="#course-data-configuration" title="Permalink to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># For GitSync</span>
+<span class="n">course</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;GIT_USER&quot;</span><span class="p">:</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_TOKEN&quot;</span><span class="p">:</span> <span class="s2">&quot;ghp_...&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_REPO&quot;</span><span class="p">:</span> <span class="s2">&quot;username/repo-name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_ALLOW_PUSH&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_ALLOW_PULL&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># Or absent</span>
+<span class="p">}</span>
+
+<span class="c1"># For GitPull</span>
+<span class="n">course</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;GIT_USER&quot;</span><span class="p">:</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span>  <span class="c1"># Optional for public repos</span>
+    <span class="s2">&quot;GIT_TOKEN&quot;</span><span class="p">:</span> <span class="s2">&quot;ghp_...&quot;</span><span class="p">,</span>  <span class="c1"># Optional for public repos</span>
+    <span class="s2">&quot;GIT_REPO&quot;</span><span class="p">:</span> <span class="s2">&quot;username/repo-name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_ALLOW_PUSH&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># Or absent</span>
+    <span class="s2">&quot;GIT_ALLOW_PULL&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="branch-persistence">
+<h4>Branch Persistence<a class="headerlink" href="#branch-persistence" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p>GitSync: Branch saved to <code class="docutils literal notranslate"><span class="pre">/subdomain-data/&lt;subdomain&gt;/.git-branch</span></code></p></li>
+<li><p>Default branch derived from hostname:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ffm516.openta-demo.org</span></code> → <code class="docutils literal notranslate"><span class="pre">openta-demo</span></code></p></li>
+</ul>
+</li>
+<li><p>GitPull: Branch format <code class="docutils literal notranslate"><span class="pre">{subdomain}.{servername}</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">test3b</span></code> on <code class="docutils literal notranslate"><span class="pre">openta-demo.org</span></code> → <code class="docutils literal notranslate"><span class="pre">test3b.openta-demo</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="commit-history-limit">
+<h4>Commit History Limit<a class="headerlink" href="#commit-history-limit" title="Permalink to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># course/views/views.py, line 669</span>
+<span class="n">commits_resp</span> <span class="o">=</span> <span class="n">http_requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">/commits&quot;</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;sha&quot;</span><span class="p">:</span> <span class="n">branch_val</span><span class="p">,</span> <span class="s2">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>  <span class="c1"># Change to 10, 20, etc.</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="styling">
+<h3>Styling<a class="headerlink" href="#styling" title="Permalink to this heading"></a></h3>
+<p>CSS theme for Git integration UI:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* Dark blue theme */</span>
+<span class="nt">--primary-color</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">1e3a8a</span><span class="o">;</span>
+<span class="nt">--card-width</span><span class="o">:</span><span class="w"> </span><span class="nt">80</span><span class="o">%;</span>
+<span class="nt">--max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">900px</span><span class="o">;</span>
+
+<span class="c">/* Progress bar */</span>
+<span class="nt">progress</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Commit history table */</span>
+<span class="p">.</span><span class="nc">commits-table</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-collapse</span><span class="p">:</span><span class="w"> </span><span class="kc">collapse</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Layout: - 80% width card layout - Centered content - Responsive table
+for commit history - Real-time status updates with progress bar -
+Auto-refresh every 2 seconds on status page</p>
+</section>
+</section>
+<section id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading"></a></h2>
+<section id="url-patterns">
+<h3>URL Patterns<a class="headerlink" href="#url-patterns" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># course/urls.py</span>
+
+<span class="c1"># GitSync URLs</span>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^gitsync/$&quot;</span><span class="p">,</span> <span class="n">GitSyncRedirectView</span><span class="p">),</span>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^course/(?P&lt;course_pk&gt;[0-9]+)/gitsync/$&quot;</span><span class="p">,</span> <span class="n">CourseGitSyncView</span><span class="p">),</span>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^course/(?P&lt;course_pk&gt;[0-9]+)/gitsync/status/(?P&lt;task_id&gt;[0-9]+)/$&quot;</span><span class="p">,</span> <span class="n">CourseGitSyncStatusView</span><span class="p">),</span>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^course/(?P&lt;course_pk&gt;[0-9]+)/gitsync/cancel/(?P&lt;task_id&gt;[0-9]+)/$&quot;</span><span class="p">,</span> <span class="n">CourseGitSyncCancelView</span><span class="p">),</span>
+
+<span class="c1"># GitPull URLs</span>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^gitpull/$&quot;</span><span class="p">,</span> <span class="n">GitPullRedirectView</span><span class="p">),</span>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^course/(?P&lt;course_pk&gt;[0-9]+)/gitpull/$&quot;</span><span class="p">,</span> <span class="n">CourseGitPullView</span><span class="p">),</span>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^course/(?P&lt;course_pk&gt;[0-9]+)/gitpull/status/(?P&lt;task_id&gt;[0-9]+)/$&quot;</span><span class="p">,</span> <span class="n">CourseGitPullStatusView</span><span class="p">),</span>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^course/(?P&lt;course_pk&gt;[0-9]+)/gitpull/cancel/(?P&lt;task_id&gt;[0-9]+)/$&quot;</span><span class="p">,</span> <span class="n">CourseGitPullCancelView</span><span class="p">),</span>
+
+<span class="c1"># Shared task status URL</span>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^queuetask/(?P&lt;task_id&gt;[0-9]+)/$&quot;</span><span class="p">,</span> <span class="n">QueueTaskStatusView</span><span class="p">),</span>
+</pre></div>
+</div>
+</section>
+<section id="task-enqueueing-examples">
+<h3>Task Enqueueing Examples<a class="headerlink" href="#task-enqueueing-examples" title="Permalink to this heading"></a></h3>
+<section id="gitsync-push">
+<h4>GitSync (Push)<a class="headerlink" href="#gitsync-push" title="Permalink to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">workqueue.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">workqueue</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">workqueue.tasks</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_gitsync_pipeline</span>
+
+<span class="n">task_id</span> <span class="o">=</span> <span class="n">workqueue</span><span class="o">.</span><span class="n">enqueue_task</span><span class="p">(</span>
+    <span class="s2">&quot;gitsync&quot;</span><span class="p">,</span>                      <span class="c1"># Task name</span>
+    <span class="n">run_gitsync_pipeline</span><span class="p">,</span>           <span class="c1"># Function to execute</span>
+    <span class="n">subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>            <span class="c1"># For QueueTask record</span>
+    <span class="n">sync_subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>       <span class="c1"># Passed to pipeline</span>
+    <span class="n">git_user</span><span class="o">=</span><span class="n">git_user</span><span class="p">,</span>
+    <span class="n">git_token</span><span class="o">=</span><span class="n">git_token</span><span class="p">,</span>
+    <span class="n">git_repo</span><span class="o">=</span><span class="n">git_repo</span><span class="p">,</span>
+    <span class="n">branch</span><span class="o">=</span><span class="n">branch</span><span class="p">,</span>
+    <span class="n">commit_msg</span><span class="o">=</span><span class="n">commit_msg</span><span class="p">,</span>
+    <span class="n">source_path</span><span class="o">=</span><span class="n">source_path</span><span class="p">,</span>
+    <span class="n">owner</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span>             <span class="c1"># Optional</span>
+<span class="p">)</span>
+
+<span class="c1"># Returns: task_id (integer)</span>
+<span class="c1"># Redirect to: /course/{course_pk}/gitsync/status/{task_id}/</span>
+</pre></div>
+</div>
+</section>
+<section id="gitpull-full">
+<h4>GitPull (Full)<a class="headerlink" href="#gitpull-full" title="Permalink to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">workqueue.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">workqueue</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">workqueue.tasks</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_gitpull_pipeline</span>
+
+<span class="n">task_id</span> <span class="o">=</span> <span class="n">workqueue</span><span class="o">.</span><span class="n">enqueue_task</span><span class="p">(</span>
+    <span class="s2">&quot;gitpull&quot;</span><span class="p">,</span>                      <span class="c1"># Task name</span>
+    <span class="n">run_gitpull_pipeline</span><span class="p">,</span>           <span class="c1"># Function to execute</span>
+    <span class="n">subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>            <span class="c1"># For QueueTask record</span>
+    <span class="n">pull_subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>       <span class="c1"># Passed to pipeline</span>
+    <span class="n">git_user</span><span class="o">=</span><span class="n">git_user</span><span class="p">,</span>              <span class="c1"># Optional for public repos</span>
+    <span class="n">git_token</span><span class="o">=</span><span class="n">git_token</span><span class="p">,</span>            <span class="c1"># Optional for public repos</span>
+    <span class="n">git_repo</span><span class="o">=</span><span class="n">git_repo</span><span class="p">,</span>
+    <span class="n">branch</span><span class="o">=</span><span class="n">branch</span><span class="p">,</span>
+    <span class="n">source_path</span><span class="o">=</span><span class="n">source_path</span><span class="p">,</span>
+    <span class="n">owner</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>                     <span class="c1"># Optional</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="gitpull-exercises-only">
+<h4>GitPull (Exercises Only)<a class="headerlink" href="#gitpull-exercises-only" title="Permalink to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">workqueue.util</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">workqueue</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">workqueue.tasks</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_gitpull_exercises_pipeline</span>
+
+<span class="n">task_id</span> <span class="o">=</span> <span class="n">workqueue</span><span class="o">.</span><span class="n">enqueue_task</span><span class="p">(</span>
+    <span class="s2">&quot;gitpull_exercises&quot;</span><span class="p">,</span>            <span class="c1"># Task name</span>
+    <span class="n">run_gitpull_exercises_pipeline</span><span class="p">,</span> <span class="c1"># Function to execute</span>
+    <span class="n">subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>            <span class="c1"># For QueueTask record</span>
+    <span class="n">pull_subdomain</span><span class="o">=</span><span class="n">subdomain</span><span class="p">,</span>       <span class="c1"># Passed to pipeline</span>
+    <span class="n">git_user</span><span class="o">=</span><span class="n">git_user</span><span class="p">,</span>
+    <span class="n">git_token</span><span class="o">=</span><span class="n">git_token</span><span class="p">,</span>
+    <span class="n">git_repo</span><span class="o">=</span><span class="n">git_repo</span><span class="p">,</span>
+    <span class="n">branch</span><span class="o">=</span><span class="n">branch</span><span class="p">,</span>
+    <span class="n">source_path</span><span class="o">=</span><span class="n">source_path</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="task-status-polling">
+<h3>Task Status Polling<a class="headerlink" href="#task-status-polling" title="Permalink to this heading"></a></h3>
+<section id="endpoint">
+<h4>Endpoint<a class="headerlink" href="#endpoint" title="Permalink to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GET</span> <span class="o">/</span><span class="n">queuetask</span><span class="o">/&lt;</span><span class="n">task_id</span><span class="o">&gt;/</span>
+</pre></div>
+</div>
+</section>
+<section id="response-format">
+<h4>Response Format<a class="headerlink" href="#response-format" title="Permalink to this heading"></a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pushing to GitHub&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;progress&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;done&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="javascript-polling-example">
+<h4>JavaScript Polling Example<a class="headerlink" href="#javascript-polling-example" title="Permalink to this heading"></a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">pollTaskStatus</span><span class="p">(</span><span class="nx">taskId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`/queuetask/</span><span class="si">${</span><span class="nx">taskId</span><span class="si">}</span><span class="sb">/`</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Update UI</span>
+<span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.progress-bar&#39;</span><span class="p">).</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">progress</span><span class="p">;</span>
+<span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.status-text&#39;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">status</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">.</span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">pollTaskStatus</span><span class="p">(</span><span class="nx">taskId</span><span class="p">),</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span><span class="w">  </span><span class="c1">// Poll every 2s</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Task complete</span>
+<span class="w">                </span><span class="nx">showCompleteButton</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="github-api-integration">
+<h3>GitHub API Integration<a class="headerlink" href="#github-api-integration" title="Permalink to this heading"></a></h3>
+<section id="check-repository-visibility">
+<h4>Check Repository Visibility<a class="headerlink" href="#check-repository-visibility" title="Permalink to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;token </span><span class="si">{</span><span class="n">git_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/vnd.github.v3+json&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">15</span>
+<span class="p">)</span>
+
+<span class="n">repo_data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">is_private</span> <span class="o">=</span> <span class="n">repo_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;private&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">repo_size</span> <span class="o">=</span> <span class="n">repo_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># In KB</span>
+</pre></div>
+</div>
+</section>
+<section id="fetch-commit-history">
+<h4>Fetch Commit History<a class="headerlink" href="#fetch-commit-history" title="Permalink to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">/commits&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;token </span><span class="si">{</span><span class="n">git_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/vnd.github.v3+json&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;sha&quot;</span><span class="p">:</span> <span class="n">branch</span><span class="p">,</span>      <span class="c1"># Branch name</span>
+        <span class="s2">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>      <span class="c1"># Number of commits</span>
+    <span class="p">},</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span>
+<span class="p">)</span>
+
+<span class="n">commits</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">commit</span> <span class="ow">in</span> <span class="n">commits</span><span class="p">:</span>
+    <span class="nb">hash</span> <span class="o">=</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;sha&quot;</span><span class="p">][:</span><span class="mi">7</span><span class="p">]</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;commit&quot;</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">commit</span><span class="p">[</span><span class="s2">&quot;commit&quot;</span><span class="p">][</span><span class="s2">&quot;committer&quot;</span><span class="p">][</span><span class="s2">&quot;date&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="check-branch-exists">
+<h4>Check Branch Exists<a class="headerlink" href="#check-branch-exists" title="Permalink to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Via git command (used in code)</span>
+git<span class="w"> </span>ls-remote<span class="w"> </span>--heads<span class="w"> </span>origin<span class="w"> </span>&lt;branch&gt;
+
+<span class="c1"># Returns: refs/heads/&lt;branch&gt; if exists, empty if not</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="development-notes">
+<h2>Development Notes<a class="headerlink" href="#development-notes" title="Permalink to this heading"></a></h2>
+<section id="adding-new-excluded-directories">
+<h3>Adding New Excluded Directories<a class="headerlink" href="#adding-new-excluded-directories" title="Permalink to this heading"></a></h3>
+<p>To exclude additional directories from GitSync:</p>
+<p><strong>Edit ``_gitsync_pipeline()`` function:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In rsync command</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+    <span class="s2">&quot;rsync&quot;</span><span class="p">,</span> <span class="s2">&quot;-av&quot;</span><span class="p">,</span> <span class="s2">&quot;--delete&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--exclude=backups&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--exclude=xsl&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--exclude=csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--exclude=html&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--exclude=new_directory&quot;</span><span class="p">,</span>  <span class="c1"># Add here</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">source_path</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">repo_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">subdomain</span><span class="si">}</span><span class="s2">/&quot;</span>
+<span class="p">])</span>
+
+<span class="c1"># In cleanup section</span>
+<span class="n">excluded_dirs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;backups&quot;</span><span class="p">,</span> <span class="s2">&quot;xsl&quot;</span><span class="p">,</span> <span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="s2">&quot;new_directory&quot;</span><span class="p">]</span>  <span class="c1"># Add here</span>
+<span class="k">for</span> <span class="n">dir_name</span> <span class="ow">in</span> <span class="n">excluded_dirs</span><span class="p">:</span>
+    <span class="n">dir_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">repo_path</span><span class="p">,</span> <span class="n">subdomain</span><span class="p">,</span> <span class="n">dir_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">dir_path</span><span class="p">):</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="changing-commit-history-count">
+<h3>Changing Commit History Count<a class="headerlink" href="#changing-commit-history-count" title="Permalink to this heading"></a></h3>
+<p><strong>Edit ``CourseGitSyncView()`` function, line 669:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">commits_resp</span> <span class="o">=</span> <span class="n">http_requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">/commits&quot;</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;sha&quot;</span><span class="p">:</span> <span class="n">branch_val</span><span class="p">,</span> <span class="s2">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>  <span class="c1"># Change from 4 to 10</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="changing-pull-sparse-checkout-paths">
+<h3>Changing Pull Sparse-Checkout Paths<a class="headerlink" href="#changing-pull-sparse-checkout-paths" title="Permalink to this heading"></a></h3>
+<p>For exercises-only pull, edit <code class="docutils literal notranslate"><span class="pre">_gitpull_exercises_pipeline()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sparse_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s2">&quot;info&quot;</span><span class="p">,</span> <span class="s2">&quot;sparse-checkout&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sparse_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sf</span><span class="p">:</span>
+    <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;exercises/</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;README.md</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;database.conf</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;new_path/</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Add new path here</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-new-pull-modes">
+<h3>Adding New Pull Modes<a class="headerlink" href="#adding-new-pull-modes" title="Permalink to this heading"></a></h3>
+<p>To create a new selective pull mode (e.g., “config-only”):</p>
+<p><strong>Step 1: Add task wrapper in ``workqueue/tasks.py``:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">run_gitpull_config_pipeline</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">pull_subdomain</span><span class="p">,</span> <span class="n">git_user</span><span class="p">,</span> <span class="n">git_token</span><span class="p">,</span> <span class="n">git_repo</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="n">source_path</span><span class="p">,</span> <span class="n">subdomain</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">course.views.views</span><span class="w"> </span><span class="kn">import</span> <span class="n">_gitpull_config_pipeline</span>
+    <span class="k">return</span> <span class="n">_gitpull_config_pipeline</span><span class="p">(</span>
+        <span class="n">task</span><span class="p">,</span>
+        <span class="n">pull_subdomain</span><span class="o">=</span><span class="n">pull_subdomain</span><span class="p">,</span>
+        <span class="n">git_user</span><span class="o">=</span><span class="n">git_user</span><span class="p">,</span>
+        <span class="n">git_token</span><span class="o">=</span><span class="n">git_token</span><span class="p">,</span>
+        <span class="n">git_repo</span><span class="o">=</span><span class="n">git_repo</span><span class="p">,</span>
+        <span class="n">branch</span><span class="o">=</span><span class="n">branch</span><span class="p">,</span>
+        <span class="n">source_path</span><span class="o">=</span><span class="n">source_path</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Step 2: Add pipeline function in ``course/views/views.py``:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_gitpull_config_pipeline</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">pull_subdomain</span><span class="p">,</span> <span class="n">git_user</span><span class="p">,</span> <span class="n">git_token</span><span class="p">,</span> <span class="n">git_repo</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="n">source_path</span><span class="p">):</span>
+    <span class="c1"># Similar structure to _gitpull_exercises_pipeline</span>
+    <span class="c1"># But with different sparse-checkout configuration</span>
+
+    <span class="n">sparse_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s2">&quot;info&quot;</span><span class="p">,</span> <span class="s2">&quot;sparse-checkout&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sparse_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sf</span><span class="p">:</span>
+        <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;*.conf</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;*.ini</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;settings/</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Rest similar to exercises pipeline</span>
+</pre></div>
+</div>
+<p><strong>Step 3: Update ``CourseGitPullView()`` POST handler:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pull_scope</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pull_scope&quot;</span><span class="p">,</span> <span class="s2">&quot;full&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">pull_scope</span> <span class="o">==</span> <span class="s2">&quot;config&quot;</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">workqueue.tasks</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_gitpull_config_pipeline</span>
+    <span class="n">task_id</span> <span class="o">=</span> <span class="n">workqueue</span><span class="o">.</span><span class="n">enqueue_task</span><span class="p">(</span>
+        <span class="s2">&quot;gitpull_config&quot;</span><span class="p">,</span>
+        <span class="n">run_gitpull_config_pipeline</span><span class="p">,</span>
+        <span class="c1"># ... kwargs</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Step 4: Update ``templates/gitpull/confirm.html``:</strong></p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;pull_scope&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;full&quot;</span> <span class="na">checked</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Full Pull<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;pull_scope&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;exercises&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Exercises Only<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;pull_scope&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;config&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Config Only<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="using-a-different-git-provider">
+<h3>Using a Different Git Provider<a class="headerlink" href="#using-a-different-git-provider" title="Permalink to this heading"></a></h3>
+<p>Currently hardcoded for GitHub. To support GitLab, Bitbucket, etc.:</p>
+<p><strong>Step 1: Add provider field to course.data:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">course</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;GIT_PROVIDER&quot;</span><span class="p">:</span> <span class="s2">&quot;gitlab&quot;</span><span class="p">,</span>  <span class="c1"># or &quot;github&quot;, &quot;bitbucket&quot;</span>
+    <span class="s2">&quot;GIT_USER&quot;</span><span class="p">:</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_TOKEN&quot;</span><span class="p">:</span> <span class="s2">&quot;token&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GIT_REPO&quot;</span><span class="p">:</span> <span class="s2">&quot;username/repo&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Step 2: Parameterize URLs in pipeline functions:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">provider</span> <span class="o">=</span> <span class="n">cdata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;GIT_PROVIDER&quot;</span><span class="p">,</span> <span class="s2">&quot;github&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;github&quot;</span><span class="p">:</span>
+    <span class="n">clone_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://</span><span class="si">{</span><span class="n">git_user</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">git_token</span><span class="si">}</span><span class="s2">@github.com/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">.git&quot;</span>
+    <span class="n">api_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.github.com/repos/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">elif</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;gitlab&quot;</span><span class="p">:</span>
+    <span class="n">clone_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://oauth2:</span><span class="si">{</span><span class="n">git_token</span><span class="si">}</span><span class="s2">@gitlab.com/</span><span class="si">{</span><span class="n">git_repo</span><span class="si">}</span><span class="s2">.git&quot;</span>
+    <span class="n">api_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://gitlab.com/api/v4/projects/</span><span class="si">{</span><span class="n">git_repo</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;</span><span class="si">%2F</span><span class="s1">&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p><strong>Step 3: Adjust API calls for commit history and visibility:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;github&quot;</span><span class="p">:</span>
+    <span class="c1"># GitHub API calls</span>
+<span class="k">elif</span> <span class="n">provider</span> <span class="o">==</span> <span class="s2">&quot;gitlab&quot;</span><span class="p">:</span>
+    <span class="c1"># GitLab API calls (different endpoints and response format)</span>
+</pre></div>
+</div>
+</section>
+<section id="testing-locally">
+<h3>Testing Locally<a class="headerlink" href="#testing-locally" title="Permalink to this heading"></a></h3>
+<p><strong>Set up test environment:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create test subdomain directory</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>/tmp/subdomain-data/test-subdomain
+
+<span class="c1"># Set settings.VOLUME</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">VOLUME</span><span class="o">=</span><span class="s2">&quot;/tmp/subdomain-data&quot;</span>
+
+<span class="c1"># Create test course with git config</span>
+<span class="c1"># (Django shell or admin interface)</span>
+</pre></div>
+</div>
+<p><strong>Test GitSync:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start django-rq worker</span>
+python<span class="w"> </span>manage.py<span class="w"> </span>rqworker<span class="w"> </span>default
+
+<span class="c1"># Access /course/1/gitsync/ in browser</span>
+<span class="c1"># Monitor worker logs</span>
+</pre></div>
+</div>
+<p><strong>Test GitPull:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure test repo exists on GitHub</span>
+<span class="c1"># Access /course/1/gitpull/ in browser</span>
+<span class="c1"># Monitor worker logs and /tmp/subdomain-data/</span>
+</pre></div>
+</div>
+<p><strong>Check task status:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Django shell</span>
+from<span class="w"> </span>workqueue.models<span class="w"> </span>import<span class="w"> </span>QueueTask
+<span class="nv">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>QueueTask.objects.filter<span class="o">(</span><span class="nv">subdomain</span><span class="o">=</span><span class="s2">&quot;test-subdomain&quot;</span><span class="o">)</span>
+<span class="k">for</span><span class="w"> </span>t<span class="w"> </span><span class="k">in</span><span class="w"> </span>tasks:
+<span class="w">    </span>print<span class="o">(</span>f<span class="s2">&quot;{t.name}: {t.progress}% - {t.status}&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="troubleshooting-for-administrators">
+<h2>Troubleshooting for Administrators<a class="headerlink" href="#troubleshooting-for-administrators" title="Permalink to this heading"></a></h2>
+<section id="task-queue-not-processing">
+<h3>Task Queue Not Processing<a class="headerlink" href="#task-queue-not-processing" title="Permalink to this heading"></a></h3>
+<p><strong>Symptoms</strong>: Tasks stuck at 0%, status page doesn’t update</p>
+<p><strong>Check</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Is Redis running?</span>
+redis-cli<span class="w"> </span>ping
+<span class="c1"># Should return: PONG</span>
+
+<span class="c1"># Is RQ worker running?</span>
+ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>rqworker
+
+<span class="c1"># Check RQ queue status</span>
+python<span class="w"> </span>manage.py<span class="w"> </span>rq_info
+</pre></div>
+</div>
+<p><strong>Fix</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start Redis</span>
+service<span class="w"> </span>redis<span class="w"> </span>start
+
+<span class="c1"># Start RQ worker</span>
+python<span class="w"> </span>manage.py<span class="w"> </span>rqworker<span class="w"> </span>default<span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+</section>
+<section id="git-clone-fetch-failing">
+<h3>Git Clone/Fetch Failing<a class="headerlink" href="#git-clone-fetch-failing" title="Permalink to this heading"></a></h3>
+<p><strong>Symptoms</strong>: “git fetch failed: couldn’t find remote ref”</p>
+<p><strong>Common causes</strong>: - Branch doesn’t exist - Wrong credentials - Network
+issues - Repo doesn’t exist</p>
+<p><strong>Debug</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test manually</span>
+<span class="nb">cd</span><span class="w"> </span>/tmp
+git<span class="w"> </span>clone<span class="w"> </span>https://username:token@github.com/username/repo.git
+
+<span class="c1"># Check specific branch</span>
+git<span class="w"> </span>ls-remote<span class="w"> </span>https://github.com/username/repo.git<span class="w"> </span>branch-name
+</pre></div>
+</div>
+</section>
+<section id="database-restoration-failing">
+<h3>Database Restoration Failing<a class="headerlink" href="#database-restoration-failing" title="Permalink to this heading"></a></h3>
+<p><strong>Symptoms</strong>: “db_rename_database failed” or timeout</p>
+<p><strong>Check</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Does script exist?</span>
+ls<span class="w"> </span>-la<span class="w"> </span>/path/to/backend/db_rename_database
+
+<span class="c1"># Is it executable?</span>
+chmod<span class="w"> </span>+x<span class="w"> </span>/path/to/backend/db_rename_database
+
+<span class="c1"># Run manually</span>
+/path/to/backend/db_rename_database<span class="w"> </span>test-subdomain
+</pre></div>
+</div>
+<p><strong>Common issues</strong>: - <code class="docutils literal notranslate"><span class="pre">database.conf</span></code> missing or malformed - Database
+file doesn’t exist in pulled data - PostgreSQL connection issues -
+Permissions on <code class="docutils literal notranslate"><span class="pre">/subdomain-data/</span></code></p>
+</section>
+<section id="sparse-checkout-not-working">
+<h3>Sparse-Checkout Not Working<a class="headerlink" href="#sparse-checkout-not-working" title="Permalink to this heading"></a></h3>
+<p><strong>Symptoms</strong>: Full repo pulled even with sparse-checkout</p>
+<p><strong>Debug</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/subdomain-data/test-subdomain
+git<span class="w"> </span>config<span class="w"> </span>core.sparseCheckout
+<span class="c1"># Should return: true</span>
+
+cat<span class="w"> </span>.git/info/sparse-checkout
+<span class="c1"># Should list only desired paths</span>
+
+git<span class="w"> </span>sparse-checkout<span class="w"> </span>list
+<span class="c1"># Shows active sparse patterns</span>
+</pre></div>
+</div>
+<p><strong>Fix</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reinitialize sparse-checkout</span>
+git<span class="w"> </span>sparse-checkout<span class="w"> </span>init
+git<span class="w"> </span>sparse-checkout<span class="w"> </span><span class="nb">set</span><span class="w"> </span>exercises/<span class="w"> </span>README.md
+</pre></div>
+</div>
+</section>
+<section id="github-api-rate-limiting">
+<h3>GitHub API Rate Limiting<a class="headerlink" href="#github-api-rate-limiting" title="Permalink to this heading"></a></h3>
+<p><strong>Symptoms</strong>: “API rate limit exceeded”</p>
+<p><strong>Check</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: token </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://api.github.com/rate_limit
+</pre></div>
+</div>
+<p><strong>Solutions</strong>: - Use authenticated requests (higher limit) - Cache
+commit history responses - Reduce API calls (increase commit history
+cache TTL)</p>
+</section>
+<section id="large-repo-timeouts">
+<h3>Large Repo Timeouts<a class="headerlink" href="#large-repo-timeouts" title="Permalink to this heading"></a></h3>
+<p><strong>Symptoms</strong>: “Git operation timed out” on large repos</p>
+<p><strong>Fix</strong>: 1. Increase timeout in pipeline function:
+<code class="docutils literal notranslate"><span class="pre">python</span>&#160;&#160;&#160; <span class="pre">subprocess.run([...],</span> <span class="pre">timeout=300)</span>&#160; <span class="pre">#</span> <span class="pre">Increase</span> <span class="pre">from</span> <span class="pre">120</span></code></p>
+<ol class="arabic" start="2">
+<li><p>Or use shallow clones more aggressively:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>--single-branch<span class="w"> </span>...
+</pre></div>
+</div>
+</li>
+<li><p>Or fetch only recent commits:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>fetch<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>...
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="deleted-directory-running-out-of-space">
+<h3>Deleted Directory Running Out of Space<a class="headerlink" href="#deleted-directory-running-out-of-space" title="Permalink to this heading"></a></h3>
+<p><strong>Symptoms</strong>: Disk full, many backups in <code class="docutils literal notranslate"><span class="pre">/subdomain-data/deleted/</span></code></p>
+<p><strong>Check</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>du<span class="w"> </span>-sh<span class="w"> </span>/subdomain-data/deleted/*
+</pre></div>
+</div>
+<p><strong>Cleanup</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete old backups (older than 30 days)</span>
+find<span class="w"> </span>/subdomain-data/deleted/<span class="w"> </span>-mtime<span class="w"> </span>+30<span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+
+<span class="c1"># Or clean up specific subdomain backups</span>
+rm<span class="w"> </span>-rf<span class="w"> </span>/subdomain-data/deleted/old-subdomain-*
+</pre></div>
+</div>
+<p><strong>Automate cleanup</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add to cron</span>
+<span class="m">0</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>find<span class="w"> </span>/subdomain-data/deleted/<span class="w"> </span>-mtime<span class="w"> </span>+30<span class="w"> </span>-delete
+</pre></div>
+</div>
+</section>
+</section>
+<section id="version-history">
+<h2>Version History<a class="headerlink" href="#version-history" title="Permalink to this heading"></a></h2>
+<section id="february-2026-initial-release">
+<h3>February 2026 - Initial Release<a class="headerlink" href="#february-2026-initial-release" title="Permalink to this heading"></a></h3>
+<p><strong>GitSync (Push) Features:</strong> - Push subdomain data to GitHub private
+repositories - README.md editor with live markdown preview - Commit
+history display (last 4 commits via GitHub API) - Auto-generated branch
+names from hostname - Branch auto-creation if doesn’t exist remotely -
+Excluded directories: backups/, xsl/, csv/, html/ - Automatic cleanup of
+excluded dirs from repo - Database backup before each sync - rsync-based
+file synchronization with –delete flag - –force-with-lease push (safe
+force push) - Async processing via Django-RQ - Real-time progress
+tracking (0-100%) - Status polling endpoint with 2-second refresh -
+Cancel functionality - Safety flag: GIT_ALLOW_PUSH - Superuser-only
+access</p>
+<p><strong>GitPull (Pull) Features:</strong> - Two modes: Full Pull and Exercises-Only
+Pull - Full Pull: Complete course restoration - Moves existing data to
+/subdomain-data/deleted/ - Shallow clone with –depth 1 - Database
+restoration via db_rename_database - OpenTA site URL update - Session
+clearing and user logout - Course key alignment for exercises -
+Exercises-Only Pull: Selective update - Git sparse-checkout for
+exercises/ only - Preserves database and configuration - No session
+clearing - Course key alignment - Support for both public and private
+repositories - Optional credentials for public repos - Safety flags:
+GIT_ALLOW_PULL + mutual exclusion with PUSH - Branch naming:
+{subdomain}.{servername} - GitHub API validation of repo accessibility -
+Async processing with real-time status - Cancel functionality</p>
+<p><strong>Shared Infrastructure:</strong> - Template system (form, status, error,
+layout pages) - Task queue management (QueueTask model) - Auto-deletion
+of tasks after 20 minutes - Error handling with truncated messages (255
+char limit) - Timeout handling for all subprocess calls - Comprehensive
+logging - CSRF protection - Path validation and security checks</p>
+<p><strong>User Interface:</strong> - Dark blue theme (#1e3a8a) - 80% width card layout
+- Responsive commit history table - Progress bar with percentage -
+Auto-refreshing status page (2s interval) - Preview README functionality
+- Clear warning messages for destructive operations - Radio button
+selection for pull modes</p>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading"></a></h2>
+<p>This Git integration provides a complete solution for OpenTA course
+version control and deployment:</p>
+<p><strong>For Teachers:</strong> - Simple backup with GitSync - Easy restoration with
+GitPull - Safe exercise updates without affecting students - Clear UI
+with progress tracking - Safety features prevent accidents</p>
+<p><strong>For Developers:</strong> - Clean separation of concerns - Async processing
+prevents blocking - Comprehensive error handling - Extensive logging for
+debugging - Modular pipeline functions - Easy to extend with new
+features</p>
+<p><strong>Key Design Principles:</strong> 1. <strong>Safety First</strong>: Mutual exclusion flags,
+backups before replacement, explicit opt-in 2. <strong>User-Friendly</strong>: Clear
+UI, real-time progress, helpful error messages 3. <strong>Flexible</strong>: Full or
+selective sync, public or private repos 4. <strong>Reliable</strong>: Timeout
+handling, error recovery, comprehensive logging 5. <strong>Secure</strong>:
+Superuser-only, token security, CSRF protection, path validation</p>
+<p>The system has been in production since February 2026 with proven
+reliability for course backup and deployment workflows.</p>
+<p><strong>End of Documentation</strong></p>
+<p>For questions, issues, or feature requests, contact the OpenTA
+development team.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../show_source_feature/index.html" class="btn btn-neutral float-left" title="Show Source Feature" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../installing/index.html" class="btn btn-neutral float-right" title="Installing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Hampus Linander, Stellan Östlund.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

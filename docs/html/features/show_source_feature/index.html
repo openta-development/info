@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Show Source Feature &mdash; OpenTA  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=39b4d592" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/js/showdomain.js?v=94da2774"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Git Sync &amp; Pull: User Guide" href="../gitsync/index.html" />
+    <link rel="prev" title="OPENTA XML Generation Rules" href="../openta_xml_rules/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            OpenTA
+          </a><div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+<div class="openta-vars">
+  <p class="caption" role="heading"><span class="caption-text">Session Variables</span></p>
+  <form id="openta-vars-form">
+    <div class="openta-field">
+      <label for="openta-remote-user">Remote user</label>
+      <input id="openta-remote-user" type="text" placeholder="remote-user" />
+    </div>
+    <div class="openta-field">
+      <label for="openta-remote-host">Remote host</label>
+      <input id="openta-remote-host" type="text" placeholder="remote-host" />
+    </div>
+  </form>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/adoption.html">Adoption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Authors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html">Authoring questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#creating-exercises">Creating Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#openta-xml-generation-rules">OPENTA XML Generation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#xml-schema">XML SCHEMA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Admins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">OpenTA For Admins</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Students</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student/index.html">Access and first time login</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Example Courses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../example-courses/index.html">OpenTA - example courses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Features</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Features</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../translations/index.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../otp/index.html">OTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openta_xml_rules/index.html">OPENTA XML Generation Rules</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Show Source Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gitsync/index.html">Git Sync &amp; Pull: User Guide</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installing/index.html">Installing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">WebWorks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html">OpenTA For webworks users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#create-a-blank-course">Create a blank course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#canvas-setup">Canvas setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#migrate-your-course-to-the-webwork-instance-at-openta">Migrate your course to the WebWork instance at openta</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../pdfindex.html">OpenTA Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../overview/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/adoption.html">Adoption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../author/index.html">Authoring questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../author/index.html#creating-exercises">Creating Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../author/index.html#openta-xml-generation-rules">OPENTA XML Generation Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../author/index.html#xml-schema">XML SCHEMA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/gettingstarted/index.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../student/index.html">Access and first time login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../example-courses/index.html">OpenTA - example courses</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installing/local/index.html">Install OpenTA using Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installing/local/index.html#fully-install-openta-either-locally-or-remote-vps">Fully install OpenTA either locally or remote vps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installing/local/index.html#clone-the-openta-repo">Clone the openta repo</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OpenTA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Features</a></li>
+      <li class="breadcrumb-item active">Show Source Feature</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/features/show_source_feature/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="show-source-feature">
+<h1>Show Source Feature<a class="headerlink" href="#show-source-feature" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">show_source</span></code> attribute allows the raw XML source of an exercise
+(or part of it) to be displayed instead of the rendered exercise.</p>
+<p>This feature is primarily intended for:</p>
+<ul class="simple">
+<li><p>Users learning how to create exercises in OpenTA</p></li>
+<li><p>Course participants in “how to use OpenTA” courses</p></li>
+<li><p>Authors who want to inspect XML structure directly</p></li>
+</ul>
+<p>When activated,  the raw XML is displayed in addition to the rendered content.</p>
+<section id="activation-requirements">
+<h3>Activation Requirements<a class="headerlink" href="#activation-requirements" title="Permalink to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">show_source</span></code> attribute works only if:</p>
+<ol class="arabic simple">
+<li><p>It is present in the XML, <strong>and</strong></p></li>
+<li><p>The corresponding course setting that enables “Show Source” is
+activated.</p></li>
+</ol>
+<p>If the course setting is disabled, the attribute is silently ignored.</p>
+<p>This allows the attribute to remain in exercise files without affecting
+production courses.</p>
+</section>
+</section>
+<section id="user-guide">
+<h2>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this heading"></a></h2>
+<section id="where-it-can-be-placed">
+<h3>Where It Can Be Placed<a class="headerlink" href="#where-it-can-be-placed" title="Permalink to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">show_source</span></code> attribute may be placed on any first-level block:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;exercise&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;global&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;question&gt;</span></code></p></li>
+</ul>
+</section>
+<section id="scope-rules">
+<h3>Scope Rules<a class="headerlink" href="#scope-rules" title="Permalink to this heading"></a></h3>
+<p>The scope depends entirely on placement.</p>
+<ol class="arabic">
+<li><p>On <code class="docutils literal notranslate"><span class="pre">&lt;exercise&gt;</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>…</p>
+<p>Effect:</p>
+<ul class="simple">
+<li><p>Displays the raw XML of the entire exercise</p></li>
+<li><p>All inner <code class="docutils literal notranslate"><span class="pre">show_source</span></code> attributes are ignored</p></li>
+<li><p>No rendering occurs anywhere in the exercise</p></li>
+</ul>
+</li>
+<li><p>On <code class="docutils literal notranslate"><span class="pre">&lt;global&gt;</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>…</p>
+<p>Effect:</p>
+<ul class="simple">
+<li><p>Displays only the raw XML of the <code class="docutils literal notranslate"><span class="pre">&lt;global&gt;</span></code> block</p></li>
+<li><p>Other parts of the exercise render normally</p></li>
+<li><p>Overridden if <code class="docutils literal notranslate"><span class="pre">&lt;exercise&gt;</span></code> has <code class="docutils literal notranslate"><span class="pre">show_source</span></code></p></li>
+</ul>
+</li>
+<li><p>On <code class="docutils literal notranslate"><span class="pre">&lt;question&gt;</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>…</p>
+<p>Effect:</p>
+<ul class="simple">
+<li><p>Displays only the raw XML of that specific question</p></li>
+<li><p>Other questions render normally</p></li>
+<li><p>Overridden if <code class="docutils literal notranslate"><span class="pre">&lt;exercise&gt;</span></code> has <code class="docutils literal notranslate"><span class="pre">show_source</span></code></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="precedence-rules">
+<h3>Precedence Rules<a class="headerlink" href="#precedence-rules" title="Permalink to this heading"></a></h3>
+<p>If <code class="docutils literal notranslate"><span class="pre">show_source</span></code> appears in multiple places:</p>
+<ol class="arabic simple">
+<li><p>The outermost placement takes priority.</p></li>
+<li><p>Inner placements are ignored.</p></li>
+</ol>
+<p>Hierarchy:</p>
+<p>exercise &gt; global &gt; question</p>
+</section>
+<section id="what-is-displayed">
+<h3>What Is Displayed<a class="headerlink" href="#what-is-displayed" title="Permalink to this heading"></a></h3>
+<p>When activated, the following is shown:</p>
+<ul class="simple">
+<li><p>Raw XML exactly as written</p></li>
+<li><p>No LaTeX processing</p></li>
+<li><p>No MathJax rendering</p></li>
+<li><p>No HTML interpretation</p></li>
+</ul>
+<p>This allows users to study:</p>
+<ul class="simple">
+<li><p>Structure</p></li>
+<li><p>Attributes</p></li>
+<li><p>Expressions</p></li>
+<li><p>Hints</p></li>
+<li><p>Validation patterns</p></li>
+</ul>
+</section>
+<section id="best-practices">
+<h3>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Enable this feature only in instructional or development courses.</p></li>
+<li><p>Avoid using it in production assessment courses.</p></li>
+<li><p>Use exercise-level placement when documenting complete structure.</p></li>
+<li><p>Use question-level placement when demonstrating specific constructs.</p></li>
+</ul>
+</section>
+</section>
+<section id="developer-reference">
+<h2>Developer Reference<a class="headerlink" href="#developer-reference" title="Permalink to this heading"></a></h2>
+<section id="attribute-behavior">
+<h3>Attribute Behavior<a class="headerlink" href="#attribute-behavior" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Attribute name: <code class="docutils literal notranslate"><span class="pre">show_source</span></code></p></li>
+<li><p>Expected value: <code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code></p></li>
+<li><p>Default behavior: If absent, no source is shown.</p></li>
+</ul>
+<p>If the attribute appears at multiple levels, only the outermost
+first-level block is activated.</p>
+</section>
+<section id="rendering-logic">
+<h3>Rendering Logic<a class="headerlink" href="#rendering-logic" title="Permalink to this heading"></a></h3>
+<p>When <code class="docutils literal notranslate"><span class="pre">show_source</span></code> is active for a given scope:</p>
+<ul class="simple">
+<li><p>Rendering of that scope is suppressed.</p></li>
+<li><p>The raw XML string for that scope is returned.</p></li>
+<li><p>Inner <code class="docutils literal notranslate"><span class="pre">show_source</span></code> attributes are ignored if overridden by an
+outer scope.</p></li>
+</ul>
+</section>
+<section id="security-considerations">
+<h3>Security Considerations<a class="headerlink" href="#security-considerations" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>The attribute is gated by a course-level configuration setting.</p></li>
+<li><p>If the course setting is disabled, the attribute is ignored.</p></li>
+<li><p>This prevents accidental exposure in production environments.</p></li>
+</ul>
+</section>
+<section id="intended-use-cases">
+<h3>Intended Use Cases<a class="headerlink" href="#intended-use-cases" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Teaching XML structure in OpenTA</p></li>
+<li><p>Debugging exercise structure</p></li>
+<li><p>Documentation and review</p></li>
+<li><p>Demonstration courses</p></li>
+</ul>
+</section>
+<section id="example-full-exercise">
+<h3>Example: Full Exercise<a class="headerlink" href="#example-full-exercise" title="Permalink to this heading"></a></h3>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>a = 5 a + 3</p>
+<p>In this case, the full raw XML is displayed instead of rendered output.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../openta_xml_rules/index.html" class="btn btn-neutral float-left" title="OPENTA XML Generation Rules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../gitsync/index.html" class="btn btn-neutral float-right" title="Git Sync &amp; Pull: User Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Hampus Linander, Stellan Östlund.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
