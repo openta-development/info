@@ -48,30 +48,8 @@ OpenTA For Admins
 Teachers must create a course, create exercises and manage
 participants. This section will guide you through these steps.
 
-:doc:`admin/gettingstarted/index`
-     Instructions on how to set up a course.
-
-:doc:`admin/managing_course/index`
-     Read up on how to publish exercises, setup deadlines, provide
-     access to students, use translations and enable `Learning Tools
-     Interoperability (LTI)
-     <https://en.wikipedia.org/wiki/Learning_Tools_Interoperability>`_.
-
-:doc:`admin/managing_participants/index`
-     Tells you how to manage users, creating privileged users,
-     deleting users, and disabling student access.
-
-
-:doc:`admin/finishing/index`
-     Instructions on how terminate and archive a course
-
-
-OpenTA For Authors
---------------------
-
-:doc:`author/index`
-     Instructions for authoring
-
+:doc:`admin/index`
+     Instructions on how to set up, manage and finish a course.
 
 
 
@@ -95,6 +73,20 @@ Example Courses
 :doc:`example-courses/index`
      Some examples with anonymous login
 
+
+
+Features
+--------------------
+
+:doc:`features/index`
+     Documentation on OpenTA features such as translations, one-time
+     passwords, XML rules, and more.
+
+Installing
+--------------------
+
+:doc:`installing/index`
+     Instructions for installing OpenTA.
 
 
 .. only:: html
@@ -131,14 +123,11 @@ Example Courses
 ..    :caption: OpenTA for Webworks
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: OpenTA For Admins
    :hidden:
 
-   admin/gettingstarted/index
-   admin/managing_course/index
-   admin/managing_participants/index
-   admin/finishing/index
+   admin/index
 
 
 
@@ -165,15 +154,11 @@ Example Courses
    example-courses/index
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Features
    :hidden:
-   :titlesonly:
 
-   features/translations/index
-   features/otp/index
-   features/openta_xml_rules/index
-   features/show_source_feature/index
+   features/index
 
 .. toctree::
    :maxdepth: 1

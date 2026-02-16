@@ -97,8 +97,8 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     # Keep navigation collapsed by default; expand only current branch.
     'collapse_navigation': True,
-    # Limit to top-level only under captions (prevents pages like OTP from auto-expanding)
-    'navigation_depth': 1,
+    # Show sub-index children (e.g. features/translations under features/index)
+    'navigation_depth': 2,
     # Avoid repeating section titles in the sidebar entries
     'titles_only': True,
 }

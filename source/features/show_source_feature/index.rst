@@ -10,18 +10,18 @@ The ``show_source`` attribute allows the raw XML source of an exercise
 This feature is primarily intended for:
 
 -  Users learning how to create exercises in OpenTA
--  Course participants in “how to use OpenTA” courses
+-  Course participants in "how to use OpenTA" courses
 -  Authors who want to inspect XML structure directly
 
 When activated,  the raw XML is displayed in addition to the rendered content.
 
 Activation Requirements
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``show_source`` attribute works only if:
 
 1. It is present in the XML, **and**
-2. The corresponding course setting that enables “Show Source” is
+2. The corresponding course setting that enables "Show Source" is
    activated.
 
 If the course setting is disabled, the attribute is silently ignored.
@@ -30,10 +30,10 @@ This allows the attribute to remain in exercise files without affecting
 production courses.
 
 User Guide
-==========
+----------
 
 Where It Can Be Placed
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 The ``show_source`` attribute may be placed on any first-level block:
 
@@ -42,7 +42,7 @@ The ``show_source`` attribute may be placed on any first-level block:
 -  ``<question>``
 
 Scope Rules
------------
+~~~~~~~~~~~
 
 The scope depends entirely on placement.
 
@@ -83,7 +83,7 @@ The scope depends entirely on placement.
    -  Overridden if ``<exercise>`` has ``show_source``
 
 Precedence Rules
-----------------
+~~~~~~~~~~~~~~~~
 
 If ``show_source`` appears in multiple places:
 
@@ -97,7 +97,7 @@ Hierarchy:
 exercise > global > question
 
 What Is Displayed
------------------
+~~~~~~~~~~~~~~~~~
 
 When activated, the following is shown:
 
@@ -115,7 +115,7 @@ This allows users to study:
 -  Validation patterns
 
 Best Practices
---------------
+~~~~~~~~~~~~~~
 
 -  Enable this feature only in instructional or development courses.
 -  Avoid using it in production assessment courses.
@@ -123,10 +123,10 @@ Best Practices
 -  Use question-level placement when demonstrating specific constructs.
 
 Developer Reference
-===================
+-------------------
 
 Attribute Behavior
-------------------
+~~~~~~~~~~~~~~~~~~
 
 -  Attribute name: ``show_source``
 -  Expected value: ``"true"``
@@ -136,7 +136,7 @@ If the attribute appears at multiple levels, only the outermost
 first-level block is activated.
 
 Rendering Logic
----------------
+~~~~~~~~~~~~~~~
 
 When ``show_source`` is active for a given scope:
 
@@ -146,14 +146,14 @@ When ``show_source`` is active for a given scope:
    outer scope.
 
 Security Considerations
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 -  The attribute is gated by a course-level configuration setting.
 -  If the course setting is disabled, the attribute is ignored.
 -  This prevents accidental exposure in production environments.
 
 Intended Use Cases
-------------------
+~~~~~~~~~~~~~~~~~~
 
 -  Teaching XML structure in OpenTA
 -  Debugging exercise structure
@@ -161,7 +161,7 @@ Intended Use Cases
 -  Demonstration courses
 
 Example: Full Exercise
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: xml
 

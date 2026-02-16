@@ -35,7 +35,7 @@ For Developers and System Administrators
 .. _for-teachers-and-course-administrators-1:
 
 For Teachers and Course Administrators
-======================================
+--------------------------------------
 
 What Is This?
 -------------
@@ -819,7 +819,7 @@ GitPull Quick Reference
 .. _for-developers-and-system-administrators-1:
 
 For Developers and System Administrators
-========================================
+----------------------------------------
 
    The following sections contain technical implementation details for
    developers and system administrators.

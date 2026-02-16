@@ -3,9 +3,6 @@
 Functions 
 ==============
 
-.. toctree::
-    :maxdepth: 1
-
 
 List of convenience functions for OpenTA
 __________________________
