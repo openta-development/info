@@ -19,7 +19,7 @@ possible for the teacher look in detail at a given student and see how
 they are faring in the course.
 
 OpenTA source
-________
+______________
 
 See https://github.com/opentaproject/openta-public
 
@@ -172,6 +172,8 @@ Example Courses
 
    features/translations/index
    features/otp/index
+   features/openta_xml_rules/index
+   features/show_source_feature/index
 
 .. toctree::
    :maxdepth: 1

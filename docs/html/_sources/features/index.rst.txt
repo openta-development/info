@@ -11,4 +11,5 @@ This section groups OpenTA feature documentation.
 
    otp/index
    translations/index
-
+   openta_xml_rules/index
+   show_source_feature/index
