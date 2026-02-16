@@ -174,6 +174,7 @@ Example Courses
    features/otp/index
    features/openta_xml_rules/index
    features/show_source_feature/index
+   features/gitsync/index
 
 .. toctree::
    :maxdepth: 1
