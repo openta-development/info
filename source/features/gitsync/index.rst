@@ -98,7 +98,7 @@ Set up a private github repo to accept the course data
 - Choose permissions :
         - Minimally, choose "Metadata" and "Contents"
 - At that point choose Access: Read and Write for "Commit statuses and contents and verify your Contents and Commit statues are Read and Write
-- Now copy the personal access token, starting with 'github_pat_......'
+- Now copy the personal access token, starting with 'github\_pat_......'
 - Now go back to your repo ``https://github.com/<gituser>/<course>``
 - Now you will be able to define the variables you will use in the next step
         - GIT_REPO = <gituser>/<course>

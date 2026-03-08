@@ -209,9 +209,9 @@ GitHub and lets you restore it anytime.</p>
 <section id="set-up-a-private-github-repo-to-accept-the-course-data">
 <h4>Set up a private github repo to accept the course data<a class="headerlink" href="#set-up-a-private-github-repo-to-accept-the-course-data" title="Permalink to this heading"></a></h4>
 <ul class="simple">
-<li><p>Login in to your github account; call it  &lt;opentaproject&gt;</p></li>
-<li><p>Press “New” and and give it a name, suitably your course name, without year identifiers. &lt;ffm516&gt;</p></li>
-<li><p>Give it a description; suitably &lt;ffm516&gt;-gitsync-backups</p></li>
+<li><p>Login in to your github account; call it  &lt;gituser&gt;</p></li>
+<li><p>Press “New” and and give it a name, suitably your course name, without year identifiers. &lt;course&gt;</p></li>
+<li><p>Give it a description; suitably &lt;course&gt;-gitsync-backups</p></li>
 <li><p>Choose visibility privatge; <strong>it must be Private</strong></p></li>
 <li><p>Choose Create repository</p></li>
 <li><p>Then go to top right of the page, click your avatar/icon and and from there choose Settings, <strong>not the Settings you see in the toolbar!</strong></p></li>
@@ -224,16 +224,16 @@ GitHub and lets you restore it anytime.</p>
 </li>
 <li><dl class="simple">
 <dt>Press Developer Settings and choose Personal access tokens.</dt><dd><ul>
-<li><p>choose Tokens (classic)</p></li>
-<li><p>generate a new token, suitably repo-scoped if you intend to share it with course admins server admin</p></li>
+<li><p>choose Tokens - Fine grained</p></li>
+<li><p>generate a new token. It should be repo scoped to the precise repo you are using so you don’t open up all your private repos.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Name your token, suitably &lt;ffm516&gt;-gh-token</dt><dd><ul>
+<dt>Name your token, suitably &lt;course&gt;-gh-token</dt><dd><ul>
 <li><p>choose a suitable expiration; at least for the duration of the course if not longer.</p></li>
-<li><p>choose “select repositories” and select the private repository you just create &lt;opentaproject&gt;/&lt;ffm516&gt;</p></li>
+<li><p>choose “select repositories” and select the private repository you just create &lt;gituser&gt;/&lt;course&gt;</p></li>
 </ul>
 </dd>
 </dl>
@@ -246,12 +246,12 @@ GitHub and lets you restore it anytime.</p>
 </dl>
 </li>
 <li><p>At that point choose Access: Read and Write for “Commit statuses and contents and verify your Contents and Commit statues are Read and Write</p></li>
-<li><p>Now copy the personal access token, starting with ‘<a href="#id4"><span class="problematic" id="id5">github_pat_</span></a>……’</p></li>
-<li><p>Now go back to your project <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;opentaproject&gt;/&lt;ffm516&gt;</span></code></p></li>
+<li><p>Now copy the personal access token, starting with ‘github_pat_……’</p></li>
+<li><p>Now go back to your repo <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;gituser&gt;/&lt;course&gt;</span></code></p></li>
 <li><dl class="simple">
 <dt>Now you will be able to define the variables you will use in the next step</dt><dd><ul>
-<li><p>GIT_REPO = &lt;opentaproject&gt;/&lt;ffm516&gt;</p></li>
-<li><p>GIT_USER = &lt;opentaproject&gt;</p></li>
+<li><p>GIT_REPO = &lt;gituser&gt;/&lt;course&gt;</p></li>
+<li><p>GIT_USER = &lt;gituser&gt;</p></li>
 <li><p>GIT_TOKEN = github_patxxxxxxx</p></li>
 <li><p>GIT_ALLOW_PUSH = True</p></li>
 </ul>
@@ -260,20 +260,20 @@ GitHub and lets you restore it anytime.</p>
 </li>
 </ul>
 </section>
-<section id="insert-the-capabilities-into-the-course">
-<h4>Insert the capabilities into the course<a class="headerlink" href="#insert-the-capabilities-into-the-course" title="Permalink to this heading"></a></h4>
+<section id="insert-sync-capabilities-into-the-course">
+<h4>Insert sync capabilities into the course<a class="headerlink" href="#insert-sync-capabilities-into-the-course" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p>Choose Course -&gt; Options</p></li>
 <li><p>At the very bottome, create new  Data (key/value) by pressing “Add Row” and insert the variables defined in the previous paragraph.</p></li>
 <li><p>Press Save</p></li>
 <li><p>After a reload, Press “Course” and a new “Gitsync” tab should open.</p></li>
-<li><p>First time sync is time consuming ( 30 minutes maybe) so make sure you can leave the browser open for some time before you do this.</p></li>
+<li><p>First time sync may be time consuming  so make sure you can leave the browser open for c:a 10 minutes.</p></li>
 <li><dl class="simple">
 <dt>Press GitSync</dt><dd><ul>
 <li><p>The branch is auto generated from your course name and server. You can’t change this</p></li>
 <li><dl class="simple">
 <dt>You can edit the README file any way you want, and the Commit message as well, For instance</dt><dd><ul>
-<li><p>README: this is a sync of the openta course &lt;ffm516&gt;-&lt;year&gt;</p></li>
+<li><p>README: this is a sync of the openta course &lt;course&gt;-&lt;year&gt;</p></li>
 <li><p>Commit message : “initial commit”</p></li>
 </ul>
 </dd>
@@ -285,37 +285,23 @@ GitHub and lets you restore it anytime.</p>
 </li>
 <li><p>Preview readme if you want</p></li>
 <li><p>Then Sync and push.</p></li>
-<li><p>Finally press “Generate Token”</p></li>
-<li><p>Create a <strong>private</strong> GitHub repository (example: <code class="docutils literal notranslate"><span class="pre">cs101</span></code>).</p></li>
-<li><p>Create a Personal Access Token (GitHub -&gt; Settings -&gt; Developer settings -&gt; Personal access tokens -&gt; Tokens (classic) -&gt; Generate new token) with at least <code class="docutils literal notranslate"><span class="pre">repo</span></code> scope; copy it once.</p></li>
-<li><p>Set course options from GitHub values:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GIT_USER</span><span class="p">:</span> <span class="n">your</span> <span class="n">GitHub</span> <span class="n">username</span> <span class="p">(</span><span class="n">example</span><span class="p">:</span> <span class="n">alice</span><span class="p">)</span>
-<span class="n">GIT_TOKEN</span><span class="p">:</span> <span class="n">the</span> <span class="n">PAT</span> <span class="n">string</span> <span class="n">you</span> <span class="n">copied</span>
-<span class="n">GIT_REPO</span><span class="p">:</span> <span class="n">owner</span><span class="o">/</span><span class="n">repo</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">repo</span> <span class="n">URL</span> <span class="p">(</span><span class="n">example</span><span class="p">:</span> <span class="n">alice</span><span class="o">/</span><span class="n">cs101</span><span class="p">)</span>
-
-<span class="c1"># Examples:</span>
-<span class="c1"># https://github.com/alice/cs101.git -&gt; GIT_REPO=alice/cs101</span>
-<span class="c1"># git@github.com:alice/cs101.git    -&gt; GIT_REPO=alice/cs101</span>
-</pre></div>
-</div>
-<p>Add these in <code class="docutils literal notranslate"><span class="pre">Course</span> <span class="pre">-&gt;</span> <span class="pre">Options</span></code> (<code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Field</span></code>), then enable one mode:
-- <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PUSH:</span> <span class="pre">true</span></code> for GitSync backups, or
-- <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PULL:</span> <span class="pre">true</span></code> for GitPull restores.</p>
-<p>You need to configure your course with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GIT_USER</span><span class="p">:</span> <span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">username</span>
-<span class="n">GIT_TOKEN</span><span class="p">:</span> <span class="n">your</span><span class="o">-</span><span class="n">personal</span><span class="o">-</span><span class="n">access</span><span class="o">-</span><span class="n">token</span>
-<span class="n">GIT_REPO</span><span class="p">:</span> <span class="n">username</span><span class="o">/</span><span class="n">repository</span><span class="o">-</span><span class="n">name</span>
-</pre></div>
-</div>
-<p>Plus one of: - <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PUSH:</span> <span class="pre">true</span></code> (for backing up) -
-<code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PULL:</span> <span class="pre">true</span></code> (for restoring)</p>
+</section>
+<section id="restore-from-backup">
+<h4>Restore from backup<a class="headerlink" href="#restore-from-backup" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p>Choose Course -&gt; Options</p></li>
+<li><dl class="simple">
+<dt>Allow PULL instead of PUSH</dt><dd><ul>
+<li><p>In course options, as above the field GIT_ALLOW_PUSH should then be</p></li>
+<li><p>GIT_ALLOW_PULL = True</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 <p><strong>Note</strong>: You can’t have both enabled on the same course (safety
 feature).</p>
-<p>These are inserted as optional fields int Course -&gt; Options at the end.
-Press “Add Field” and insert these. If you are pulling from a public
-repository, you only need <code class="docutils literal notranslate"><span class="pre">GIT_ALLOW_PULL</span>&#160; <span class="pre">:</span> <span class="pre">true</span></code> and
-<code class="docutils literal notranslate"><span class="pre">GIT_REPO</span> <span class="pre">:</span> <span class="pre">XXXX</span></code></p>
 </section>
 </section>
 <section id="daily-use">
@@ -328,7 +314,7 @@ a description of changes 3. Click “Sync to GitHub” 4. Wait 1-2 minutes
 <ol class="arabic simple">
 <li><p>Go to <code class="docutils literal notranslate"><span class="pre">/gitpull/</span></code>, selectable from <code class="docutils literal notranslate"><span class="pre">Course</span></code> in the main menu
 provided you have <code class="docutils literal notranslate"><span class="pre">GITPUSH:</span> <span class="pre">true</span></code></p></li>
-<li><p>Select the entire course, and read the warning</p></li>
+<li><p>Select the entire course, and read the warning; the sync pull is destructive and will replace the cousre, not merge.</p></li>
 <li><p>Wait 1-2 minutes</p></li>
 <li><p>Done!</p></li>
 </ol>
@@ -439,7 +425,8 @@ grades, settings) - Configuration files - README file - All course
 materials</p>
 <p><strong>❌ Excluded (cleaned up automatically):</strong> - <code class="docutils literal notranslate"><span class="pre">backups/</span></code> folder
 (temporary files) - <code class="docutils literal notranslate"><span class="pre">xsl/</span></code> folder (system files) - <code class="docutils literal notranslate"><span class="pre">csv/</span></code> folder
-(exports) - <code class="docutils literal notranslate"><span class="pre">html/</span></code> folder (cache)</p>
+(exports) - <code class="docutils literal notranslate"><span class="pre">html/</span></code> folder (cache) - <code class="docutils literal notranslate"><span class="pre">json-answer-backups</span></code> folder that
+safe copies all student correct answers into the file system for up to the second restores.</p>
 <p>These folders are excluded because they’re temporary or regenerated
 automatically.</p>
 </section>
