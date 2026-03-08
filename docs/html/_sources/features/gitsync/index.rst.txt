@@ -75,14 +75,17 @@ GitHub and lets you restore it anytime.
 Quick Start
 -----------
 
+.. _gitsync_first_time_setup:
+
 First Time Setup
 ~~~~~~~~~~~~~~~~
 
 Set up a private github repo to accept the course data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Login in to your github account; call it  <gituser>
-- Press "New" and and give it a name, suitably your course name, without year identifiers. <course>
+- Login in to your github account; call it  ``https://github.com/<gituser>`` and choose "Repositories"
+- Add a new Repoository :
+        - Press "New" and and give it a name, suitably your course name <course>  without year identifiers. Thus if your openta course is ``ffm516-2025`` Your <course> is ``ffm516``
 - Give it a description; suitably <course>-gitsync-backups
 - Choose visibility privatge; **it must be Private**
 - Choose Create repository
