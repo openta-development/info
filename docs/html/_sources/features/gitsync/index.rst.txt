@@ -78,6 +78,70 @@ Quick Start
 First Time Setup
 ~~~~~~~~~~~~~~~~
 
+Set up a private github repo to accept the course data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Login in to your github account; call it  <opentaproject>
+- Press "New" and and give it a name, suitably your course name, without year identifiers. <ffm516>
+- Give it a description; suitably <ffm516>-gitsync-backups
+- Choose visibility privatge; **it must be Private**
+- Choose Create repository
+- Then go to top right of the page, click your avatar/icon and and from there choose Settings, **not the Settings you see in the toolbar!**
+- Then go to the very left, bottom of the page in "Developer Settings" 
+         - if you don't see it, you probably chosee the wrong Settings. It is Top right avatar -> settings -> far left - furthest down
+- Press Developer Settings and choose Personal access tokens.
+        - choose Tokens (classic)
+        - generate a new token, suitably repo-scoped if you intend to share it with course admins server admin
+- Name your token, suitably <ffm516>-gh-token
+        - choose a suitable expiration; at least for the duration of the course if not longer.
+        - choose "select repositories" and select the private repository you just create <opentaproject>/<ffm516>
+- Choose permissions :
+        - Minimally, choose "Metadata" and "Contents"
+- At that point choose Access: Read and Write for "Commit statuses and contents and verify your Contents and Commit statues are Read and Write
+- Now copy the personal access token, starting with 'github_pat_......'
+- Now go back to your project ``https://github.com/<opentaproject>/<ffm516>``
+- Now you will be able to define the variables you will use in the next step
+        - GIT_REPO = <opentaproject>/<ffm516>
+        - GIT_USER = <opentaproject>
+        - GIT_TOKEN = github_patxxxxxxx
+        - GIT_ALLOW_PUSH = True
+
+Insert the capabilities into the course
+^^^^^^^^^^^^^^^^^^^^^^^
+- Choose Course -> Options
+- At the very bottome, create new  Data (key/value) by pressing "Add Row" and insert the variables defined in the previous paragraph.
+- Press Save
+- After a reload, Press "Course" and a new "Gitsync" tab should open.
+- First time sync is time consuming ( 30 minutes maybe) so make sure you can leave the browser open for some time before you do this.
+- Press GitSync
+        - The branch is auto generated from your course name and server. You can't change this
+        - You can edit the README file any way you want, and the Commit message as well, For instance
+                - README: this is a sync of the openta course <ffm516>-<year> 
+                - Commit message : "initial commit"
+- Preview readme if you want
+- Then Sync and push. 
+
+
+
+- Finally press "Generate Token"
+- Create a **private** GitHub repository (example: ``cs101``).
+- Create a Personal Access Token (GitHub -> Settings -> Developer settings -> Personal access tokens -> Tokens (classic) -> Generate new token) with at least ``repo`` scope; copy it once.
+- Set course options from GitHub values:
+
+::
+
+   GIT_USER: your GitHub username (example: alice)
+   GIT_TOKEN: the PAT string you copied
+   GIT_REPO: owner/repo from the repo URL (example: alice/cs101)
+
+   # Examples:
+   # https://github.com/alice/cs101.git -> GIT_REPO=alice/cs101
+   # git@github.com:alice/cs101.git    -> GIT_REPO=alice/cs101
+
+Add these in ``Course -> Options`` (``Add Field``), then enable one mode:
+- ``GIT_ALLOW_PUSH: true`` for GitSync backups, or
+- ``GIT_ALLOW_PULL: true`` for GitPull restores.
+
 You need to configure your course with:
 
 ::
