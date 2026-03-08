@@ -111,7 +111,7 @@ Set up a private github repo to accept the course data
 
 Insert sync capabilities into the course
 ^^^^^^^^^^^^^^^^^^^^^^^
-- Choose Course -> Options
+- Got to the OpenTA course, select Course -> Options
 - At the very bottome, create new  Data (key/value) by pressing "Add Row" and insert the variables defined in the previous paragraph.
 - Press Save
 - After a reload, Press "Course" and a new "Gitsync" tab should open.
@@ -123,6 +123,7 @@ Insert sync capabilities into the course
                 - Commit message : "initial commit"
 - Preview readme if you want
 - Then Sync and push. 
+        - Be prepared to wait a few minutes , particularly the first time
 
 
 Restore from backup
