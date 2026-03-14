@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instructions for Constructing OpenTA XML Exercises &mdash; OpenTA  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=39b4d592" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/js/showdomain.js?v=94da2774"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            OpenTA
+          </a><div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+<div class="openta-vars">
+  <p class="caption" role="heading"><span class="caption-text">Session Variables</span></p>
+  <form id="openta-vars-form">
+    <div class="openta-field">
+      <label for="openta-remote-user">Remote user</label>
+      <input id="openta-remote-user" type="text" placeholder="remote-user" />
+    </div>
+    <div class="openta-field">
+      <label for="openta-remote-host">Remote host</label>
+      <input id="openta-remote-host" type="text" placeholder="remote-host" />
+    </div>
+  </form>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/adoption.html">Adoption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Authors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html">Authoring questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#creating-exercises">Creating Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#openta-xml-generation-rules">OPENTA XML Generation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#xml-schema">XML SCHEMA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Admins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">OpenTA For Admins</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Students</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student/index.html">Access and first time login</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Example Courses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../example-courses/index.html">OpenTA - example courses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Features</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installing/index.html">Installing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">WebWorks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html">OpenTA For webworks users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#create-a-blank-course">Create a blank course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#canvas-setup">Canvas setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#migrate-your-course-to-the-webwork-instance-at-openta">Migrate your course to the WebWork instance at openta</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pdfindex.html">OpenTA Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OpenTA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Instructions for Constructing OpenTA XML Exercises</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/features/openta_xml_rules/CHATGPT_INSTRUCTIONS.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="instructions-for-constructing-openta-xml-exercises">
+<h1>Instructions for Constructing OpenTA XML Exercises<a class="headerlink" href="#instructions-for-constructing-openta-xml-exercises" title="Permalink to this heading"></a></h1>
+<section id="general-structure">
+<h2>General Structure<a class="headerlink" href="#general-structure" title="Permalink to this heading"></a></h2>
+<p>When asked to construct an exercise, generate an XML file with the
+following structure:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;exercise&gt;</span>
+<span class="w">  </span><span class="nt">&lt;exercisename&gt;</span><span class="w"> </span>EXERCISE_NAME<span class="w"> </span><span class="nt">&lt;/exercisename&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;global&gt;</span>
+<span class="w">    </span>var1<span class="w"> </span>=<span class="w"> </span>value1;
+<span class="w">    </span>var2<span class="w"> </span>=<span class="w"> </span>value2;
+<span class="w">    </span>...
+<span class="w">  </span><span class="nt">&lt;/global&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;text&gt;</span>
+<span class="w">    </span>TEXT<span class="w"> </span>EXPLAINING<span class="w"> </span>THE<span class="w"> </span>EXERCISE
+<span class="w">  </span><span class="nt">&lt;/text&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;question</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;RANDOMKEY1&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;text&gt;</span>
+<span class="w">      </span>TEXT<span class="w"> </span>EXPLAINING<span class="w"> </span>THE<span class="w"> </span>QUESTION
+<span class="w">    </span><span class="nt">&lt;/text&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;expression&gt;</span>
+<span class="w">      </span>A<span class="w"> </span>MATHEMATICAL<span class="w"> </span>EXPRESSION<span class="w"> </span>THAT<span class="w"> </span>IS<span class="w"> </span>THE<span class="w"> </span>CORRECT<span class="w"> </span>ANSWER<span class="w"> </span>TO<span class="w"> </span>THE<span class="w"> </span>QUESTION
+<span class="w">    </span><span class="nt">&lt;/expression&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/question&gt;</span>
+<span class="nt">&lt;/exercise&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="variable-and-unit-rules">
+<h1>Variable and Unit Rules<a class="headerlink" href="#variable-and-unit-rules" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p>Variables are defined inside the <code class="docutils literal notranslate"><span class="pre">&lt;global&gt;</span></code> tag.</p></li>
+<li><p>Each variable must have a <strong>numerical value</strong>.</p></li>
+<li><p>Units may be included if relevant.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="mf">9.8066</span> <span class="n">meter</span> <span class="o">/</span> <span class="n">second</span><span class="o">^</span><span class="mi">2</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">2.347</span> <span class="n">kg</span>
+</pre></div>
+</div>
+<p>Use explicit unit words such as:</p>
+<ul class="simple">
+<li><p>meter</p></li>
+<li><p>second</p></li>
+<li><p>kg</p></li>
+</ul>
+<section id="important-rule-about-units-in-answers">
+<h2>Important rule about units in answers<a class="headerlink" href="#important-rule-about-units-in-answers" title="Permalink to this heading"></a></h2>
+<p>Since variables already include units in the <code class="docutils literal notranslate"><span class="pre">&lt;global&gt;</span></code> definition:</p>
+<ul class="simple">
+<li><p><strong>Do NOT ask the student to include units in their answer.</strong></p></li>
+<li><p>Student answers should use the defined variables only.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="numerical-value-requirements">
+<h1>Numerical Value Requirements<a class="headerlink" href="#numerical-value-requirements" title="Permalink to this heading"></a></h1>
+<p>When defining numerical values:</p>
+<ul class="simple">
+<li><p>Use <strong>at least four significant figures</strong></p></li>
+<li><p>Avoid:</p>
+<ul>
+<li><p>whole numbers</p></li>
+<li><p>simple fractions</p></li>
+<li><p>overly convenient values</p></li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v0</span> <span class="o">=</span> <span class="mf">3.274</span> <span class="n">meter</span> <span class="o">/</span> <span class="n">second</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="angle-rules">
+<h1>Angle Rules<a class="headerlink" href="#angle-rules" title="Permalink to this heading"></a></h1>
+<p>Angles must follow these rules:</p>
+<ul class="simple">
+<li><p>Angles are <strong>always defined using radians</strong></p></li>
+<li><p><strong>Do NOT use degrees</strong></p></li>
+<li><p><strong>Do NOT write the word “radian” in expressions</strong></p></li>
+</ul>
+<p>Reason:</p>
+<p>Radians are treated as equal to 1 in expressions.</p>
+<p>Therefore:</p>
+<ul class="simple">
+<li><p>Never include the word <strong>radian</strong> in <code class="docutils literal notranslate"><span class="pre">&lt;expression&gt;</span></code>.</p></li>
+</ul>
+<p>Also:</p>
+<ul class="simple">
+<li><p>Avoid special angles (π/6, π/4, π/3, etc.)</p></li>
+<li><p>Use general values unless the problem explicitly requires special
+cases.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="math-formatting-in-text">
+<h1>Math Formatting in Text<a class="headerlink" href="#math-formatting-in-text" title="Permalink to this heading"></a></h1>
+<p>Inside <code class="docutils literal notranslate"><span class="pre">&lt;text&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/text&gt;</span></code> tags:</p>
+<ul class="simple">
+<li><p>Wrap mathematical expressions with <strong>dollar signs</strong> so they are
+MathJax compatible.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The velocity is given by $v = v_0 + at$.
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="consistency-rule">
+<h1>Consistency Rule<a class="headerlink" href="#consistency-rule" title="Permalink to this heading"></a></h1>
+<p>All variables appearing inside:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span> <span class="o">...</span> <span class="o">&lt;/</span><span class="n">expression</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>must:</p>
+<ol class="arabic simple">
+<li><p>Be defined in <code class="docutils literal notranslate"><span class="pre">&lt;global&gt;</span></code></p></li>
+<li><p>Have sensible numerical values</p></li>
+<li><p>Include units if appropriate</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="enforcing-answer-rules-with-hints-and-regex">
+<h1>Enforcing Answer Rules with Hints and Regex<a class="headerlink" href="#enforcing-answer-rules-with-hints-and-regex" title="Permalink to this heading"></a></h1>
+<p>The system can enforce answer formatting using <strong>regex hints</strong>.</p>
+<p>Hints can be placed either:</p>
+<ul class="simple">
+<li><p>inside <code class="docutils literal notranslate"><span class="pre">&lt;global&gt;</span></code></p></li>
+<li><p>inside <code class="docutils literal notranslate"><span class="pre">&lt;question&gt;</span></code></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="forbidden-answer-forms">
+<h1>Forbidden Answer Forms<a class="headerlink" href="#forbidden-answer-forms" title="Permalink to this heading"></a></h1>
+<p>If a mathematically correct answer format must be rejected, use:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;hint&gt;</span>
+<span class="w">  </span><span class="nt">&lt;regex</span><span class="w"> </span><span class="na">present=</span><span class="s">&quot;forbidden&quot;</span><span class="nt">&gt;</span><span class="w"> </span>REGEX<span class="w"> </span><span class="nt">&lt;/regex&gt;</span>
+<span class="w">  </span><span class="nt">&lt;comment&gt;</span><span class="w"> </span>COMMENT<span class="w"> </span>HERE<span class="w"> </span><span class="nt">&lt;/comment&gt;</span>
+<span class="nt">&lt;/hint&gt;</span>
+</pre></div>
+</div>
+<p>The comment should explain why the answer was rejected.</p>
+</section>
+<hr class="docutils" />
+<section id="required-answer-forms">
+<h1>Required Answer Forms<a class="headerlink" href="#required-answer-forms" title="Permalink to this heading"></a></h1>
+<p>If the student’s answer must contain a certain structure, use:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;hint&gt;</span>
+<span class="w">  </span><span class="nt">&lt;regex</span><span class="w"> </span><span class="na">present=</span><span class="s">&quot;required&quot;</span><span class="nt">&gt;</span><span class="w"> </span>REGEX<span class="w"> </span><span class="nt">&lt;/regex&gt;</span>
+<span class="w">  </span><span class="nt">&lt;comment&gt;</span><span class="w"> </span>COMMENT<span class="w"> </span>HERE<span class="w"> </span><span class="nt">&lt;/comment&gt;</span>
+<span class="nt">&lt;/hint&gt;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="general-hint-structure">
+<h1>General Hint Structure<a class="headerlink" href="#general-hint-structure" title="Permalink to this heading"></a></h1>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;hint&gt;</span>
+<span class="w">  </span><span class="nt">&lt;regex</span><span class="w"> </span><span class="na">present=</span><span class="s">&quot;ATTRIBUTE&quot;</span><span class="nt">&gt;</span><span class="w"> </span>REGEX<span class="w"> </span><span class="nt">&lt;/regex&gt;</span>
+<span class="w">  </span><span class="nt">&lt;comment&gt;</span><span class="w"> </span>COMMENT<span class="w"> </span><span class="nt">&lt;/comment&gt;</span>
+<span class="nt">&lt;/hint&gt;</span>
+</pre></div>
+</div>
+<p>Where ATTRIBUTE can be one of:</p>
+<ul class="simple">
+<li><p>required</p></li>
+<li><p>forbidden</p></li>
+<li><p>necessary</p></li>
+<li><p>allowed</p></li>
+<li><p>encouraged</p></li>
+<li><p>discouraged</p></li>
+</ul>
+<p>The appropriate attribute should be inferred from the query.</p>
+</section>
+<hr class="docutils" />
+<section id="reminder-about-regex-attributes">
+<h1>Reminder About Regex Attributes<a class="headerlink" href="#reminder-about-regex-attributes" title="Permalink to this heading"></a></h1>
+<p>If a regex rule is used, after constructing the XML the system should
+remind the user that the available regex attributes are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forbidden</span>
+<span class="n">necessary</span>
+<span class="n">allowed</span>
+<span class="n">encouraged</span>
+<span class="n">discouraged</span>
+<span class="n">required</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Hampus Linander, Stellan Östlund.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

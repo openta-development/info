@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; OpenTA  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=39b4d592" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=b3ba4146"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/js/showdomain.js?v=94da2774"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            OpenTA
+          </a><div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+<div class="openta-vars">
+  <p class="caption" role="heading"><span class="caption-text">Session Variables</span></p>
+  <form id="openta-vars-form">
+    <div class="openta-field">
+      <label for="openta-remote-user">Remote user</label>
+      <input id="openta-remote-user" type="text" placeholder="remote-user" />
+    </div>
+    <div class="openta-field">
+      <label for="openta-remote-host">Remote host</label>
+      <input id="openta-remote-host" type="text" placeholder="remote-host" />
+    </div>
+  </form>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/adoption.html">Adoption</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Authors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html">Authoring questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#creating-exercises">Creating Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#openta-xml-generation-rules">OPENTA XML Generation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../author/index.html#xml-schema">XML SCHEMA</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Admins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">OpenTA For Admins</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">OpenTA For Students</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../student/index.html">Access and first time login</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Example Courses</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../example-courses/index.html">OpenTA - example courses</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Features</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installing/index.html">Installing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">WebWorks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html">OpenTA For webworks users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#create-a-blank-course">Create a blank course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#canvas-setup">Canvas setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../webworks/index.html#migrate-your-course-to-the-webwork-instance-at-openta">Migrate your course to the WebWork instance at openta</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pdfindex.html">OpenTA Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OpenTA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/features/openta_xml_rules/xml_exercise_authoring_guide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p># XML Exercise Authoring Guide</p>
+<p>This document describes how to construct XML exercises used by the
+system.</p>
+<hr class="docutils" />
+<p># 1. Basic XML Structure</p>
+<p>Each exercise must follow the structure below.</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>` xml
+&lt;exercise&gt;</p>
+<blockquote>
+<div><dl class="simple">
+<dt>&lt;exercisename&gt;</dt><dd><p>EXERCISE_NAME</p>
+</dd>
+</dl>
+<p>&lt;/exercisename&gt;</p>
+<dl class="simple">
+<dt>&lt;global&gt;</dt><dd><p>var1 = value1;
+var2 = value2;</p>
+</dd>
+</dl>
+<p>&lt;/global&gt;</p>
+<dl class="simple">
+<dt>&lt;text&gt;</dt><dd><p>TEXT EXPLAINING THE EXERCISE</p>
+</dd>
+</dl>
+<p>&lt;/text&gt;</p>
+<p>&lt;question key=”RANDOMKEY1”&gt;</p>
+<blockquote>
+<div><dl class="simple">
+<dt>&lt;text&gt;</dt><dd><p>TEXT EXPLAINING THE QUESTION</p>
+</dd>
+</dl>
+<p>&lt;/text&gt;</p>
+<dl class="simple">
+<dt>&lt;expression&gt;</dt><dd><p>MATHEMATICAL_EXPRESSION</p>
+</dd>
+</dl>
+<p>&lt;/expression&gt;</p>
+</div></blockquote>
+<p>&lt;/question&gt;</p>
+</div></blockquote>
+<p>&lt;/exercise&gt;
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<hr class="docutils" />
+<p># 2. Global Variables</p>
+<p>The <cite>&lt;global&gt;</cite> section defines variables used in the exercise.</p>
+<p>Example:</p>
+<blockquote>
+<div><p>g = 9.812 meter / second^2;
+m = 3.456 kg;
+h = 1.237 meter;</p>
+</div></blockquote>
+<p>### Rules</p>
+<p>Variables must:</p>
+<ul class="simple">
+<li><p>contain <strong>at least four significant figures</strong></p></li>
+<li><p>avoid whole numbers</p></li>
+<li><p>avoid simple fractions</p></li>
+<li><p>include units when relevant</p></li>
+</ul>
+<p>Allowed units:</p>
+<blockquote>
+<div><p>meter
+second
+kg</p>
+</div></blockquote>
+<p>Example:</p>
+<blockquote>
+<div><p>g = 9.812 meter / second^2</p>
+</div></blockquote>
+<p>The <strong>student answer must NOT include units</strong>, because units are
+embedded in the variables.</p>
+<hr class="docutils" />
+<p># 3. Mathematical Notation</p>
+<p>All math inside <cite>&lt;text&gt;</cite> must be wrapped with <cite>$…$</cite> so that it is
+MathJax compatible.</p>
+<p>Example:</p>
+<blockquote>
+<div><p>$text: The velocity is given by $v = at$</p>
+</div></blockquote>
+<hr class="docutils" />
+<p># 4. Angles</p>
+<p>Angles follow strict rules.</p>
+<ul class="simple">
+<li><p>angles use radians</p></li>
+<li><p><strong>never write the word radian</strong></p></li>
+<li><p>radians are dimensionless (value = 1)</p></li>
+<li><p>avoid special angles unless explicitly requested</p></li>
+</ul>
+<p>Example (acceptable):</p>
+<blockquote>
+<div><p>theta = 0.8735</p>
+</div></blockquote>
+<p>Example (not allowed):</p>
+<blockquote>
+<div><p>theta = 45 degree
+theta = π/4</p>
+</div></blockquote>
+<hr class="docutils" />
+<p># 5. Expression Requirements</p>
+<p>Every variable used in</p>
+<blockquote>
+<div><p>&lt;expression&gt;
+&lt;/expression&gt;</p>
+</div></blockquote>
+<p>must appear in the <cite>&lt;global&gt;</cite> section.</p>
+<p>Example:</p>
+<blockquote>
+<div><p>&lt;expression&gt;
+m * g * h
+&lt;/expression&gt;</p>
+</div></blockquote>
+<hr class="docutils" />
+<p># 6. Regex Hint System</p>
+<p>Hints enforce rules on student answers.</p>
+<p>Structure:</p>
+<p><a href="#id7"><span class="problematic" id="id8">``</span></a>` xml
+&lt;hint&gt;</p>
+<blockquote>
+<div><p>&lt;regex present=”ATTRIBUTE”&gt; REGEX &lt;/regex&gt;
+&lt;comment&gt; COMMENT &lt;/comment&gt;</p>
+</div></blockquote>
+<p>&lt;/hint&gt;
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+<p>A hint may be placed inside:</p>
+<ul class="simple">
+<li><p><cite>&lt;global&gt;</cite></p></li>
+<li><p><cite>&lt;question&gt;</cite></p></li>
+</ul>
+<hr class="docutils" />
+<p># 7. Regex Attributes</p>
+<p>Possible attributes for <cite>present=</cite></p>
+<ul class="simple">
+<li><p>required</p></li>
+<li><p>forbidden</p></li>
+<li><p>necessary</p></li>
+<li><p>allowed</p></li>
+<li><p>encouraged</p></li>
+<li><p>discouraged</p></li>
+</ul>
+<hr class="docutils" />
+<p># 8. Common Regex Examples</p>
+<p>### Forbid square root notation</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span> <span class="pre">xml</span>
+<span class="pre">&lt;hint&gt;</span>
+<span class="pre">&lt;regex</span> <span class="pre">present=&quot;forbidden&quot;&gt;sqrt&lt;/regex&gt;</span>
+<span class="pre">&lt;comment&gt;Use</span> <span class="pre">exponent</span> <span class="pre">notation</span> <span class="pre">instead</span> <span class="pre">of</span> <span class="pre">sqrt()&lt;/comment&gt;</span>
+<span class="pre">&lt;/hint&gt;</span>
+<span class="pre">`</span></code></p>
+<p>### Require trigonometric form</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span> <span class="pre">xml</span>
+<span class="pre">&lt;hint&gt;</span>
+<span class="pre">&lt;regex</span> <span class="pre">present=&quot;required&quot;&gt;sin&lt;/regex&gt;</span>
+<span class="pre">&lt;comment&gt;The</span> <span class="pre">solution</span> <span class="pre">must</span> <span class="pre">include</span> <span class="pre">a</span> <span class="pre">sine</span> <span class="pre">function&lt;/comment&gt;</span>
+<span class="pre">&lt;/hint&gt;</span>
+<span class="pre">`</span></code></p>
+<p>### Forbid numeric answers</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span> <span class="pre">xml</span>
+<span class="pre">&lt;hint&gt;</span>
+<span class="pre">&lt;regex</span> <span class="pre">present=&quot;forbidden&quot;&gt;^[0-9\.]+$&lt;/regex&gt;</span>
+<span class="pre">&lt;comment&gt;The</span> <span class="pre">answer</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">symbolic&lt;/comment&gt;</span>
+<span class="pre">&lt;/hint&gt;</span>
+<span class="pre">`</span></code></p>
+<p>### Encourage simplified expressions</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span> <span class="pre">xml</span>
+<span class="pre">&lt;hint&gt;</span>
+<span class="pre">&lt;regex</span> <span class="pre">present=&quot;discouraged&quot;&gt;1\*&lt;/regex&gt;</span>
+<span class="pre">&lt;comment&gt;Avoid</span> <span class="pre">unnecessary</span> <span class="pre">multiplication</span> <span class="pre">by</span> <span class="pre">1&lt;/comment&gt;</span>
+<span class="pre">&lt;/hint&gt;</span>
+<span class="pre">`</span></code></p>
+<hr class="docutils" />
+<p># 9. Complete Example Exercise</p>
+<p><a href="#id13"><span class="problematic" id="id14">``</span></a>` xml
+&lt;exercise&gt;</p>
+<p>&lt;exercisename&gt;
+Potential Energy
+&lt;/exercisename&gt;</p>
+<p>&lt;global&gt;
+m = 2.347 kg;
+g = 9.812 meter / second^2;
+h = 1.764 meter;
+&lt;/global&gt;</p>
+<p>&lt;text&gt;</p>
+<p>A mass $m$ is lifted vertically by a height $h$ in a uniform gravitational field $g$.</p>
+<p>Compute the gravitational potential energy.</p>
+<p>&lt;/text&gt;</p>
+<p>&lt;question key=”PE1”&gt;</p>
+<p>&lt;text&gt;</p>
+<p>Express the gravitational potential energy.</p>
+<p>&lt;/text&gt;</p>
+<p>&lt;expression&gt;</p>
+<p>m * g * h</p>
+<p>&lt;/expression&gt;</p>
+<p>&lt;/question&gt;</p>
+<p>&lt;/exercise&gt;
+<a href="#id15"><span class="problematic" id="id16">``</span></a><a href="#id17"><span class="problematic" id="id18">`</span></a></p>
+<hr class="docutils" />
+<p># 10. Example with Hint Constraints</p>
+<p><a href="#id19"><span class="problematic" id="id20">``</span></a>` xml
+&lt;exercise&gt;</p>
+<p>&lt;exercisename&gt;
+Spring Energy
+&lt;/exercisename&gt;</p>
+<p>&lt;global&gt;
+k = 14.237 kg / second^2;
+x = 0.4382 meter;
+&lt;/global&gt;</p>
+<p>&lt;text&gt;</p>
+<p>A spring with constant $k$ is stretched by $x$.</p>
+<p>Compute the stored energy.</p>
+<p>&lt;/text&gt;</p>
+<p>&lt;question key=”SE1”&gt;</p>
+<p>&lt;text&gt;</p>
+<p>Write the expression for elastic potential energy.</p>
+<p>&lt;/text&gt;</p>
+<p>&lt;expression&gt;</p>
+<p>1/2 * k * x^2</p>
+<p>&lt;/expression&gt;</p>
+<p>&lt;hint&gt;
+&lt;regex present=”required”&gt;x^2&lt;/regex&gt;
+&lt;comment&gt;The expression must contain $x^2$&lt;/comment&gt;
+&lt;/hint&gt;</p>
+<p>&lt;/question&gt;</p>
+<p>&lt;/exercise&gt;
+<a href="#id21"><span class="problematic" id="id22">``</span></a><a href="#id23"><span class="problematic" id="id24">`</span></a></p>
+<hr class="docutils" />
+<p># 11. Author Checklist</p>
+<p>Before finalizing an exercise:</p>
+<p>✔ Correct XML structure✔ All variables defined in <cite>&lt;global&gt;</cite>✔ ≥4 significant figures✔ Units written explicitly✔ Math wrapped with <cite>$…$</cite>✔ No units requested in answers✔ No special angles unless required✔ Regex hints added if format constraints are needed</p>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Hampus Linander, Stellan Östlund.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
