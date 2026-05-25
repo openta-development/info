@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: info-site
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: info-site
+  template:
+    metadata:
+      labels:
+        app: info-site
+    spec:
+      volumes:
+      - name: subdomain-vol
+        persistentVolumeClaim:
+          claimName: subdomain-pvc
+      containers:
+        - name: nginx
+          image: nginx:alpine
+          volumeMounts:
+            - name: subdomain-vol
+              subPath: info 
+              mountPath: /usr/share/nginx/html

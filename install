@@ -1,0 +1,4 @@
+mkdir -p /mnt/pv/subdomain-vol/info
+chmod a+w /mnt/pv/subdomain-vol/info
+cp -rp docs/* /mnt/pv/subdomain-vol/info
+

@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: info-site-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+    - hosts:
+        - 'info.openta.dev' # 'www.openta.se'   #EDIT
+      secretName: openta-tls-secret
+  ingressClassName: nginx
+  rules:
+    - host: info.openta.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: info-site
+                port:
+                  number: 80
