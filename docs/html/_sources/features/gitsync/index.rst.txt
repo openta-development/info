@@ -100,7 +100,7 @@ Set up a private github repo to accept the course data
         - choose "select repositories" and select the private repository you just create <gituser>/<course>
 - Choose permissions :
         - Minimally, choose "Metadata" and "Contents"
-- At that point choose Access: Read and Write for "Commit statuses and contents and verify your Contents and Commit statues are Read and Write
+- At that point choose Access: **Read and Write** for "Commit statuses and contents and verify your Contents and Commit statues are Read and Write
 - Now copy the personal access token, starting with 'github\_pat_......'
 - Now go back to your repo ``https://github.com/<gituser>/<course>``
 - Now you will be able to define the variables you will use in the next step
@@ -124,6 +124,7 @@ Insert sync capabilities into the course
 - Preview readme if you want
 - Then Sync and push. 
         - Be prepared to wait a few minutes , particularly the first time
+        - **If you get a 403/Permission denied you may not have selected READ AND WRITE for your token persmission**
 
 
 Restore from backup
